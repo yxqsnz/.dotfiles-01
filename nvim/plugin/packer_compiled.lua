@@ -84,7 +84,7 @@ _G.packer_plugins = {
   },
   catppuccin = {
     after = { "feline.nvim" },
-    config = { "\27LJ\2\n∫\5\0\0\a\0\23\0\0286\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0005\5\a\0005\6\b\0=\6\t\0055\6\n\0=\6\v\5=\5\f\0045\5\r\0=\5\14\0045\5\15\0=\5\16\4=\4\17\3B\1\2\0016\1\18\0009\1\19\1'\3\20\0006\4\21\0009\4\22\4&\3\4\3B\1\2\1K\0\1\0\ntheme\rOmegaVim\17colorscheme \bcmd\bvim\17integrations\21indent_blankline\1\0\2\26colored_indent_levels\2\fenabled\2\rnvimtree\1\0\3\fenabled\2\22transparent_panel\1\14show_root\1\15native_lsp\15underlines\1\0\4\rwarnings\14underline\nhints\14underline\16information\14underline\verrors\14underline\17virtual_text\1\0\4\rwarnings\vitalic\nhints\vitalic\16information\vitalic\verrors\vitalic\1\0\1\fenabled\2\1\0\t\bcmp\2\15telekasten\2\bhop\1\14dashboard\2\rgitsigns\2\14gitgutter\1\rlsp_saga\2\16lsp_trouble\1\15treesitter\2\vstyles\1\0\5\14variables\tNONE\fstrings\tNONE\rkeywords\tNONE\14functions\tNONE\rcomments\tNONE\1\0\2\16term_colors\2\27transparent_background\1\nsetup\15catppuccin\frequire\0" },
+    config = { "\27LJ\2\n∫\5\0\0\a\0\23\0\0286\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0005\5\a\0005\6\b\0=\6\t\0055\6\n\0=\6\v\5=\5\f\0045\5\r\0=\5\14\0045\5\15\0=\5\16\4=\4\17\3B\1\2\0016\1\18\0009\1\19\1'\3\20\0006\4\21\0009\4\22\4&\3\4\3B\1\2\1K\0\1\0\ntheme\rOmegaVim\17colorscheme \bcmd\bvim\17integrations\21indent_blankline\1\0\2\fenabled\2\26colored_indent_levels\2\rnvimtree\1\0\3\fenabled\2\22transparent_panel\1\14show_root\1\15native_lsp\15underlines\1\0\4\nhints\14underline\16information\14underline\verrors\14underline\rwarnings\14underline\17virtual_text\1\0\4\nhints\vitalic\16information\vitalic\verrors\vitalic\rwarnings\vitalic\1\0\1\fenabled\2\1\0\t\15telekasten\2\bhop\1\14dashboard\2\bcmp\2\15treesitter\2\rgitsigns\2\14gitgutter\1\rlsp_saga\2\16lsp_trouble\1\vstyles\1\0\5\fstrings\tNONE\rkeywords\tNONE\14functions\tNONE\rcomments\tNONE\14variables\tNONE\1\0\2\16term_colors\2\27transparent_background\1\nsetup\15catppuccin\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -140,7 +140,7 @@ _G.packer_plugins = {
   },
   ["nvim-lsp-installer"] = {
     after = { "nvim-lspconfig" },
-    config = { "\27LJ\2\n®\1\0\0\6\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\6\0005\4\4\0005\5\3\0=\5\5\4=\4\a\3B\1\2\1K\0\1\0\aui\1\0\0\nicons\1\0\0\1\0\3\19server_pending\b‚ûú\23server_uninstalled\b‚úó\21server_installed\b‚úì\rsettings\23nvim-lsp-installer\frequire\0" },
+    config = { "\27LJ\2\n®\1\0\0\6\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\6\0005\4\4\0005\5\3\0=\5\5\4=\4\a\3B\1\2\1K\0\1\0\aui\1\0\0\nicons\1\0\0\1\0\3\21server_installed\b‚úì\23server_uninstalled\b‚úó\19server_pending\b‚ûú\rsettings\23nvim-lsp-installer\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -148,7 +148,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
-    config = { "\27LJ\2\n#\0\1\5\1\1\0\5\18\3\0\0009\1\0\0-\4\0\0B\1\3\1K\0\1\0\3¿\nsetup±\3\1\0\r\0\24\0,6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\0019\1\5\1B\1\1\0025\2\6\0006\3\a\0\18\5\2\0B\3\2\4H\6\fÄ'\b\b\0\18\t\6\0&\b\t\b6\t\2\0009\t\t\t9\t\n\t\18\v\b\0005\f\v\0=\a\f\f=\b\r\f=\b\14\fB\t\3\1F\6\3\3R\6Ú5\3\17\0006\4\0\0'\6\15\0B\4\2\0029\4\16\4\18\6\1\0B\4\2\2=\4\18\0036\4\2\0009\4\19\0049\4\20\4=\4\21\0039\4\22\0003\6\23\0B\4\2\0012\0\0ÄK\0\1\0\0\20on_server_ready\rroot_dir\bcwd\tloop\17capabilities\1\0\0\24update_capabilities\17cmp_nvim_lsp\nnumhl\vtexthl\ttext\1\0\0\16sign_define\afn\19DiagnosticSign\npairs\1\0\4\nError\bÔôò\tInfo\bÔüª\tWarn\bÔÅ±\tHint\bÔ†¥\29make_client_capabilities\rprotocol\blsp\bvim\23nvim-lsp-installer\frequire\0" },
+    config = { "\27LJ\2\n#\0\1\5\1\1\0\5\18\3\0\0009\1\0\0-\4\0\0B\1\3\1K\0\1\0\3¿\nsetup±\3\1\0\r\0\24\0,6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\0019\1\5\1B\1\1\0025\2\6\0006\3\a\0\18\5\2\0B\3\2\4H\6\fÄ'\b\b\0\18\t\6\0&\b\t\b6\t\2\0009\t\t\t9\t\n\t\18\v\b\0005\f\v\0=\a\f\f=\b\r\f=\b\14\fB\t\3\1F\6\3\3R\6Ú5\3\17\0006\4\0\0'\6\15\0B\4\2\0029\4\16\4\18\6\1\0B\4\2\2=\4\18\0036\4\2\0009\4\19\0049\4\20\4=\4\21\0039\4\22\0003\6\23\0B\4\2\0012\0\0ÄK\0\1\0\0\20on_server_ready\rroot_dir\bcwd\tloop\17capabilities\1\0\0\24update_capabilities\17cmp_nvim_lsp\nnumhl\vtexthl\ttext\1\0\0\16sign_define\afn\19DiagnosticSign\npairs\1\0\4\tWarn\bÔÅ±\tInfo\bÔüª\nError\bÔôò\tHint\bÔ†¥\29make_client_capabilities\rprotocol\blsp\bvim\23nvim-lsp-installer\frequire\0" },
     load_after = {
       ["nvim-lsp-installer"] = true
     },
@@ -167,7 +167,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    config = { "\27LJ\2\n”\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\3B\1\2\1K\0\1\0\14highlight\1\0\2\venable\2\21use_languagetree\2\21ensure_installed\1\0\0\1\v\0\0\15javascript\15typescript\thtml\bcss\tbash\blua\tjson\vpython\trust\6c\nsetup\28nvim-treesitter.configs\frequire\0" },
+    config = { "\27LJ\2\n”\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\3B\1\2\1K\0\1\0\14highlight\1\0\2\21use_languagetree\2\venable\2\21ensure_installed\1\0\0\1\v\0\0\15javascript\15typescript\thtml\bcss\tbash\blua\tjson\vpython\trust\6c\nsetup\28nvim-treesitter.configs\frequire\0" },
     loaded = false,
     needs_bufread = true,
     only_cond = false,
@@ -183,6 +183,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yxqsnz/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["presence.nvim"] = {
+    config = { "\27LJ\2\n’\3\0\0\5\0\6\0\f6\0\0\0'\2\1\0B\0\2\2\18\2\0\0009\0\2\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\3B\0\3\1K\0\1\0\16file_assets\14blacklist\1\0\14\15main_image\vneovim\20git_commit_text\23Committing changes\22neovim_image_text\29The One True Text Editor\16auto_update\2\23file_explorer_text\16Browsing %s\24plugin_manager_text\21Managing plugins\17editing_text\15Editing %s\fbuttons\2\23enable_line_number\1\21debounce_timeout\3\n\17reading_text\15Reading %s\19workspace_text\18Working on %s\14client_id\023793271441293967371\21line_number_text\22Line %s out of %s\nsetup\rpresence\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/yxqsnz/.local/share/nvim/site/pack/packer/opt/presence.nvim",
+    url = "https://github.com/andweeb/presence.nvim"
   }
 }
 
@@ -191,8 +199,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim-lsp-installer', 'bufferline.nvim', 'nvim-lspconfig', 'catppuccin', 'feline.nvim', 'nvim-tree.lua'}, { event = "VimEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-cmp', 'nvim-treesitter', 'lspsaga.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-cmp', 'presence.nvim', 'nvim-treesitter', 'lspsaga.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim-lsp-installer', 'catppuccin', 'bufferline.nvim', 'nvim-lspconfig', 'feline.nvim', 'nvim-tree.lua'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

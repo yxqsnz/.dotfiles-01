@@ -6,4 +6,5 @@ require('plugins.lsp')
 require('plugins.bufferline')
 require('plugins.file-tree')
 require('plugins.line')
+require('plugins.discord')
 

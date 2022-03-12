@@ -1,5 +1,5 @@
 #!/bin/bash
 echo "=> Link Neovim"
-ln -sv $(realpath nvim) ~/.config/nvim 
+test -d ~/.config/nvim || ln -sv $(realpath nvim) ~/.config/nvim
 echo "=> Link git"
-ln -sv $(realpath .gitconfig) ~
+test -d ~/.config/nvim || ln -sv $(realpath .gitconfig) ~ 

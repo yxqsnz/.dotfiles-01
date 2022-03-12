@@ -1,11 +1,10 @@
-plugin { 
+plugin {
 	url = 'akinsho/bufferline.nvim',
 	config = function()
 	 require('bufferline').setup({
-		options = { 
+		options = {
 			separator_style = "slant",
 		}
 	 })
 	end
-	
 }

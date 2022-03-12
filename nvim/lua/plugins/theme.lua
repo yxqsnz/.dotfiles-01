@@ -1,6 +1,7 @@
-plugin { 
+plugin {
 	url = 'catppuccin/nvim',
-	config = function() 
+	as = "catppuccin",
+	config = function()
 		local catppuccin = require("catppuccin")
 		catppuccin.setup({
 			transparent_background = false,
@@ -14,10 +15,6 @@ plugin {
 			},
 			integrations = {
 				treesitter = true,
-				bufferline = {
-					 --transparent_panel = true,
-					enabled = true,
-				},
 				native_lsp = {
 					enabled = true,
 					virtual_text = {

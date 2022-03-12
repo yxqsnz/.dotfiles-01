@@ -1,12 +1,12 @@
-plugin { 
-	name = "Cmp.Nvim completion", 
-	url = "hrsh7th/nvim-cmp", 
+plugin {
+	name = "Cmp.Nvim completion",
+	url = "hrsh7th/nvim-cmp",
 	event = "BufEnter",
 	requires = {
 		'hrsh7th/cmp-nvim-lsp',
 		'onsails/lspkind-nvim',
 		'L3MON4D3/LuaSnip'
-	}, 
+	},
 	config = function()
 		vim.o.completeopt = "menuone,noselect,noinsert"
 		vim.o.updatetime = 300

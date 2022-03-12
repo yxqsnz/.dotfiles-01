@@ -38,14 +38,8 @@ plugin {
 				lsp_saga = true,
 				gitgutter = false,
 				gitsigns = true,
-				telescope = true,
 				nvimtree = {
 					enabled = true,
-					show_root = false,
-					transparent_panel = false,
-				},
-				neotree = {
-					enabled = false,
 					show_root = false,
 					transparent_panel = false,
 				},

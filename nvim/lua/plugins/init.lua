@@ -1,5 +1,6 @@
-require('plugins.line')
 require('plugins.theme')
+require('plugins.line')
 require('plugins.treesitter')
 require('plugins.lsp')
 require('plugins.bufferline')
+require('plugins.file-tree')

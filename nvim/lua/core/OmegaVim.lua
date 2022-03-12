@@ -14,3 +14,5 @@ require('plugins')
 require('core.packer')
 -- default config
 require('etc.settings')
+-- keybinds
+require('etc.keybinds')

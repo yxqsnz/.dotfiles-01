@@ -94,7 +94,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   nvim = {
-    config = { "\27LJ\2\nû\6\0\0\a\0\27\0 6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0005\5\a\0=\5\b\0045\5\t\0005\6\n\0=\6\v\0055\6\f\0=\6\r\5=\5\14\0045\5\15\0=\5\16\0045\5\17\0=\5\18\0045\5\19\0=\5\20\4=\4\21\3B\1\2\0016\1\22\0009\1\23\1'\3\24\0006\4\25\0009\4\26\4&\3\4\3B\1\2\1K\0\1\0\ntheme\rOmegaVim\17colorscheme \bcmd\bvim\17integrations\21indent_blankline\1\0\2\26colored_indent_levels\2\fenabled\2\fneotree\1\0\3\14show_root\1\22transparent_panel\1\fenabled\1\rnvimtree\1\0\3\14show_root\1\22transparent_panel\1\fenabled\2\15native_lsp\15underlines\1\0\4\verrors\14underline\rwarnings\14underline\nhints\14underline\16information\14underline\17virtual_text\1\0\4\verrors\vitalic\rwarnings\vitalic\nhints\vitalic\16information\vitalic\1\0\1\fenabled\2\15bufferline\1\0\1\fenabled\2\1\0\n\rlsp_saga\2\16lsp_trouble\1\14telescope\2\15telekasten\2\bhop\1\14dashboard\2\15treesitter\2\bcmp\2\rgitsigns\2\14gitgutter\1\vstyles\1\0\5\rkeywords\tNONE\14functions\tNONE\rcomments\tNONE\14variables\tNONE\fstrings\tNONE\1\0\2\16term_colors\2\27transparent_background\1\nsetup\15catppuccin\frequire\0" },
+    config = { "\27LJ\2\nŸ\5\0\0\a\0\25\0\0306\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0005\5\a\0=\5\b\0045\5\t\0005\6\n\0=\6\v\0055\6\f\0=\6\r\5=\5\14\0045\5\15\0=\5\16\0045\5\17\0=\5\18\4=\4\19\3B\1\2\0016\1\20\0009\1\21\1'\3\22\0006\4\23\0009\4\24\4&\3\4\3B\1\2\1K\0\1\0\ntheme\rOmegaVim\17colorscheme \bcmd\bvim\17integrations\21indent_blankline\1\0\2\fenabled\2\26colored_indent_levels\2\rnvimtree\1\0\3\22transparent_panel\1\fenabled\2\14show_root\1\15native_lsp\15underlines\1\0\4\rwarnings\14underline\nhints\14underline\16information\14underline\verrors\14underline\17virtual_text\1\0\4\rwarnings\vitalic\nhints\vitalic\16information\vitalic\verrors\vitalic\1\0\1\fenabled\2\15bufferline\1\0\1\fenabled\2\1\0\t\bcmp\2\15telekasten\2\bhop\1\14dashboard\2\rgitsigns\2\14gitgutter\1\rlsp_saga\2\16lsp_trouble\1\15treesitter\2\vstyles\1\0\5\14variables\tNONE\fstrings\tNONE\rkeywords\tNONE\14functions\tNONE\rcomments\tNONE\1\0\2\27transparent_background\1\16term_colors\2\nsetup\15catppuccin\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -108,6 +108,14 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/yxqsnz/.local/share/nvim/site/pack/packer/opt/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/yxqsnz/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     config = { "\27LJ\2\n”\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\3B\1\2\1K\0\1\0\14highlight\1\0\2\venable\2\21use_languagetree\2\21ensure_installed\1\0\0\1\v\0\0\15javascript\15typescript\thtml\bcss\tbash\blua\tjson\vpython\trust\6c\nsetup\28nvim-treesitter.configs\frequire\0" },
@@ -134,8 +142,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-treesitter', 'nvim-lspconfig', 'lspsaga.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim', 'bufferline.nvim', 'lualine.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim', 'nvim-tree.lua', 'bufferline.nvim', 'lualine.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'lspsaga.nvim', 'nvim-lspconfig', 'nvim-treesitter'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/home/yxqsnz/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
   ["bufferline.nvim"] = {
     config = { "\27LJ\2\nh\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\0\1\0\1\20separator_style\nslant\nsetup\15bufferline\frequire\0" },
     loaded = false,
@@ -76,6 +81,16 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/yxqsnz/.local/share/nvim/site/pack/packer/opt/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/yxqsnz/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/home/yxqsnz/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lspsaga.nvim"] = {
     config = { "\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0" },
@@ -94,15 +109,23 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   nvim = {
-    config = { "\27LJ\2\nŸ\5\0\0\a\0\25\0\0306\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0005\5\a\0=\5\b\0045\5\t\0005\6\n\0=\6\v\0055\6\f\0=\6\r\5=\5\14\0045\5\15\0=\5\16\0045\5\17\0=\5\18\4=\4\19\3B\1\2\0016\1\20\0009\1\21\1'\3\22\0006\4\23\0009\4\24\4&\3\4\3B\1\2\1K\0\1\0\ntheme\rOmegaVim\17colorscheme \bcmd\bvim\17integrations\21indent_blankline\1\0\2\fenabled\2\26colored_indent_levels\2\rnvimtree\1\0\3\22transparent_panel\1\fenabled\2\14show_root\1\15native_lsp\15underlines\1\0\4\rwarnings\14underline\nhints\14underline\16information\14underline\verrors\14underline\17virtual_text\1\0\4\rwarnings\vitalic\nhints\vitalic\16information\vitalic\verrors\vitalic\1\0\1\fenabled\2\15bufferline\1\0\1\fenabled\2\1\0\t\bcmp\2\15telekasten\2\bhop\1\14dashboard\2\rgitsigns\2\14gitgutter\1\rlsp_saga\2\16lsp_trouble\1\15treesitter\2\vstyles\1\0\5\14variables\tNONE\fstrings\tNONE\rkeywords\tNONE\14functions\tNONE\rcomments\tNONE\1\0\2\27transparent_background\1\16term_colors\2\nsetup\15catppuccin\frequire\0" },
+    config = { "\27LJ\2\nŸ\5\0\0\a\0\25\0\0306\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0005\5\a\0=\5\b\0045\5\t\0005\6\n\0=\6\v\0055\6\f\0=\6\r\5=\5\14\0045\5\15\0=\5\16\0045\5\17\0=\5\18\4=\4\19\3B\1\2\0016\1\20\0009\1\21\1'\3\22\0006\4\23\0009\4\24\4&\3\4\3B\1\2\1K\0\1\0\ntheme\rOmegaVim\17colorscheme \bcmd\bvim\17integrations\21indent_blankline\1\0\2\fenabled\2\26colored_indent_levels\2\rnvimtree\1\0\3\fenabled\2\22transparent_panel\1\14show_root\1\15native_lsp\15underlines\1\0\4\rwarnings\14underline\nhints\14underline\16information\14underline\verrors\14underline\17virtual_text\1\0\4\rwarnings\vitalic\nhints\vitalic\16information\vitalic\verrors\vitalic\1\0\1\fenabled\2\15bufferline\1\0\1\fenabled\2\1\0\t\bcmp\2\bhop\1\15treesitter\2\14dashboard\2\rgitsigns\2\15telekasten\2\14gitgutter\1\rlsp_saga\2\16lsp_trouble\1\vstyles\1\0\5\rkeywords\tNONE\14variables\tNONE\fstrings\tNONE\rcomments\tNONE\14functions\tNONE\1\0\2\27transparent_background\1\16term_colors\2\nsetup\15catppuccin\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
     path = "/home/yxqsnz/.local/share/nvim/site/pack/packer/opt/nvim",
     url = "https://github.com/catppuccin/nvim"
   },
+  ["nvim-cmp"] = {
+    config = { "\27LJ\2\nC\0\1\4\0\4\0\a6\1\0\0'\3\1\0B\1\2\0029\1\2\0019\3\3\0B\1\2\1K\0\1\0\tbody\15lsp_expand\fluasnip\frequireå\a\1\0\v\0003\1\\6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\4\0006\0\5\0'\2\6\0B\0\2\0026\1\5\0'\3\a\0B\1\2\0029\2\b\0005\4\f\0005\5\n\0003\6\t\0=\6\v\5=\5\r\0045\5\15\0009\6\14\0014\b\0\0B\6\2\2=\6\16\5=\5\17\0045\5\18\0=\5\19\0045\5\21\0005\6\20\0=\6\22\0056\6\23\0009\6\24\0066\b\0\0009\b\25\b9\b\26\b)\n\0\0B\b\2\2\25\b\0\bB\6\2\2=\6\27\0056\6\23\0009\6\24\0066\b\0\0009\b\25\b9\b\28\b)\n\0\0B\b\2\2\25\b\0\bB\6\2\2=\6\29\5=\5\30\0044\5\5\0005\6\31\0>\6\1\0055\6 \0>\6\2\0055\6!\0>\6\3\0055\6\"\0>\6\4\5=\5#\0045\5&\0009\6$\0009\6%\6)\b¸ˇB\6\2\2=\6'\0059\6$\0009\6%\6)\b\4\0B\6\2\2=\6(\0059\6$\0009\6)\6B\6\1\2=\6*\0059\6$\0009\6+\6B\6\1\2=\6,\0059\6$\0009\6-\0065\b0\0009\t.\0009\t/\t=\t1\bB\6\2\2=\0062\5=\5$\4B\2\2\1K\0\1\0\t<CR>\rbehavior\1\0\1\vselect\2\fReplace\20ConfirmBehavior\fconfirm\n<C-e>\nclose\14<C-Space>\rcomplete\n<C-f>\n<C-d>\1\0\0\16scroll_docs\fmapping\fsources\1\0\1\tname\fluasnip\1\0\1\tname\vbuffer\1\0\1\tname\tpath\1\0\1\tname\rnvim_lsp\18documentation\rmaxwidth\rwinwidth\14maxheigth\14winheight\afn\nfloor\tmath\vborder\1\0\1\17winhighlight\28FloatBorder:NormalFloat\1\t\0\0\tü≠Ω\b‚ñî\tü≠æ\b‚ñï\tü≠ø\b‚ñÅ\tü≠º\b‚ñè\15completion\1\0\1\16completeopt\30menuone,noinsert,noselect\15formatting\vformat\1\0\0\15cmp_format\fsnippet\1\0\0\vexpand\1\0\0\0\nsetup\flspkind\bcmp\frequire\15updatetime\30menuone,noselect,noinsert\16completeopt\6o\bvim\4\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/yxqsnz/.local/share/nvim/site/pack/packer/opt/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
   ["nvim-lspconfig"] = {
-    config = { "\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0" },
+    config = { "\27LJ\2\n’\3\0\0\15\0\25\00025\0\0\0006\1\1\0'\3\2\0B\1\2\0026\2\3\0009\2\4\0029\2\5\0029\2\6\2B\2\1\0025\3\a\0006\4\b\0\18\6\3\0B\4\2\4H\a\fÄ'\t\t\0\18\n\a\0&\t\n\t6\n\3\0009\n\n\n9\n\v\n\18\f\t\0005\r\f\0=\b\r\r=\t\14\r=\t\15\rB\n\3\1F\a\3\3R\aÚ6\4\16\0\18\6\0\0B\4\2\4X\a\15Ä8\t\b\0019\t\17\t5\v\20\0006\f\1\0'\14\18\0B\f\2\0029\f\19\f\18\14\2\0B\f\2\2=\f\21\v6\f\3\0009\f\22\f9\f\23\f=\f\24\vB\t\2\1E\a\3\3R\aÔK\0\1\0\rroot_dir\bcwd\tloop\17capabilities\1\0\0\24update_capabilities\17cmp_nvim_lsp\nsetup\vipairs\nnumhl\vtexthl\ttext\1\0\0\16sign_define\afn\19DiagnosticSign\npairs\1\0\4\nError\bÔôò\tInfo\bÔüª\tWarn\bÔÅ±\tHint\bÔ†¥\29make_client_capabilities\rprotocol\blsp\bvim\14lspconfig\frequire\1\3\0\0\18rust_analyzer\vclangd\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -118,7 +141,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    config = { "\27LJ\2\n”\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\3B\1\2\1K\0\1\0\14highlight\1\0\2\venable\2\21use_languagetree\2\21ensure_installed\1\0\0\1\v\0\0\15javascript\15typescript\thtml\bcss\tbash\blua\tjson\vpython\trust\6c\nsetup\28nvim-treesitter.configs\frequire\0" },
+    config = { "\27LJ\2\n”\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\3B\1\2\1K\0\1\0\14highlight\1\0\2\21use_languagetree\2\venable\2\21ensure_installed\1\0\0\1\v\0\0\15javascript\15typescript\thtml\bcss\tbash\blua\tjson\vpython\trust\6c\nsetup\28nvim-treesitter.configs\frequire\0" },
     loaded = false,
     needs_bufread = true,
     only_cond = false,
@@ -142,8 +165,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim', 'nvim-tree.lua', 'bufferline.nvim', 'lualine.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'lspsaga.nvim', 'nvim-lspconfig', 'nvim-treesitter'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim', 'lualine.nvim', 'nvim-tree.lua', 'bufferline.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-cmp', 'nvim-lspconfig', 'lspsaga.nvim', 'nvim-treesitter'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

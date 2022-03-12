@@ -1,5 +1,5 @@
 local function map(key, command, mode, opts)
-    local options = { noremap = true }
+    local options = { noremap = true, silent = true }
     if opts then
         options = vim.tbl_extend("force", options, opts)
     end
@@ -10,3 +10,7 @@ local function bind(key, command)
 end
 -- File tree binds
 bind("<C-n>", ":NvimTreeToggle")
+-- lsp saga keybinds
+bind("<C-.>", ":Lspsaga code_action")
+bind('K', ":Lspsaga hover_doc")
+bind('<S-k>', ':Lspsaga signature_help')

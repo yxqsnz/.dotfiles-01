@@ -16,7 +16,7 @@ plugin {
 				treesitter = true,
 				bufferline = {
 					 --transparent_panel = true,
-					enabled=  true,
+					enabled = true,
 				},
 				native_lsp = {
 					enabled = true,

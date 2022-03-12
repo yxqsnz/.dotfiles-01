@@ -8,7 +8,13 @@ local packer = require('packer')
 packer.startup(function (use)
   use { 'wbthomason/packer.nvim' } 
   for _, plugin in pairs(OmegaVim.plugins) do
-	  use { plugin.url, event = plugin.event or 'VimEnter', config = plugin.config, requires = plugin.requires or {} }
+	  use {
+		  plugin.url,
+		  event = plugin.event or 'VimEnter',
+		  config = plugin.config or function() end , 
+		  requires = plugin.requires or {},
+		  after = plugin.after or {}  
+	  }
   end
   if packer_boostrap then
 	  packer.sync()

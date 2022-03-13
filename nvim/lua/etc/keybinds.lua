@@ -14,4 +14,7 @@ bind("<C-n>", ":NvimTreeToggle")
 bind("<C-a>", ":Lspsaga code_action")
 bind('K', ":Lspsaga hover_doc")
 bind("<C-r>", ":Lspsaga rename")
+bind("]d", ":Lspsaga diagnostic_jump_next")
+bind("[d", ":Lspsaga diagnostic_jump_prev")
+bind("<C-k>", ":Lspsaga open_floaterm")
 bind('q', ":q");

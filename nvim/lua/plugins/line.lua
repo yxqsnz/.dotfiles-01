@@ -1,11 +1,14 @@
 plugin {
 	name = "Status Line for NeoVim",
-	url = 'feline-nvim/feline.nvim',
+	url = 'nvim-lualine/lualine.nvim',
 	requires = { 'kyazdani42/nvim-web-devicons', 'catppuccin/nvim' },
 	after = "catppuccin",
 	config = function()
-		require("feline").setup({
-			components = require('catppuccin.core.integrations.feline'),
-		})
+		require('lualine').setup {
+			options = {
+				theme = "catppuccin"
+				-- ... the rest of your lualine config
+			}
+		}
 	end
 }

@@ -1,8 +1,11 @@
 plugin {
 	url = "hrsh7th/nvim-cmp",
 	event = "BufEnter",
+	after = 'snippets',
 	requires = {
 		'hrsh7th/cmp-nvim-lsp',
+		'petertriho/cmp-git',
+		'nvim-lua/plenary.nvim',
 		'onsails/lspkind-nvim',
 		'L3MON4D3/LuaSnip',
 		'github/copilot.vim',
@@ -27,8 +30,7 @@ plugin {
 				completeopt = 'menuone,noinsert,noselect',
 			},
 			documentation = {
-				border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
-				winhighlight = 'FloatBorder:NormalFloat',
+				border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 				maxheigth = math.floor(vim.fn.winheight(0) / 2),
 				maxwidth = math.floor(vim.fn.winwidth(0) / 2),
 			},
@@ -36,7 +38,8 @@ plugin {
 				{ name = 'nvim_lsp' },
 				{ name = 'path' },
 				{ name = 'buffer' },
-				{ name = "luasnip" }
+				{ name = 'luasnip' },
+				{ name = 'cmp_git' }
 			},
 			mapping = {
 				['<C-d>'] = cmp.mapping.scroll_docs(-4),

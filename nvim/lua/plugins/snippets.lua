@@ -1,7 +1,8 @@
 plugin {
-   url = 'L3MON4D3/LuaSnip',
-   requrires = {'rafamadriz/friendly-snippets'},
-   config = function ()
-   	
-   end
+	url    = 'L3MON4D3/LuaSnip',
+	as     = 'snippets',
+	event  = "BufEnter",
+	config = function ()
+		require("luasnip.loaders.from_vscode").lazy_load({ path = "./friendly-snippets/snippets" })
+	end
 }

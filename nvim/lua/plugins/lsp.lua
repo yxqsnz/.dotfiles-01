@@ -39,9 +39,30 @@ plugin {
 			root_dir = vim.loop.cwd,
 		}
 		lsp_installer.on_server_ready(function(server)
-
 			server:setup(opts)
 		end)
+		local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+		function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+			opts = opts or {}
+			opts.border = opts.border or {
+				{"🭽", "FloatBorder"},
+
+				{"▔", "FloatBorder"},
+
+				{"🭾", "FloatBorder"},
+
+				{"▕", "FloatBorder"},
+
+				{"🭿", "FloatBorder"},
+
+				{"▁", "FloatBorder"},
+
+				{"🭼", "FloatBorder"},
+
+				{"▏", "FloatBorder"},
+			}
+			return orig_util_open_floating_preview(contents, syntax, opts, ...)
+		end
 	end
 }
 

@@ -135,6 +135,9 @@ ForegroundNormal=215,218,224
 ForegroundPositive=179,225,163
 ForegroundVisited=155,89,182
 
+[DirSelect Dialog]
+DirSelectDialog Size=844,598
+
 [General]
 ColorSchemeHash=0d04f1ee1aa087020fa68e3df905258950472d6a
 

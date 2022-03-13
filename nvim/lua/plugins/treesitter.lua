@@ -1,4 +1,4 @@
-plugin { 
+plugin {
 	url = 'nvim-treesitter/nvim-treesitter',
 	event = 'BufEnter',
 	config = function()

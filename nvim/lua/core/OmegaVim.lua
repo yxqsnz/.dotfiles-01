@@ -6,12 +6,12 @@ OmegaVim = {
 }
 local vim = OmegaVim
 function plugin(plug)
-   vim.plugins[plug.name or plug.url] = plug
+   vim.plugins[plug.url] = plug
 end
 -- require default plugins
 require('plugins')
 -- start packer
-require('core.packer')
+require('core.plugins')
 -- default config
 require('etc.settings')
 -- keybinds

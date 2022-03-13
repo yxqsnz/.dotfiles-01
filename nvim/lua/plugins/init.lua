@@ -1,10 +1,9 @@
 require('plugins.theme')
+require('plugins.snippets')
 require('plugins.treesitter')
 require('plugins.completion')
-require('plugins.lsp-installer')
 require('plugins.lsp')
-require('plugins.bufferline')
+require('plugins.buffer-line')
 require('plugins.file-tree')
 require('plugins.line')
 require('plugins.discord')
-

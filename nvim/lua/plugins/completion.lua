@@ -1,5 +1,4 @@
 plugin {
-	name = "Cmp.Nvim completion",
 	url = "hrsh7th/nvim-cmp",
 	event = "BufEnter",
 	requires = {

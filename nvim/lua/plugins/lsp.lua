@@ -7,10 +7,20 @@ plugin {
 plugin {
 	url = 'neovim/nvim-lspconfig',
 	requires = { 'hrsh7th/cmp-nvim-lsp', 'williamboman/nvim-lsp-installer' },
-	after = "nvim-lsp-installer",
 	config = function()
-		local lsp_installer = require("nvim-lsp-installer");
-
+		local present, lsp_installer = pcall(require, "nvim-lsp-installer");
+        if not present then
+			return
+		end
+		lsp_installer.settings({
+			ui = {
+				icons = {
+					server_installed = "✓",
+					server_pending = "➜",
+					server_uninstalled = "✗"
+				}
+			}
+		})
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		local symbols = {
 			Error = "",

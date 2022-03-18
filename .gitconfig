@@ -2,11 +2,11 @@
 	email = yxqsnz@gmail.com
 	name = yxqsnz
 	signingkey = F4216D44798CE83C8D693C14FD27C3F265D62E4A
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
 [commit]
 	gpgsign = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/home/linuxbrew/.linuxbrew/Cellar/gh/2.6.0/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/home/linuxbrew/.linuxbrew/Cellar/gh/2.6.0/bin/gh auth git-credential

@@ -1,5 +1,0 @@
-* Default
-** .emacs.d
- - path :: ~/.emacs.d
-** testing
- - path :: ~/dev/rust/testing

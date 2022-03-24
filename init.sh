@@ -23,4 +23,6 @@ echo "=> Link Picom"
 test -d ~/.config/picom || ln -sv $(realpath picom) ~/.config/picom
 echo "=> Link Alacritty"
 test -d ~/.config/alacritty || ln -sv $(realpath alacritty) ~/.config/alacritty
+echo "=> Copy Paru (ROOT)"
+sudo cp -v $(realpath paru.conf) /etc/paru.conf
 

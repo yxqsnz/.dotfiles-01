@@ -1,0 +1,175 @@
+[colors]
+background = ${xrdb:background}
+background-alt = ${xrdb:background-alt}
+foreground = ${xrdb:foreground}
+foreground-alt = ${xrdb:foreground-alt}
+
+# .Xresources format
+color0 =  ${xrdb:color0}
+color1 =  ${xrdb:color1}
+color2 =  ${xrdb:color2}
+color3 =  ${xrdb:color3}
+color4 =  ${xrdb:color4}
+color5 =  ${xrdb:color5}
+color6 =  ${xrdb:color6}
+color7 =  ${xrdb:color7}
+color8 =  ${xrdb:color8}
+color9 =  ${xrdb:color9}
+color10 = ${xrdb:color10}
+color11 = ${xrdb:color11}
+color12 = ${xrdb:color12}
+color13 = ${xrdb:color13}
+color14 = ${xrdb:color14}
+color15 = ${xrdb:color15}
+
+# Normal colors
+gray = ${colors.color0}
+red = ${colors.color1}
+green = ${colors.color2}
+yellow = ${colors.color3}
+blue = ${colors.color4}
+magenta = ${colors.color5}
+cyan = ${colors.color6}
+white = ${colors.color7}
+
+# Light colors
+lgray = ${colors.color8}
+lred = ${colors.color9}
+lgreen = ${colors.color10}
+lyellow = ${colors.color11}
+lblue = ${colors.color12}
+lmagenta = ${colors.color13}
+lcyan = ${colors.color14}
+lwhite = ${colors.color15}
+
+[icons]
+tag = "  "
+
+
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = ${icons.tag}
+label-focused-foreground = ${colors.blue}
+label-focused-underline = #313141
+label-focused-padding = 1
+
+label-occupied = ${icons.tag}
+label-occupied-foreground = ${colors.green}
+label-occupied-padding = 1
+
+label-urgent = ${icons.tag}
+label-urgent-foreground = ${colors.red}
+label-urgent-padding = 1
+
+label-empty = ${icons.tag}
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 1
+
+[module/debian]
+type = custom/text
+content = %{T2}%{F#CE0056}%{F-}%{T-}
+bold = true
+
+click-left = rofi -show drun
+
+[module/sep]
+type = custom/text
+content = "  "
+
+[module/time]
+type = internal/date
+date = %{F#b782da}%{T2}%{T-} %{T3}%H:%M%{T-}%{F-}
+
+[module/date]
+type = internal/date
+date = %{F#b782da}%{T2}%{T-} %{T3}%y/%m/%d%{T-}%{F-}
+
+[module/audio]
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume>
+
+label-volume = %{T3}%{F#b782da}%percentage%%%{F-}%{T-}
+label-muted = %{T2}%{F#b782da}婢%{F-}%{T-}
+
+ramp-volume-0 = %{T2}%{F#b782da}%{F-}%{T-}
+ramp-volume-1 = %{T2}%{F#b782da}奔%{F-}%{T-}
+ramp-volume-2 = %{T2}%{F#b782da}墳%{F-}%{T-}
+
+interval = 2
+
+[module/battery]
+type = internal/battery
+
+format-charging = %{T2}%{F#b782da}<ramp-capacity>%{F-} %{T-} <label-charging>
+format-discharging = %{T2}%{F#b782da}<ramp-capacity>%{F-} %{T-} <label-discharging>
+format-full = %{T2}%{F#b782da}<ramp-capacity>%{F-}%{T-} <label-full>
+
+label-charging = %{T3}%{F#b782da}%percentage%%%{F-} %{T-}
+label-discharging = %{T3}%{F#b782da}%percentage%%%{F-} %{T-}
+label-full = %{T3}%{F#b782da}%percentage%%%{F-} %{T-}
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 75
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
+
+[module/backlight]
+type = internal/backlight
+card = nvidia_0 
+format = %{T4}%{F#b782da}<ramp>%{F-}%{T-} <label>
+label =  %{T3}%{F#b782da}%percentage%%%{F-}%{T-}
+
+ramp-0 = 🌔
+ramp-1 = 🌓
+ramp-2 = 🌓
+ramp-3 = 🌓
+ramp-4 = 🌒
+interval = 30 
+enable-scroll = true
+
+scroll-up = xbacklight -inc 10
+scroll-down = xbacklight -dec 10
+
+[module/memory]
+type = internal/memory
+
+interval = 1
+format = <label>
+format-prefix = %{F#b782da} 
+label = " %mb_used%"
+
+[module/cpu]
+type = internal/cpu
+
+
+interval = 1
+
+format = <label>
+format-prefix = %{F#b782da}
+label = "  %percentage%%"
+

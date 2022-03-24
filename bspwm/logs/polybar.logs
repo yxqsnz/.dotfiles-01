@@ -1,0 +1,301 @@
+FC_DEBUG=1
+Match Pattern has 26 elts (size 32)
+	family: "Iosevka Nerd Font"(s) "DejaVu LGC Sans"(w) "Noto Sans"(w) "DejaVu Sans"(w) "Verdana"(w) "Arial"(w) "Albany AMT"(w) "Luxi Sans"(w) "Nimbus Sans L"(w) "Nimbus Sans"(w) "Helvetica"(w) "Lucida Sans Unicode"(w) "BPG Glaho International"(w) "Tahoma"(w) "Carlito"(w) "Droid Sans"(w) "Nachlieli"(w) "Lucida Sans Unicode"(w) "Yudit Unicode"(w) "Kerkis"(w) "ArmNet Helvetica"(w) "Artsounk"(w) "BPG UTF8 M"(w) "Waree"(w) "Loma"(w) "Garuda"(w) "Umpush"(w) "Saysettha Unicode"(w) "JG Lao Old Arial"(w) "GF Zemen Unicode"(w) "Pigiarniq"(w) "B Davat"(w) "B Compset"(w) "Kacst-Qr"(w) "Urdu Nastaliq Unicode"(w) "Raghindi"(w) "Mukti Narrow"(w) "malayalam"(w) "Sampige"(w) "padmaa"(w) "Hapax Berbère"(w) "MS Gothic"(w) "UmePlus P Gothic"(w) "Microsoft YaHei"(w) "Microsoft JhengHei"(w) "WenQuanYi Zen Hei"(w) "WenQuanYi Bitmap Song"(w) "AR PL ShanHeiSun Uni"(w) "AR PL New Sung"(w) "MgOpen Modata"(w) "VL Gothic"(w) "IPAMonaGothic"(w) "IPAGothic"(w) "Sazanami Gothic"(w) "Kochi Gothic"(w) "AR PL KaitiM GB"(w) "AR PL KaitiM Big5"(w) "AR PL ShanHeiSun Uni"(w) "AR PL SungtiL GB"(w) "AR PL Mingti2L Big5"(w) "ＭＳ ゴシック"(w) "ZYSong18030"(w) "TSCu_Paranar"(w) "NanumGothic"(w) "UnDotum"(w) "Baekmuk Dotum"(w) "Baekmuk Gulim"(w) "KacstQura"(w) "Lohit Bengali"(w) "Lohit Gujarati"(w) "Lohit Hindi"(w) "Lohit Marathi"(w) "Lohit Maithili"(w) "Lohit Kashmiri"(w) "Lohit Konkani"(w) "Lohit Nepali"(w) "Lohit Sindhi"(w) "Lohit Punjabi"(w) "Lohit Tamil"(w) "Meera"(w) "Lohit Malayalam"(w) "Lohit Kannada"(w) "Lohit Telugu"(w) "Lohit Oriya"(w) "LKLUG"(w) "Noto Sans"(w) "FreeSans"(w) "Arial Unicode MS"(w) "Arial Unicode"(w) "Code2000"(w) "Code2001"(w) "sans-serif"(w) "Roya"(w) "Koodak"(w) "Terafik"(w) "sans-serif"(w) "sans-serif"(w)
+	familylang: "pt"(s) "en-us"(w)
+	stylelang: "pt"(s) "en-us"(w)
+	fullnamelang: "pt"(s) "en-us"(w)
+	slant: 0(i)(s)
+	weight: 80(i)(s)
+	width: 100(i)(s)
+	size: 10(f)(s)
+	pixelsize: 10.4167(f)(s)
+	hintstyle: 3(i)(s) 1(i)(w)
+	hinting: True(s)
+	verticallayout: False(s)
+	autohint: False(s)
+	globaladvance: True(s)
+	dpi: 75(f)(s)
+	scale: 1(f)(s)
+	lang: "pt"(w)
+	fontversion: 2147483647(i)(s)
+	embeddedbitmap: True(s)
+	decorative: False(s)
+	lcdfilter: 1(i)(w)
+	namelang: "pt"(s)
+	prgname: "polybar"(s)
+	symbol: False(s)
+	variable: False(s)
+	order: 0(i)(s)
+
+Best score 0 0 0 0 0 0 0 0 0 0 1e+99 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.14742e+12
+Pattern has 26 elts (size 32)
+	family: "Iosevka"(s) "Iosevka Nerd Font"(s)
+	familylang: "en"(w) "en"(w)
+	style: "Regular"(s) "Book"(s)
+	stylelang: "en"(w) "en"(w)
+	fullname: "Iosevka Nerd Font Complete"(w)
+	fullnamelang: "en"(w)
+	slant: 0(i)(s)
+	weight: 80(f)(s)
+	width: 100(f)(s)
+	foundry: "CYEL"(s)
+	file: "/home/pietro/.local/share/fonts/Iosevka Nerd Font Complete.ttf"(s)
+	index: 0(i)(w)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	0000: 00000000 ffffffff ffffffff 7fffffff 00000000 ffffffff ffffffff ffffffff
+	0001: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0002: ffffffff ffffffff ffffffff ffffffff ffffffff 3fffffff ffffffc3 008833ff
+	0003: ffffffff ffffffff f5bf7fff fc00ffff ffffd7f0 fffffffb 00607fff e39c0000
+	0004: ffffffff ffffffff ffffffff 03f00cc0 0fcf0000 0fcffc0c ffff8007 033fffff
+	0005: 3c000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	001a: 00000000 00000000 00000000 00000000 00000000 00040000 00000000 00000000
+	001d: 1ff1ffff ffffffff fdffffff b98007ff fa038000 fffffbff ff9000f0 401fcfff
+	001e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 03ffffff
+	001f: 3f3fffff ffffffff aaff3f3f 3fffffff ffffffff ffdfffff efcfffdf 7fdcffff
+	0020: ff3f08ff 7eff00f7 00000810 fff30000 1fff7fff 20001398 00000000 00000000
+	0021: 00c80268 00004ac5 7fff0000 00000000 cfff0200 f300400f 03fff87f 1fa003f0
+	0022: 678f9ffd 30f07ff9 00041fba 03ffcfff ffe00ffc 800031ff 0000004f 01000000
+	0023: 00000f00 ffc00600 ffffffff 07ffffff 00200000 00000000 00000000 78000000
+	0024: 00000000 00000000 00000000 ffffffff ffffffff ffffffff ffffffff ffffffff
+	0025: ffffffff ffffffff ffffffff ffffffff ffffffff f3ffffff 003fdfcf 0000807c
+	0026: 00000060 00000000 00000007 0000feff 00030000 00000002 00000000 00000000
+	0027: 05f80000 00000000 00000000 ffc3f000 00000000 00000000 00000004 00000f00
+	0028: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0029: 00000000 00000006 00000000 00000000 00000000 00000000 00000000 00000800
+	002a: 00000000 80000000 00000000 60000000 00000000 00000000 00000000 00000000
+	002b: 80000000 0000000f 01180000 00000000 00000000 00000000 00000000 00000000
+	002c: 00000000 00000000 00000000 fa8fb800 00000000 00000000 00000000 00000000
+	0032: 00000000 00000000 fffe0000 00000000 00000000 fffe0000 00000000 00000000
+	00a7: 00000000 00030080 0c000000 00000000 000c4003 00030000 00000000 00000000
+	00ab: 00000000 00210000 00080000 00000030 00000000 00000000 00000000 00000000
+	00e0: 000007ff 00000000 00000000 00000000 c0030000 ffffc00f 0017f5ff 00000000
+	00e2: ffffffff ffffffff ffffffff ffffffff ffffffff 000003ff 00000000 00000000
+	00e3: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 0000000f
+	00e5: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 fc000000
+	00e6: ffffffff 00007fff 00000000 00000000 00000000 00000000 00000000 00000000
+	00e7: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 0000003f 00000000
+	00f0: 7fff7fff 7ffffffe 7fff7fff 7fff7fff 7fff7fff 00077fff 7fff7fff 7fff7fff
+	00f1: 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff
+	00f2: 7fff7fff 7ffffffe 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 00000001
+	00f3: 1fffffff 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	00f4: ffffffff ffffffff ffffffff ffffffff ffffffff 000003ff 00000000 00000000
+	00f5: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00f6: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00f7: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00f8: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00f9: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00fa: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00fb: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00fc: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00fd: ffffffff ffffffff 0000007f 00000000 00000000 00000000 00000000 00000000
+	01f1: ffff0001 000003ff 00000000 00000000 00000000 00000000 00000000 00000000
+(s)
+	lang: aa|af|ast|av|ay|az-az|bm|be|bg|bi|bin|br|bs|bua|ca|ce|ch|co|cs|cv|cy|da|de|el|en|eo|es|et|eu|fi|fj|fo|fr|ff|fur|fy|ga|gd|gl|gn|gv|ha|haw|ho|hr|hu|ia|ig|id|ie|ik|io|is|it|kaa|ki|kk|kl|ku-am|kum|kv|kw|ky|la|lb|lez|ln|lt|lv|mg|mh|mi|mk|mo|mt|nb|nds|nl|nn|no|nr|nso|ny|oc|om|os|pl|pt|rm|ro|ru|sco|se|sel|shs|sk|sl|sm|sma|smj|smn|sms|so|sq|sr|ss|st|sv|sw|tg|tk|tl|tn|to|tr|ts|tt|tw|tyv|uk|uz|ve|vi|vo|vot|wa|wen|wo|xh|yap|yo|zu|ak|an|ber-dz|crh|csb|ee|fat|fil|hsb|ht|hz|jv|kab|kj|kr|ku-tr|kwm|lg|li|mn-mn|ms|na|ng|nv|pap-an|pap-aw|qu|quz|rn|rw|sc|sg|sn|su|ty|za(s)
+	fontversion: 65536(i)(w)
+	capability: "otlayout:DFLT otlayout:cyrl otlayout:grek otlayout:hani otlayout:kana otlayout:latn"(w)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "IosevkaNerdFontComplete-"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: True(s)
+	order: 0(i)(s)
+
+Match Pattern has 27 elts (size 32)
+	family: "FontAwesome"(s) "DejaVu LGC Sans"(w) "Noto Sans"(w) "DejaVu Sans"(w) "Verdana"(w) "Arial"(w) "Albany AMT"(w) "Luxi Sans"(w) "Nimbus Sans L"(w) "Nimbus Sans"(w) "Helvetica"(w) "Lucida Sans Unicode"(w) "BPG Glaho International"(w) "Tahoma"(w) "Carlito"(w) "Droid Sans"(w) "Nachlieli"(w) "Lucida Sans Unicode"(w) "Yudit Unicode"(w) "Kerkis"(w) "ArmNet Helvetica"(w) "Artsounk"(w) "BPG UTF8 M"(w) "Waree"(w) "Loma"(w) "Garuda"(w) "Umpush"(w) "Saysettha Unicode"(w) "JG Lao Old Arial"(w) "GF Zemen Unicode"(w) "Pigiarniq"(w) "B Davat"(w) "B Compset"(w) "Kacst-Qr"(w) "Urdu Nastaliq Unicode"(w) "Raghindi"(w) "Mukti Narrow"(w) "malayalam"(w) "Sampige"(w) "padmaa"(w) "Hapax Berbère"(w) "MS Gothic"(w) "UmePlus P Gothic"(w) "Microsoft YaHei"(w) "Microsoft JhengHei"(w) "WenQuanYi Zen Hei"(w) "WenQuanYi Bitmap Song"(w) "AR PL ShanHeiSun Uni"(w) "AR PL New Sung"(w) "MgOpen Modata"(w) "VL Gothic"(w) "IPAMonaGothic"(w) "IPAGothic"(w) "Sazanami Gothic"(w) "Kochi Gothic"(w) "AR PL KaitiM GB"(w) "AR PL KaitiM Big5"(w) "AR PL ShanHeiSun Uni"(w) "AR PL SungtiL GB"(w) "AR PL Mingti2L Big5"(w) "ＭＳ ゴシック"(w) "ZYSong18030"(w) "TSCu_Paranar"(w) "NanumGothic"(w) "UnDotum"(w) "Baekmuk Dotum"(w) "Baekmuk Gulim"(w) "KacstQura"(w) "Lohit Bengali"(w) "Lohit Gujarati"(w) "Lohit Hindi"(w) "Lohit Marathi"(w) "Lohit Maithili"(w) "Lohit Kashmiri"(w) "Lohit Konkani"(w) "Lohit Nepali"(w) "Lohit Sindhi"(w) "Lohit Punjabi"(w) "Lohit Tamil"(w) "Meera"(w) "Lohit Malayalam"(w) "Lohit Kannada"(w) "Lohit Telugu"(w) "Lohit Oriya"(w) "LKLUG"(w) "Noto Sans"(w) "FreeSans"(w) "Arial Unicode MS"(w) "Arial Unicode"(w) "Code2000"(w) "Code2001"(w) "sans-serif"(w) "Roya"(w) "Koodak"(w) "Terafik"(w) "sans-serif"(w) "sans-serif"(w)
+	familylang: "pt"(s) "en-us"(w)
+	style: "Solid"(s)
+	stylelang: "pt"(s) "en-us"(w)
+	fullnamelang: "pt"(s) "en-us"(w)
+	slant: 0(i)(s)
+	weight: 80(i)(s)
+	width: 100(i)(s)
+	size: 10(f)(s)
+	pixelsize: 10.4167(f)(s)
+	hintstyle: 3(i)(s) 1(i)(w)
+	hinting: True(s)
+	verticallayout: False(s)
+	autohint: False(s)
+	globaladvance: True(s)
+	dpi: 75(f)(s)
+	scale: 1(f)(s)
+	lang: "pt"(w)
+	fontversion: 2147483647(i)(s)
+	embeddedbitmap: True(s)
+	decorative: False(s)
+	lcdfilter: 1(i)(w)
+	namelang: "pt"(s)
+	prgname: "polybar"(s)
+	symbol: False(s)
+	variable: False(s)
+	order: 0(i)(s)
+
+Best score 0 0 0 0 0 0 0 0 0 2000 1e+99 0 0 0 0 0 1000 0 0 0 0 0 0 0 0 0 2.14722e+12
+Pattern has 25 elts (size 32)
+	family: "FontAwesome"(s)
+	familylang: "en"(w)
+	style: "Regular"(w)
+	stylelang: "en"(w)
+	fullname: "FontAwesome"(w)
+	fullnamelang: "en"(w)
+	slant: 0(i)(s)
+	weight: 80(f)(s)
+	width: 100(f)(s)
+	foundry: "pyrs"(s)
+	file: "/usr/share/fonts/TTF/fontawesome-webfont.ttf"(s)
+	index: 0(i)(w)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	0000: 00000000 00000001 00000000 00000000 00000000 00104300 01000040 00000000
+	0021: 00000000 00000004 00000000 00000000 00000000 00000000 00000000 00000000
+	0022: 40000000 00000000 00000000 00000001 00000000 00000000 00000000 00000000
+	00f0: 7fff7fff 7ffffffe 7fff7fff 7fff7fff 7fff7fff 00077fff 7fff7fff 7fff7fff
+	00f1: 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff
+	00f2: 7fff7fff 7ffffffe 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 00007fff
+	00f5: 00000001 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+(s)
+	lang: (w)
+	fontversion: 262603(i)(w)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "FontAwesome"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: False(s)
+	order: 0(i)(s)
+
+Match Pattern has 27 elts (size 32)
+	family: "FontAwesome"(s) "DejaVu LGC Sans"(w) "Noto Sans"(w) "DejaVu Sans"(w) "Verdana"(w) "Arial"(w) "Albany AMT"(w) "Luxi Sans"(w) "Nimbus Sans L"(w) "Nimbus Sans"(w) "Helvetica"(w) "Lucida Sans Unicode"(w) "BPG Glaho International"(w) "Tahoma"(w) "Carlito"(w) "Droid Sans"(w) "Nachlieli"(w) "Lucida Sans Unicode"(w) "Yudit Unicode"(w) "Kerkis"(w) "ArmNet Helvetica"(w) "Artsounk"(w) "BPG UTF8 M"(w) "Waree"(w) "Loma"(w) "Garuda"(w) "Umpush"(w) "Saysettha Unicode"(w) "JG Lao Old Arial"(w) "GF Zemen Unicode"(w) "Pigiarniq"(w) "B Davat"(w) "B Compset"(w) "Kacst-Qr"(w) "Urdu Nastaliq Unicode"(w) "Raghindi"(w) "Mukti Narrow"(w) "malayalam"(w) "Sampige"(w) "padmaa"(w) "Hapax Berbère"(w) "MS Gothic"(w) "UmePlus P Gothic"(w) "Microsoft YaHei"(w) "Microsoft JhengHei"(w) "WenQuanYi Zen Hei"(w) "WenQuanYi Bitmap Song"(w) "AR PL ShanHeiSun Uni"(w) "AR PL New Sung"(w) "MgOpen Modata"(w) "VL Gothic"(w) "IPAMonaGothic"(w) "IPAGothic"(w) "Sazanami Gothic"(w) "Kochi Gothic"(w) "AR PL KaitiM GB"(w) "AR PL KaitiM Big5"(w) "AR PL ShanHeiSun Uni"(w) "AR PL SungtiL GB"(w) "AR PL Mingti2L Big5"(w) "ＭＳ ゴシック"(w) "ZYSong18030"(w) "TSCu_Paranar"(w) "NanumGothic"(w) "UnDotum"(w) "Baekmuk Dotum"(w) "Baekmuk Gulim"(w) "KacstQura"(w) "Lohit Bengali"(w) "Lohit Gujarati"(w) "Lohit Hindi"(w) "Lohit Marathi"(w) "Lohit Maithili"(w) "Lohit Kashmiri"(w) "Lohit Konkani"(w) "Lohit Nepali"(w) "Lohit Sindhi"(w) "Lohit Punjabi"(w) "Lohit Tamil"(w) "Meera"(w) "Lohit Malayalam"(w) "Lohit Kannada"(w) "Lohit Telugu"(w) "Lohit Oriya"(w) "LKLUG"(w) "Noto Sans"(w) "FreeSans"(w) "Arial Unicode MS"(w) "Arial Unicode"(w) "Code2000"(w) "Code2001"(w) "sans-serif"(w) "Roya"(w) "Koodak"(w) "Terafik"(w) "sans-serif"(w) "sans-serif"(w)
+	familylang: "pt"(s) "en-us"(w)
+	style: "Regular"(s)
+	stylelang: "pt"(s) "en-us"(w)
+	fullnamelang: "pt"(s) "en-us"(w)
+	slant: 0(i)(s)
+	weight: 80(i)(s)
+	width: 100(i)(s)
+	size: 10(f)(s)
+	pixelsize: 10.4167(f)(s)
+	hintstyle: 3(i)(s) 1(i)(w)
+	hinting: True(s)
+	verticallayout: False(s)
+	autohint: False(s)
+	globaladvance: True(s)
+	dpi: 75(f)(s)
+	scale: 1(f)(s)
+	lang: "pt"(w)
+	fontversion: 2147483647(i)(s)
+	embeddedbitmap: True(s)
+	decorative: False(s)
+	lcdfilter: 1(i)(w)
+	namelang: "pt"(s)
+	prgname: "polybar"(s)
+	symbol: False(s)
+	variable: False(s)
+	order: 0(i)(s)
+
+Best score 0 0 0 0 0 0 0 0 0 2000 1e+99 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.14722e+12
+Pattern has 25 elts (size 32)
+	family: "FontAwesome"(s)
+	familylang: "en"(w)
+	style: "Regular"(s)
+	stylelang: "en"(w)
+	fullname: "FontAwesome"(w)
+	fullnamelang: "en"(w)
+	slant: 0(i)(s)
+	weight: 80(f)(s)
+	width: 100(f)(s)
+	foundry: "pyrs"(s)
+	file: "/usr/share/fonts/TTF/fontawesome-webfont.ttf"(s)
+	index: 0(i)(w)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	0000: 00000000 00000001 00000000 00000000 00000000 00104300 01000040 00000000
+	0021: 00000000 00000004 00000000 00000000 00000000 00000000 00000000 00000000
+	0022: 40000000 00000000 00000000 00000001 00000000 00000000 00000000 00000000
+	00f0: 7fff7fff 7ffffffe 7fff7fff 7fff7fff 7fff7fff 00077fff 7fff7fff 7fff7fff
+	00f1: 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff
+	00f2: 7fff7fff 7ffffffe 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 00007fff
+	00f5: 00000001 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+(s)
+	lang: (w)
+	fontversion: 262603(i)(w)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "FontAwesome"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: False(s)
+	order: 0(i)(s)
+
+Match Pattern has 27 elts (size 32)
+	family: "FontAwesome"(s) "DejaVu LGC Sans"(w) "Noto Sans"(w) "DejaVu Sans"(w) "Verdana"(w) "Arial"(w) "Albany AMT"(w) "Luxi Sans"(w) "Nimbus Sans L"(w) "Nimbus Sans"(w) "Helvetica"(w) "Lucida Sans Unicode"(w) "BPG Glaho International"(w) "Tahoma"(w) "Carlito"(w) "Droid Sans"(w) "Nachlieli"(w) "Lucida Sans Unicode"(w) "Yudit Unicode"(w) "Kerkis"(w) "ArmNet Helvetica"(w) "Artsounk"(w) "BPG UTF8 M"(w) "Waree"(w) "Loma"(w) "Garuda"(w) "Umpush"(w) "Saysettha Unicode"(w) "JG Lao Old Arial"(w) "GF Zemen Unicode"(w) "Pigiarniq"(w) "B Davat"(w) "B Compset"(w) "Kacst-Qr"(w) "Urdu Nastaliq Unicode"(w) "Raghindi"(w) "Mukti Narrow"(w) "malayalam"(w) "Sampige"(w) "padmaa"(w) "Hapax Berbère"(w) "MS Gothic"(w) "UmePlus P Gothic"(w) "Microsoft YaHei"(w) "Microsoft JhengHei"(w) "WenQuanYi Zen Hei"(w) "WenQuanYi Bitmap Song"(w) "AR PL ShanHeiSun Uni"(w) "AR PL New Sung"(w) "MgOpen Modata"(w) "VL Gothic"(w) "IPAMonaGothic"(w) "IPAGothic"(w) "Sazanami Gothic"(w) "Kochi Gothic"(w) "AR PL KaitiM GB"(w) "AR PL KaitiM Big5"(w) "AR PL ShanHeiSun Uni"(w) "AR PL SungtiL GB"(w) "AR PL Mingti2L Big5"(w) "ＭＳ ゴシック"(w) "ZYSong18030"(w) "TSCu_Paranar"(w) "NanumGothic"(w) "UnDotum"(w) "Baekmuk Dotum"(w) "Baekmuk Gulim"(w) "KacstQura"(w) "Lohit Bengali"(w) "Lohit Gujarati"(w) "Lohit Hindi"(w) "Lohit Marathi"(w) "Lohit Maithili"(w) "Lohit Kashmiri"(w) "Lohit Konkani"(w) "Lohit Nepali"(w) "Lohit Sindhi"(w) "Lohit Punjabi"(w) "Lohit Tamil"(w) "Meera"(w) "Lohit Malayalam"(w) "Lohit Kannada"(w) "Lohit Telugu"(w) "Lohit Oriya"(w) "LKLUG"(w) "Noto Sans"(w) "FreeSans"(w) "Arial Unicode MS"(w) "Arial Unicode"(w) "Code2000"(w) "Code2001"(w) "sans-serif"(w) "Roya"(w) "Koodak"(w) "Terafik"(w) "sans-serif"(w) "sans-serif"(w)
+	familylang: "pt"(s) "en-us"(w)
+	style: "Regular"(s)
+	stylelang: "pt"(s) "en-us"(w)
+	fullnamelang: "pt"(s) "en-us"(w)
+	slant: 0(i)(s)
+	weight: 80(i)(s)
+	width: 100(i)(s)
+	size: 10(f)(s)
+	pixelsize: 10.4167(f)(s)
+	hintstyle: 3(i)(s) 1(i)(w)
+	hinting: True(s)
+	verticallayout: False(s)
+	autohint: False(s)
+	globaladvance: True(s)
+	dpi: 75(f)(s)
+	scale: 1(f)(s)
+	lang: "pt"(w)
+	fontversion: 2147483647(i)(s)
+	embeddedbitmap: True(s)
+	decorative: False(s)
+	lcdfilter: 1(i)(w)
+	namelang: "pt"(s)
+	prgname: "polybar"(s)
+	symbol: False(s)
+	variable: False(s)
+	order: 0(i)(s)
+
+Best score 0 0 0 0 0 0 0 0 0 2000 1e+99 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.14722e+12
+Pattern has 25 elts (size 32)
+	family: "FontAwesome"(s)
+	familylang: "en"(w)
+	style: "Regular"(s)
+	stylelang: "en"(w)
+	fullname: "FontAwesome"(w)
+	fullnamelang: "en"(w)
+	slant: 0(i)(s)
+	weight: 80(f)(s)
+	width: 100(f)(s)
+	foundry: "pyrs"(s)
+	file: "/usr/share/fonts/TTF/fontawesome-webfont.ttf"(s)
+	index: 0(i)(w)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	0000: 00000000 00000001 00000000 00000000 00000000 00104300 01000040 00000000
+	0021: 00000000 00000004 00000000 00000000 00000000 00000000 00000000 00000000
+	0022: 40000000 00000000 00000000 00000001 00000000 00000000 00000000 00000000
+	00f0: 7fff7fff 7ffffffe 7fff7fff 7fff7fff 7fff7fff 00077fff 7fff7fff 7fff7fff
+	00f1: 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff
+	00f2: 7fff7fff 7ffffffe 7fff7fff 7fff7fff 7fff7fff 7fff7fff 7fff7fff 00007fff
+	00f5: 00000001 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+(s)
+	lang: (w)
+	fontversion: 262603(i)(w)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "FontAwesome"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: False(s)
+	order: 0(i)(s)
+

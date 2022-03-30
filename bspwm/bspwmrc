@@ -2,8 +2,8 @@
 
 
 bash ~/.config/bspwm/monitors.sh
-bspc config border_width        2
-bspc config window_gap          5
+bspc config border_width        0
+bspc config window_gap          15
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
@@ -20,6 +20,6 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 xsetroot -cursor_name left_ptr &
 ${HOME}/.fehbg
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
-MONITOR="eDP-0" polybar -c /home/yxqsnz/.config/polybar/config bar &
-MONITOR="HDMI-1" polybar -c /home/yxqsnz/.config/polybar/config_monitor_2 sidebar &
+polybar -c /home/yxqsnz/.config/polybar/config bar &
+polybar -c /home/yxqsnz/.config/polybar/config_monitor_2 sidebar &
 

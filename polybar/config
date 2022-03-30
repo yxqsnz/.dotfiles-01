@@ -6,7 +6,7 @@ include-file = ~/.config/polybar/modules
 
 [bar/bar]
 modules-left = sep debian sep bspwm
-monitor = eDP-1
+monitor = eDP1
 modules-right = cpu sep memory sep time sep date sep audio sep battery sep backlight sep
 position = bottom
 wm-restack = bspwm
@@ -17,7 +17,7 @@ tray-offset-x = 240
 tray-offset-y = 0
 tray-padding = 0
 tray-scale = 1.0
-
+bottom = true
 background = "#222632"
 
 width = 100%

@@ -146,3 +146,7 @@ XF86AudioMute
 
 XF86MonBrightness{Up,Down}
 	brightnessctl s 10%{+,-}
+Print
+	flameshot full -c
+Shift + Print
+	flameshot gui

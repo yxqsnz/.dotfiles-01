@@ -53,3 +53,4 @@
 (package! yex-mode
   :recipe (:host github 
            :repo "yxqsnz/yex.el"))
+(package! lsp-ui)

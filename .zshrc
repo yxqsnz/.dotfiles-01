@@ -33,7 +33,7 @@ zinit light zsh-users/zsh-autosuggestions # AutoSuggestions
 zinit light zsh-users/zsh-completions # Completions
 zinit light zdharma-continuum/fast-syntax-highlighting # Syntax hightlight
 zinit light zsh-users/zsh-history-substring-search # history
-zinit light romkatv/powerlevel10k
+#zinit light romkatv/powerlevel10k
 # --- Configuration --
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion) # Use History and Command Compile (Aka Tab completion) to suggest strategy
 # > PATH config
@@ -55,6 +55,6 @@ bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # Aliases
 alias ls="exa --icons"

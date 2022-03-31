@@ -21,8 +21,9 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
-;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+(setq doom-font (font-spec :family "JetBrains Mono" :size 12 :weight 'semi-light)
+      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+(setq doom-unicode-font (font-spec :family "Noto Color Emoji" :size 12))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -85,7 +86,7 @@
          lsp-rust-analyzer-display-chaining-hints t
          lsp-rust-analyzer-display-parameter-hints t))
 
-(global-whitespace-mode +1)
+;;(global-whitespace-mode +1)
 
 (elcord-mode)
 (defun transparency (value)
@@ -93,3 +94,15 @@
          (interactive "nTransparency Value 0 - 100 opaque:")
 	    (set-frame-parameter (selected-frame) 'alpha value))
 (transparency 100)
+(after! lsp-ui
+  (setq lsp-ui-doc-enable t)
+  (setq lsp-ui-sideline-enable t)
+  (setq lsp-ui-flycheck-enable t)
+  (setq lsp-ui-flycheck-live-reporting t)
+  (setq lsp-ui-sideline-toggle-symbols-info t)
+  (setq lsp-ui-sideline-show-hover t)
+  (setq lsp-ui-peek-enable t))
+(setq lsp-rust-analyzer-server-display-inlay-hints t)
+(when (member "Noto Color Emoji" (font-family-list))
+    (set-fontset-font t 'symbol (font-spec :family "Noto Color Emoji") nil 'prepend)
+      (set-fontset-font "fontset-default" '(#xFE00 . #xFE0F) "Noto Color Emoji"))

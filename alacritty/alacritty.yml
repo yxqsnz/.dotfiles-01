@@ -23,7 +23,7 @@ window:
     x: 8
     y: 8
 
-  decorations: full
+  decorations: None
   startup_mode: Windowed
   dynamic_title: true
   opacity: 0.90

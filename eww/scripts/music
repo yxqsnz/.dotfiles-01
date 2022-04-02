@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+URL=`playerctl metadata --format '{{ mpris:artUrl }}'`
+TITLE=`playerctl metadata --format '{{ title }}'`
+ARTIST=`playerctl metadata --format '{{ artist}}'`
+URL=`echo "${URL##*file://}"`
+echo "
+	(box
+	  :orientation \"v\" 
+	  :class \"status\"
+	  :space-evenly false
+	 (image :path \"${URL}\")
+	 (box 
+	 	:orientation \"v\" 
+	 	:class \"status-itens\"
+	 	(label :wrap true :text \"${TITLE}\")
+	 	(label :wrap true :text \"${ARTIST}\")))"

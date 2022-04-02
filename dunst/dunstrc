@@ -1,0 +1,23 @@
+[global] 
+	 origin = bottom-right
+	 font = Ubuntu Mono 12
+     allow_markup = yes
+     sort = yes
+     corner_radius = 7
+     ignore_newline = no
+     follow = mouse
+[urgency_low]
+    background = "#3a3a3a"
+    foreground = "#888888"
+    timeout = 10
+
+[urgency_normal]
+    background = "#3a3a3a"
+    foreground = "#ffffff"
+    timeout = 10
+
+[urgency_critical]
+    background = "#3a3a3a"
+    foreground = "#ffffff"
+    frame_color = "#ff0000"
+    timeout = 0

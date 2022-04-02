@@ -106,3 +106,4 @@
 (when (member "Noto Color Emoji" (font-family-list))
     (set-fontset-font t 'symbol (font-spec :family "Noto Color Emoji") nil 'prepend)
       (set-fontset-font "fontset-default" '(#xFE00 . #xFE0F) "Noto Color Emoji"))
+(setq lsp-elixir-local-server-command "/usr/bin/elixir-ls")

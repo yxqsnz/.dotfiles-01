@@ -1,0 +1,7 @@
+#!/bin/sh
+
+playerctl --follow metadata --format '{{ artist }} - {{ title }}' | while read -r c; do 
+  sleep 0.5;
+  export ICON=$(playerctl metadata --format '{{ mpris:artUrl }}')
+  notify-send "Now playing" "$c" -i ${ICON}
+done

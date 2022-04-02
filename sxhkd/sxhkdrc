@@ -37,9 +37,9 @@ Print
 shift + Print
 	flameshot gui
 XF86AudioLowerVolume
-	pactl set-sink-volume @DEFAULT_SINK@ -5%
+	~/.config/bspwm/scripts/sys change-volume down
 XF86AudioRaiseVolume
-	pactl set-sink-volume @DEFAULT_SINK@ +5%
+	~/.config/bspwm/scripts/sys change-volume up
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86MonBrightness{Down,Up}	
@@ -50,5 +50,5 @@ XF86AudioNext
 	playerctl next
 XF86AudioPlay
 	playerctl play-pause
-Super + Print
+super + Print
 	boomer

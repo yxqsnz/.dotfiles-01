@@ -54,3 +54,7 @@
   :recipe (:host github 
            :repo "yxqsnz/yex.el"))
 (package! lsp-ui)
+(package! emacs-mirwood-theme
+  :recipe (:host github 
+           :repo "b-coimbra/emacs-mirwood-theme"))
+(package! autothemer)

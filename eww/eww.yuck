@@ -60,9 +60,8 @@
   "date '+%H:%M %b %d, %Y'")
 (deflisten workspaces_listen "./scripts/workspaces eDP1")
 
-(defwindow bar
-  :monitor 0
-  :windowtype "dock"
+(defwindow bar 
+  :stacking "bottom"
   :geometry (geometry :x "0%"
                       :y "0%"
                       :width "100%"
@@ -71,10 +70,11 @@
   :reserve (struts :side "bottom" :distance "5%")
   (bar))
 (defpoll status-lit :interval "1s"
-	"scripts/music")
+  "scripts/music")
 (defwindow status
   :class status
   :monitor 0
+  
   :windowtype "dialog"
   :geometry (geometry 
   					  :y "-60px"

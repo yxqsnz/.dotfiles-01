@@ -22,3 +22,4 @@ link() {
 }
 link home-manager ~/.config/nixpkgs -p
 link cargo-config.toml ~/.cargo/config.toml
+link .doom.d ~/.doom.d -p

@@ -2,8 +2,8 @@
   description = "uwu";
 
   inputs = {
-    nixpkgs.url = github:nixos/nixpkgs/nixos-unstable-small;
-    utils.url = path:../../;
+    nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
+    utils.url = github:gytis-ivaskevicius/flake-utils-plus;
 
 
     nur.url = github:nix-community/NUR;

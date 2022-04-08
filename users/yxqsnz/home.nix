@@ -35,7 +35,7 @@ in {
         firefox font-manager easyeffects
         pinentry pinentry-curses gnupg
         discord betterdiscordctl vscode
-        mako vanilla-dmz
+        mako vanilla-dmz ubuntu_font_family
         # <---- AUTH ----> 
         polkit_gnome gnome.gnome-keyring
         # <---- CLI ----> 

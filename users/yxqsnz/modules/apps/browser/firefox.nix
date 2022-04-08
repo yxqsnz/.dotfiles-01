@@ -16,9 +16,9 @@ in
                 "layout.css.backdrop-filter.enabled" = true;
                 "gfx.webrender.all" = true;
                 "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-                #"browser.uidensity" = 1;
+                "browser.uidensity" = 1;
             };
-            #userChrome = userChrome;
+            #quserChrome = userChrome;
         };
     };
     extensions = with pkgs.nur.repos.rycee.firefox-addons; [

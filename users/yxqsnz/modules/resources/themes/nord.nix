@@ -4,6 +4,9 @@
         sha256 = "";
     };
     colors = {
-
+        primary = {
+            accentColor = "";
+            backdroundColor = "";
+        };
     };
 }

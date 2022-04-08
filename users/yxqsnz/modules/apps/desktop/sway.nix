@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 with builtins;
 let 
-    sys = import ../../resources/settings/system.nix { pkgs = pkgs; };
+    sys = import ../../resources/settings/system.nix { pkgs = pkgs; config = config; };
+    sysTheme = import ../../resources/settings/appearance.nix { pkgs = pkgs; };
 in {
-
  wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
@@ -12,8 +12,8 @@ in {
       terminal = "${pkgs.kitty}/bin/kitty";
       seat = { "*" = { hide_cursor = "when-typing enable"; }; };
       gaps = {
-            inner = 2;
-            outer = 0;
+          inner = 2;
+          outer = 0;
       };
       input = {
         "type:keyboard" = {
@@ -27,8 +27,12 @@ in {
             scroll_method = "two_finger";
         };
       };
+      keybindings = sys.keybindings;
       startup = map(app: { command = app; }) sys.autoStart;
     };
+    extraConfig = ''
+      seat seat0 xcursor_theme ${sysTheme.cursor.theme.name} ${sysTheme.cursor.theme.size}
+    '';
     extraSessionCommands = ''
       export XDG_SESSION_TYPE=wayland
       export XDG_SESSION_DESKTOP=sway

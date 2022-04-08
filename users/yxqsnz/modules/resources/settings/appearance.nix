@@ -2,7 +2,7 @@
 {
     theme = ../themes/nord.nix;
     font = {
-        name = "Fira Code";
+        name = "Ubuntu Mono";
         package = pkgs.fira-code;
         size = 11;
     };

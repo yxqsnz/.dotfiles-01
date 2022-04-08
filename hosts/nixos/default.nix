@@ -6,6 +6,9 @@
    i18n.defaultLocale = "en_US.UTF-8"; 
    virtualisation.docker.enable = true;
    nix.settings.auto-optimise-store = true;
+   services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
+   '';  
    nix.gc = {
      automatic = true;
      dates = "weekly";

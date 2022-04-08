@@ -35,7 +35,8 @@ in {
         firefox font-manager easyeffects
         pinentry pinentry-curses gnupg
         discord betterdiscordctl vscode
-        mako vanilla-dmz ubuntu_font_family
+        mako vanilla-dmz ubuntu_font_family steam
+        waydroid steam-tui gnome.gnome-system-monitor
         # <---- AUTH ----> 
         polkit_gnome gnome.gnome-keyring
         # <---- CLI ----> 
@@ -73,7 +74,7 @@ in {
     xdg = {
         enable = true;
     };
-
+    #programs.steam.enable = true;
     programs.command-not-found.enable = true;
     imports = [
         ./modules/apps/desktop/sway.nix

@@ -1,5 +1,4 @@
-{pkgs, ...}:
-{
+{pkgs, ...}: {
   programs.git = {
     enable = true;
     userName = "yxqsnz";
@@ -21,7 +20,7 @@
       credential.helper = "store"; # want to make this more secure
       github.user = "yxqsnz";
       push.default = "tracking";
-      init.defaultBranch = "main";
+      init.defaultBranch = "dev";
     };
   };
 }

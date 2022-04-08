@@ -5,6 +5,12 @@
    time.timeZone = "America/Sao_Paulo";
    i18n.defaultLocale = "en_US.UTF-8"; 
    virtualisation.docker.enable = true;
+   nix.settings.auto-optimise-store = true;
+   nix.gc = {
+     automatic = true;
+     dates = "weekly";
+     options = "--delete-older-than 30d";
+   };
    services.dbus.packages = [ pkgs.gcr ];
    console = {
       keyMap = "br-abnt2";

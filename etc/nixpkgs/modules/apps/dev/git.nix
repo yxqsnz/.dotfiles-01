@@ -5,7 +5,6 @@
     userEmail = "yxqsnz@gmail.com";
     signing = {
       key = "F4216D44798CE83C8D693C14FD27C3F265D62E4A";
-      gpgPath = "${pkgs.gnupg}/bin/gpg";
       signByDefault = true;
     };
     aliases = {

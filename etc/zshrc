@@ -28,11 +28,13 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk
-# --- Plugins --- 
+# --- Plugins ---
+zinit ice lucid nocompile
 zinit light zsh-users/zsh-autosuggestions # AutoSuggestions 
 zinit light zsh-users/zsh-completions # Completions
 zinit light zdharma-continuum/fast-syntax-highlighting # Syntax hightlight
 zinit light zsh-users/zsh-history-substring-search # history
+zinit light MenkeTechnologies/zsh-cargo-completion # Cargo Completions
 #zinit light romkatv/powerlevel10k
 # --- Configuration --
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion) # Use History and Command Compile (Aka Tab completion) to suggest strategy
@@ -45,7 +47,7 @@ export HISTFILE=$HOME/.zhistory
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
-export HISTTIMEFORMAT="[%F %T]" 
+export HISTTIMEFORMAT="[%F %T]"
 setopt SHARE_HISTORY
 setopt HIST_FIND_NO_DUPS
 setopt appendhistory
@@ -53,8 +55,16 @@ setopt appendhistory
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # Aliases
 alias ls="exa --icons"
+
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/.zcompcache"
+zstyle ':completion:*' menu select
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=34}:${(s.:.)LS_COLORS}")';
+autoload -Uz compinit
+compinit
+eval $(starship init zsh)

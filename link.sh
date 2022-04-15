@@ -8,7 +8,7 @@ link "etc/starship.toml" ~/.config/starship.toml
 ok "Ensuring packages,."
 ensure git exa zsh ccache lld clang curl steam amdvlk vulkan-radeon lib32-vulkan-radeon lib32-amdvlk \
 	   discord-canary firefox telegram-desktop pipewire bat asp ttf-nerd-fonts-symbols rustup \
-	   noto-fonts-cjk noto-fonts-extra ttf-joypixels lldb gdb
+	   noto-fonts-cjk noto-fonts-extra ttf-joypixels lldb gdb github-cli
 ok "Running first run setup..."
 zsh -c "source ~/.zshrc && exit"
 ok "Setting Zsh as default shell for $USER."

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+	{pkgs, ...}: {
   programs.git = {
     enable = true;
     userName = "yxqsnz";
@@ -8,7 +8,7 @@
       signByDefault = true;
     };
     aliases = {
-      prettylog =
+      commits =
         "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
       root = "rev-parse --show-toplevel";
     };

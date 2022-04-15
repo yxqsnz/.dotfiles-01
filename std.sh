@@ -16,7 +16,7 @@ link() {
   fi
 }
 ensure() {
-  sudo apt install -y $@
+  paru -S $@ || yay -S $@ || sudo pacman -S $@
 }
 
 

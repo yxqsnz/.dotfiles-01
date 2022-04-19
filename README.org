@@ -1,1 +1,7 @@
-#+TITLE:
+#+TITLE: My owo dotfiles
+* Details
+ + Based on Dracula
+ + Somethings were from [[reddit.com/r/unixporn][r/unixporn]]
+* Installation
++ use =./link.sh= to install and link dotfiles
+  *warn*: =./link.sh= will install all packages from =./pkgs.list=!

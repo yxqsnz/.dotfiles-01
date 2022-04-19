@@ -8,6 +8,7 @@ link "etc/starship.toml" ~/.config/starship.toml
 link "etc/bspwm"  ~/.config/
 link "etc/sxhkd"  ~/.config/
 link "etc/dunst"  ~/.config/
+link "etc/kitty" ~/.config/kitty
 link "etc/polybar" ~/.config/
 ok "Ensuring packages,."
 #ensure git exa zsh ccache lld clang curl steam amdvlk vulkan-radeon lib32-vulkan-radeon lib32-amdvlk \

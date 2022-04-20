@@ -10,4 +10,3 @@ link "etc/sxhkd"  ~/.config/
 link "etc/dunst"  ~/.config/
 link "etc/kitty" ~/.config/kitty
 link "etc/polybar" ~/.config/
-link "wm/awesome" ~/.config

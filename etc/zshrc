@@ -50,6 +50,7 @@ bindkey  "^[[3~"  delete-char
 alias tree='exa --tree'
 alias ls="exa --icons --long"
 alias l='exa --icons --long'
+alias flatpak='flatpak --user'
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' use-cache on
@@ -59,5 +60,3 @@ zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:
 autoload -Uz compinit
 compinit
 eval $(starship init zsh)
-source /usr/share/doc/pkgfile/command-not-found.zsh
-

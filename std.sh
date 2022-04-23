@@ -9,6 +9,7 @@ err() {
 }
 
 link() {
+  unlink $2
   if ln -s $(realpath $1) $2 2>/dev/null; then
     ok "linked $1 into $2."
   else

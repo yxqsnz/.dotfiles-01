@@ -1,0 +1,24 @@
+[color]
+	ui = always
+[user]
+	email = yxqsnz@gmail.com
+	name = yxqsnz
+	signingkey = F4216D44798CE83C8D693C14FD27C3F265D62E4A
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = dev
+[branch "autosetup"]
+	rebase = yes
+[core]
+	askpass = 
+[credential]
+	helper = store
+[alias]
+	commits = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	root = rev-parse --show-toplevel
+[push]
+	gpgSign = false
+	default = tracking
+[pull]
+	ff = true

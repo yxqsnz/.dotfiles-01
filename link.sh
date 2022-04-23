@@ -5,3 +5,4 @@ link "etc/cargo.toml" ~/.cargo/config.toml
 link "etc/zshrc" ~/.zshrc
 link "etc/nixpkgs" ~/.config/nixpkgs
 link "etc/starship.toml" ~/.config/starship.toml
+link "etc/gitconf" ~/.gitconfig

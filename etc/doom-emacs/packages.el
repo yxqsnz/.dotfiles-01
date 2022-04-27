@@ -50,3 +50,4 @@
 ;(unpin! t)
 (package! org-superstar)
 (package! org-bullets)
+(package! gruber-darker-theme)

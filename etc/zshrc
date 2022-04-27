@@ -50,8 +50,9 @@ bindkey  "^[[3~"  delete-char
 alias tree='exa --tree'
 alias ls="exa --icons --long"
 alias l='exa --icons --long'
-alias flatpak='flatpak --user'
-
+alias m="$(which lvim)"
+# Exports
+export EDITOR=$(which lvim)
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/.zcompcache"

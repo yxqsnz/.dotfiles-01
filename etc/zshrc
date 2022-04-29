@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
@@ -26,7 +33,8 @@ zinit light zsh-users/zsh-completions # Completions
 zinit light zdharma-continuum/fast-syntax-highlighting # Syntax hightlight
 zinit light zsh-users/zsh-history-substring-search # history
 zinit light MenkeTechnologies/zsh-cargo-completion # Cargo Completions
-#zinit light romkatv/powerlevel10k
+zinit ice depth=1
+zinit light romkatv/powerlevel10k #prompt
 # --- Configuration --
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion) # Use History and Command Compile (Aka Tab completion) to suggest strategy
 # > PATH config
@@ -60,4 +68,9 @@ zstyle ':completion:*' menu select
 zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=34}:${(s.:.)LS_COLORS}")';
 autoload -Uz compinit
 compinit
-eval $(starship init zsh)
+alias fast='sudo zypper'
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+autoload bashcompinit
+bashcompinit
+source /etc/bash_completion.d/scout.sh

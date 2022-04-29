@@ -22,9 +22,9 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 (setq monospace-font "Fira Code")
-(setq gui-font "Fira Sans")
-(setq doom-font (font-spec :family monospace-font :size 12 :weight 'semi-light)
-      doom-variable-pitch-font (font-spec :family gui-font :size 13))
+(setq gui-font "Fira Code")
+(setq doom-font (font-spec :family monospace-font :size 12 :weight 'regular)
+     doom-variable-pitch-font (font-spec :family gui-font :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to

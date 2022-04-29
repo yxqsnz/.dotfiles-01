@@ -16,9 +16,9 @@ link() {
     ok "linked $1 into $2."
   else
     err "failed to link $1."
-    printf "unlink directory? "
+    printf "remove directory? "
     if zsh -c read -q; then
-      unlink $2 2>/dev/null
+     rm -rfv  $2 2>/dev/null
     fi
 
   fi

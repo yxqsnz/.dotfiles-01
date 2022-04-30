@@ -1,5 +1,21 @@
-local awful       = require('awful')
-local beautiful   = require('beautiful')
+local awful     = require('awful')
+local beautiful = require('beautiful')
+local settings  = require('user.settings')
+local function build_rules()
+  local rules = {}
+  for name, tag in pairs(settings.desktop.rules) do
+    table.insert(rules, {
+      rule = {
+        class = name,
+      };
+      properties = {
+        tag = tag;
+      }
+    });
+  end
+  return rules
+end
+
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
   -- All clients will match this rule.
@@ -48,9 +64,10 @@ awful.rules.rules = {
   { rule_any = { type = { "normal", "dialog" }
   }, properties = { titlebars_enabled = false }
   },
-
+  build_rules()
   -- Set Firefox to always map on the tag named "2" on screen 1.
   -- { rule = { class = "Firefox" },
   --   properties = { screen = 1, tag = "2" } },
 }
+
 -- }}}

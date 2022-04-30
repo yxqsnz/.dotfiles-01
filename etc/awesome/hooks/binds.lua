@@ -18,10 +18,11 @@ local globalkeys = awful.util.table.join(
   awful.key({ modkey, }, "Escape", awful.tag.history.restore,
     { description = "go back", group = "tag" }),
 
-  awful.key({}, "Print", callbacks.execute('flameshot full -c'),
-    { description = "take screenshot", group = "globalkeys" }),
   awful.key({ "Shift" }, "Print",
-    callbacks.execute('flameshot gui'), { description = "take screenshot selecting area", group = "globalkeys" }),
+    callbacks.execute('flameshot gui'), { description = "take screenshot selecting area", group = "screenshot" }),
+  awful.key({ }, "Print",
+    callbacks.execute('flameshot full -c'), { description = "take a screenshot", group = "screenshot" }),
+
   awful.key({ modkey, }, "j",
     function()
       awful.client.focus.byidx(1)
@@ -61,6 +62,7 @@ local globalkeys = awful.util.table.join(
     { description = "open a terminal", group = "launcher" }),
   awful.key({ modkey, "Control" }, "r", awesome.restart,
     { description = "reload awesome", group = "awesome" }),
+
   awful.key({ modkey, "Shift" }, "q", awesome.quit,
     { description = "quit awesome", group = "awesome" }),
 
@@ -118,7 +120,7 @@ clientkeys = awful.util.table.join(
       c:raise()
     end,
     { description = "toggle fullscreen", group = "client" }),
-  awful.key({ modkey, "Shift" }, "c", function(c) c:kill() end,
+  awful.key({ modkey }, "q", function(c) c:kill() end,
     { description = "close", group = "client" }),
   awful.key({ modkey, "Control" }, "space", awful.client.floating.toggle,
     { description = "toggle floating", group = "client" }),

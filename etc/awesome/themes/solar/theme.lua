@@ -1,4 +1,5 @@
 local bar = require('themes.solar.bar')
+local settings = require('user.settings')
 local dpi = require("beautiful.xresources").apply_dpi
 
 
@@ -8,7 +9,8 @@ local base_col = "#101020"
 theme                     = {}
 theme.dir                 = os.getenv("HOME") .. "/.config/awesome/solar"
 theme.wallpaper           = os.getenv("HOME") .. "/.wallpaper.png"
-theme.font                = "Hack 11"
+theme.useless_gap         = settings.ui.gaps
+theme.font                = "Hack Nerd Font Mono 8"
 theme.fg_normal           = "#a9b3d9"
 theme.fg_focus            = base_col
 theme.fg_urgent           = "#a9b3d9"

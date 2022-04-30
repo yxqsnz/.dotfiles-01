@@ -8,12 +8,12 @@ return {
     editor = 'nvim';
   };
   desktop = {
-    tags = { "main", "web", "dev", "term", 'discord', 'telegram' },
+    tags = { "main", "web", "dev", 'discord', 'telegram' },
     rules = {
-      { 'alacritty', 'term' },
-      { 'firefox', 'web' },
+      { 'Alacritty', 'main' },
+      { 'Firefox', 'web' },
       { 'Discord', 'discord' },
-      { 'telegram', 'telegram' }
+      { 'telegram-desktop', 'telegram' }
     };
   };
   ui = {
@@ -21,20 +21,13 @@ return {
     gtk = {
       icon_theme = 'Papirus-Dark';
     };
-    gaps = {
-      inter = 10;
-      outer = 10;
-    };
+    gaps = 5;
   },
   system = {
     autostart = {
-      'pipewire',
-      'pipewire-pulse',
-      'alacritty',
+      'setxkbmap br',
       'picom -b',
-      'firefox',
-      'discord',
-      'telegram-desktop'
+      'flameshot',
     };
   }
 };

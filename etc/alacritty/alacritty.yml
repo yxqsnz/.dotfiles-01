@@ -41,11 +41,11 @@ font:
     family: Hack Nerd Font
     style: Bold Italic
 
-  size: 10
+  size: 8
 
 
 shell:
   program: /bin/zsh
 
-# window:
-#  opacity: 0.8
+window:
+  opacity: 0.8

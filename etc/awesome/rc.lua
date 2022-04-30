@@ -12,5 +12,6 @@ require('hooks.focus')
 require('hooks.signals')
 require('hooks.rules')
 require('hooks.titlebars')
+require('hooks.autostart')
 logger.info('all hooks has been initialized!')
 -- }}}

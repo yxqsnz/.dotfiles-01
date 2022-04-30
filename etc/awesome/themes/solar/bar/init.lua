@@ -1,23 +1,22 @@
 return function(theme)
-  local theme         = theme
-  local hotkeys_popup = require("awful.hotkeys_popup")
   require("awful.hotkeys_popup.keys")
-  local lain          = require('lain')
-  local gears         = require('gears')
-  local wibox         = require('wibox')
-  local awful         = require('awful')
-  local dpi           = require("beautiful.xresources").apply_dpi
-  local markup        = lain.util.markup
-  local separators    = lain.util.separators
-  local highlight_col = "#61AFEF"
-  local base_col      = "#101020"
-  local round_shape   = function(cr, w, h)
+  local lain                       = require('lain')
+  local gears                      = require('gears')
+  local wibox                      = require('wibox')
+  local awful                      = require('awful')
+  local naughty                    = require('naughty')
+  local docker                     = require('awesome-wm-widgets.docker-widget.docker')
+  local dpi                        = require("beautiful.xresources").apply_dpi
+  local markup                     = lain.util.markup
+  local base_col                   = "#101020"
+  local round_shape                = function(cr, w, h)
     gears.shape.rounded_rect(cr, w, h, dpi(3))
   end
-
-  local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
-  local spr = wibox.widget.textbox(' ')
-  local block = function(widgets, color)
+  naughty.config.defaults.position = 'bottom_right'
+  naughty.config.padding           = 16
+  local my_table                   = awful.util.table or gears.table -- 4.{0,1} compatibility
+  local spr                        = wibox.widget.textbox(' ')
+  local block                      = function(widgets, color)
     return wibox.container.margin(
       wibox.container.background(
         wibox.widget(widgets),
@@ -43,7 +42,7 @@ return function(theme)
   theme.cal = lain.widget.cal({
     attach_to = { clock },
     notification_preset = {
-      font = "Hack 10",
+      font = "Hack Nerd Font Mono",
       fg   = theme.fg_normal,
       bg   = base_col
     }
@@ -109,7 +108,6 @@ return function(theme)
   )
 
   local bat = block({
-    spr,
     baticon,
     battext,
     layout = wibox.layout.align.horizontal
@@ -209,7 +207,7 @@ return function(theme)
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist {
       screen = s,
-      filter = awful.widget.taglist.filter.all,
+      filter = awful.widget.taglist.filter.noempty,
       buttons = awful.util.taglist_buttons,
       style = {
         shape = round_shape,
@@ -251,8 +249,8 @@ return function(theme)
       fg = theme.fg_normal,
       shape = gears.shape.rounded_rect
     })
-
-    -- Add widgets to the wibox
+    local tray = wibox.widget.systray()
+    tray:set_base_size(37)
     s.mywibox:setup {
       widget = wibox.container.background,
       shape_border_width = dpi(2),
@@ -268,7 +266,8 @@ return function(theme)
         s.mytasklist, -- Middle widget
         { -- Right widgets
           layout = wibox.layout.fixed.horizontal,
-          wibox.widget.systray(),
+          tray,
+          docker(),
           music,
           theme.volume,
           mem,

@@ -90,3 +90,4 @@ ptyless() {
 	pty $@ | less
 }
 export MANPAGER=most
+export PATH="$PATH:/usr/sbin"

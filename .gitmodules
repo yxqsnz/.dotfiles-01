@@ -1,0 +1,3 @@
+[submodule "etc/awesome/lain"]
+	path = etc/awesome/lain
+	url = https://github.com/lcpz/lain.git

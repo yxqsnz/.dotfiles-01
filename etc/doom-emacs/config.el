@@ -21,8 +21,8 @@
 ;;
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
-(setq monospace-font "Fira Code")
-(setq gui-font "Fira Code")
+(setq monospace-font "Hack")
+(setq gui-font "Hack")
 (setq doom-font (font-spec :family monospace-font :size 12 :weight 'regular)
      doom-variable-pitch-font (font-spec :family gui-font :size 13))
 ;;

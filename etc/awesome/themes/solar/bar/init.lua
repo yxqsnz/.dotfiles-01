@@ -137,7 +137,7 @@ return function(theme)
         text = text .. "- " .. title
       end
 
-      widget:set_markup(" " .. markup.font(theme.font, markup.fg.color(base_col, text)))
+      widget:set_markup(markup.font(theme.font, ' ' .. markup.fg.color(base_col, text)))
 
       if status == "Playing" then
         musicicon.image = theme.widget_music

@@ -20,7 +20,7 @@ local globalkeys = awful.util.table.join(
 
   awful.key({ "Shift" }, "Print",
     callbacks.execute('flameshot gui'), { description = "take screenshot selecting area", group = "screenshot" }),
-  awful.key({ }, "Print",
+  awful.key({}, "Print",
     callbacks.execute('flameshot full -c'), { description = "take a screenshot", group = "screenshot" }),
 
   awful.key({ modkey, }, "j",
@@ -110,7 +110,20 @@ local globalkeys = awful.util.table.join(
     { description = "lua execute prompt", group = "awesome" }),
   -- Menubar
   awful.key({ modkey }, "p", function() menubar.show() end,
-    { description = "show the menubar", group = "launcher" })
+    { description = "show the menubar", group = "launcher" }),
+  -- light
+  awful.key({}, "XF86MonBrightnessDown", function()
+    awful.util.spawn("brightnessctl s 1%-")
+  end),
+  awful.key({}, "XF86MonBrightnessUp", function()
+    awful.util.spawn("brightnessctl s +1%")
+  end),
+  awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn('pamixer -i 1', false) end),
+  awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn('pamixer -d 1', false) end),
+  awful.key({}, "XF86AudioMute", function() awful.util.spawn('pamixer -t', false) end),
+  awful.key({}, "XF86AudioPrev", function() awful.util.spawn('playerctl previus') end, false),
+  awful.key({}, "XF86AudioNext", function() awful.util.spawn('playerctl Next') end, false),
+  awful.key({}, "XF86AudioPlay", function() awful.util.spawn("playerctl play-pause") end, false)
 )
 
 clientkeys = awful.util.table.join(

@@ -1,6 +1,0 @@
-#+TITLE: My owo dotfiles
-* Details
- + Somethings were from [[reddit.com/r/unixporn][r/unixporn]]
-
-* Installation
-+ use =./link.sh= to install dotfiles

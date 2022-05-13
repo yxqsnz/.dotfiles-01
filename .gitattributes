@@ -1,3 +1,0 @@
-images/desktop-screenshot.png filter=lfs diff=lfs merge=lfs -text
-images/neofetch-screenshot.png filter=lfs diff=lfs merge=lfs -text
-images/wallpaper.jpg filter=lfs diff=lfs merge=lfs -text

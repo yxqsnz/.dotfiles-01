@@ -8,6 +8,7 @@ CONFIG = [
     ['Picom', 'user/picom', '~/.config/picom'],
     ['Kitty', 'user/kitty', '~/.config/kitty'],
     ['Rofi', 'user/rofi', '~/.config/rofi'],
+    ["Git", 'user/git', '~/.config/git'],
     ['Neovim', 'user/nvim', '~/.config/nvim'],
     ["Oh My Zsh", 'user/oh-my-zsh', '~/.oh-my-zsh'],
     ["system:paru", "system/paru.conf", "/etc/paru.conf"]

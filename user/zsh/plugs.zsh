@@ -1,3 +1,6 @@
 zinit light "z-shell/F-Sy-H"
 zinit light "zsh-users/zsh-autosuggestions"
 zinit light "zsh-users/zsh-completions"
+zinit light "molovo/crash"
+zinit light "caarlos0-graveyard/zsh-pg"
+#zinit light "sroze/docker-compose-zsh-plugin"

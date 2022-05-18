@@ -15,3 +15,5 @@ require omz
 require alias
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 eval $(thefuck --alias)
+
+[ -f "/home/yxqsnz/.ghcup/env" ] && source "/home/yxqsnz/.ghcup/env" # ghcup-env

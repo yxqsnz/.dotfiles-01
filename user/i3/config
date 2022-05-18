@@ -1,8 +1,8 @@
 set $mod Mod4
 
 ##### Autostart applications
-exec --no-startup-id redshift -O 10500
-exec --no-startup-id redshift -l $(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | awk 'OFS=":" {print $3,$5}' | tr -d ',}')
+#exec --no-startup-id redshift -O 10500
+#exec --no-startup-id redshift -l $(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | awk 'OFS=":" {print $3,$5}' | tr -d ',}')
 
 bindsym Print exec --no-startup-id flameshot full -c
 
@@ -140,6 +140,7 @@ bindsym $mod+Ctrl+l resize grow width 50 px or 5 ppt
 
 ##### i3-gaps ##############
 for_window [class=".*"] border pixel 2 #*
+for_window [class="robloxplayerlauncher.exe"] floating enable
 gaps inner 10
 gaps top 5
 smart_borders on
@@ -160,7 +161,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
 # wallpaper
-exec_always --no-startup-id feh --bg-fill ~/etc/wallpapers/night-city.jpg   
+exec_always --no-startup-id feh --bg-fill ~/etc/wallpapers/night-city.jpg
 # polybar
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
 

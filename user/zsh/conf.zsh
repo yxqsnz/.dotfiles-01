@@ -11,9 +11,8 @@ require deps
 require vars
 require hist
 require plugs
-require omz
 require alias
-compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 eval $(thefuck --alias)
-
+export NL=$'\n'
+PROMPT="[ %T %B%~%b ]${NL}$ "
 [ -f "/home/yxqsnz/.ghcup/env" ] && source "/home/yxqsnz/.ghcup/env" # ghcup-env

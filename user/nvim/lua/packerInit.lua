@@ -72,6 +72,10 @@ return require('packer').startup(function(use)
       require('plugs.cmp')
     end
   })
+
+  use({ "simrat39/symbols-outline.nvim" })
+  use({ "folke/trouble.nvim" })
+
   use({
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },

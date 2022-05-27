@@ -1,6 +1,6 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local lsp = require('lspconfig')
-local Servers = { "rust_analyzer", "clangd", "sumneko_lua", "grammarly" }
+local Servers = { "rust_analyzer", "clangd", "sumneko_lua", "grammarly", "pyright", "elixirls" }
 
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
@@ -15,7 +15,7 @@ require("nvim-lsp-installer").setup({
   }
 })
 
-local function on_attach(_client)
+local function on_attach()
   require("fidget").setup({});
   vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
 end

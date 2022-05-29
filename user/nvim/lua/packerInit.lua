@@ -37,13 +37,10 @@ return require('packer').startup(function(use)
     end
   })
 
-  use({ 'onsails/lspkind.nvim', config = function()
-    require('plugs.kind')
-  end })
 
   use({
     "nvim-lualine/lualine.nvim",
-    requires = { 'kyazdani42/nvim-web-devicons', 'onsails/lspkind.nvim' },
+    requires = { 'kyazdani42/nvim-web-devicons' },
     config = function()
       require('plugs.line')
     end

@@ -7,6 +7,10 @@ end
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  use({ 'lewis6991/impatient.nvim', config = function()
+    require('impatient').enable_profile()
+  end })
+
   use({
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
@@ -17,9 +21,16 @@ return require('packer').startup(function(use)
       })
     end,
   })
-  use({
-    "jbyuki/instant.nvim"
-  })
+
+  use({ "navarasu/onedark.nvim", config = function()
+    require('onedark').setup {
+      style = 'darker'
+    }
+    require('onedark').load()
+  end })
+
+  use({ "github/copilot.vim", event = "BufEnter" })
+
   use({
     "kyazdani42/nvim-tree.lua",
     requires = { "kyazdani42/nvim-web-devicons" },
@@ -37,13 +48,6 @@ return require('packer').startup(function(use)
     end
   })
 
-  use({
-    'sainnhe/sonokai',
-    event = 'VimEnter',
-    config = function()
-      vim.cmd('colorscheme sonokai')
-    end
-  })
 
   use({ "tami5/lspsaga.nvim", config = function()
     require('lspsaga').setup()
@@ -65,6 +69,7 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-emoji",
       "hrsh7th/cmp-calc",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
       "saadparwaiz1/cmp_luasnip",
       "L3MON4D3/LuaSnip",
     },

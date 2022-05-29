@@ -2,19 +2,16 @@
 CONFIG = [
     ['zsh', 'user/zsh', '~/.config/zsh'],
     ['zsh-rc', 'user/zsh/conf.zsh', '~/.zshrc'],
-    ['i3 Window Manager', 'user/i3', '~/.config/i3'],
-    ['Polybar', 'user/polybar', '~/.config/polybar'],
     ['Ranger', 'user/ranger', '~/.config/ranger'],
-    ['Picom', 'user/picom', '~/.config/picom'],
     ['Kitty', 'user/kitty', '~/.config/kitty'],
     ['Rofi', 'user/rofi', '~/.config/rofi'],
     ["Git", 'user/git', '~/.config/git'],
     ['Neovim', 'user/nvim', '~/.config/nvim'],
     ["Oh My Zsh", 'user/oh-my-zsh', '~/.oh-my-zsh'],
     ["Cargo", 'user/cargo/config.toml', '~/.cargo/config.toml'],
-    ["system:paru", "system/paru.conf", "/etc/paru.conf"]
+    ["Weechat", 'user/weechat', '~/.config/weechat'],
 ]
-SUDO = 'doas'
+SUDO = 'sudo'
 from colorama.ansi import Fore
 from os import path
 import os

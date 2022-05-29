@@ -6,3 +6,10 @@ rustflags = [
     "-C", "link-arg=-Xlinker --threads=4"
 ]
 linker = "clang"
+[target.'cfg(debug_assertions)']
+rustflags = [
+    "-C", "link-arg=-fuse-ld=lld",
+    "-C", "link-arg=-Xlinker --threads=4",
+    "-C", "target-cpu=native"
+]
+

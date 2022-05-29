@@ -1,6 +1,6 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local lsp = require('lspconfig')
-local Servers = { "rust_analyzer", "clangd", "sumneko_lua", "grammarly", "pyright", "elixirls" }
+local Servers = { "rust_analyzer", "clangd", "sumneko_lua", "grammarly", "pyright", "elixirls", "tsserver" }
 
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
@@ -17,7 +17,7 @@ require("nvim-lsp-installer").setup({
 
 local function on_attach()
   require("fidget").setup({});
-  vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+  vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 end
 
 local function get_config_of_server_or_default(server_name)

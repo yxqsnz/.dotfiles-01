@@ -1,4 +1,5 @@
 local fn = vim.fn
+
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOSTRAP = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
@@ -21,13 +22,10 @@ return require('packer').startup(function(use)
       })
     end,
   })
-
-  use({ "navarasu/onedark.nvim", config = function()
-    require('onedark').setup {
-      style = 'darker'
-    }
-    require('onedark').load()
+  use({ "cocopon/iceberg.vim", config = function()
+    vim.cmd("colorscheme iceberg")
   end })
+
 
   use({ "github/copilot.vim", event = "BufEnter" })
 
@@ -39,10 +37,13 @@ return require('packer').startup(function(use)
     end
   })
 
+  use({ 'onsails/lspkind.nvim', config = function()
+    require('plugs.kind')
+  end })
 
   use({
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    "nvim-lualine/lualine.nvim",
+    requires = { 'kyazdani42/nvim-web-devicons', 'onsails/lspkind.nvim' },
     config = function()
       require('plugs.line')
     end
@@ -70,6 +71,8 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-emoji",
       "hrsh7th/cmp-calc",
       "hrsh7th/cmp-nvim-lsp-signature-help",
+      "hrsh7th/cmp-copilot",
+      { "petertriho/cmp-git", requires = { "nvim-lua/plenary.nvim" } },
       "saadparwaiz1/cmp_luasnip",
       "L3MON4D3/LuaSnip",
     },

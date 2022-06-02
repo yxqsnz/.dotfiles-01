@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 CONFIG = [
-    ['zsh', 'user/zsh', '~/.config/zsh'],
-    ['zsh-rc', 'user/zsh/conf.zsh', '~/.zshrc'],
-    ['Ranger', 'user/ranger', '~/.config/ranger'],
+    ['(ArchCraft) bspwm', 'user/bspwm', '~/.config/bspwm'],
+    ['Sxhkd', 'user/sxhkd', '~/.config/sxhkd'],
     ['Kitty', 'user/kitty', '~/.config/kitty'],
     ['Rofi', 'user/rofi', '~/.config/rofi'],
     ["Git", 'user/git', '~/.config/git'],
@@ -10,19 +9,22 @@ CONFIG = [
     ["Oh My Zsh", 'user/oh-my-zsh', '~/.oh-my-zsh'],
     ["Cargo", 'user/cargo/config.toml', '~/.cargo/config.toml'],
     ["Weechat", 'user/weechat', '~/.config/weechat'],
+    ["Zsh", 'user/zsh', '~/.config/zsh'],
+    ["Zsh RC", 'user/zsh/conf.zsh', '~/.zshrc'],
+    ["(System) Paru" ,'system/paru.conf', '/etc/paru.conf']
 ]
 SUDO = 'sudo'
 from colorama.ansi import Fore
 from os import path
 import os
 BANNER = f"""{Fore.RED}
->> ▒█▀▀▄ ▒█▀▀▀█ ▀▀█▀▀ ▒█▀▀▀ ▀█▀ ▒█░░░ ▒█▀▀▀ 　 
->> ▒█░▒█ ▒█░░▒█ ░▒█░░ ▒█▀▀▀ ▒█░ ▒█░░░ ▒█▀▀▀ 　 
->> ▒█▄▄▀ ▒█▄▄▄█ ░▒█░░ ▒█░░░ ▄█▄ ▒█▄▄█ ▒█▄▄▄ 　 
+>> ▒█▀▀▄ ▒█▀▀▀█ ▀▀█▀▀ ▒█▀▀▀ ▀█▀ ▒█░░░ ▒█▀▀▀ 　
+>> ▒█░▒█ ▒█░░▒█ ░▒█░░ ▒█▀▀▀ ▒█░ ▒█░░░ ▒█▀▀▀ 　
+>> ▒█▄▄▀ ▒█▄▄▄█ ░▒█░░ ▒█░░░ ▄█▄ ▒█▄▄█ ▒█▄▄▄ 　
 
->> ▀█▀ ▒█▄░▒█ ▒█▀▀▀█ ▀▀█▀▀ ░█▀▀█ ▒█░░░ ▒█░░░ ▒█▀▀▀ ▒█▀▀█ 
->> ▒█░ ▒█▒█▒█ ░▀▀▀▄▄ ░▒█░░ ▒█▄▄█ ▒█░░░ ▒█░░░ ▒█▀▀▀ ▒█▄▄▀ 
->> ▄█▄ ▒█░░▀█ ▒█▄▄▄█ ░▒█░░ ▒█░▒█ ▒█▄▄█ ▒█▄▄█ ▒█▄▄▄ ▒█░▒█ 
+>> ▀█▀ ▒█▄░▒█ ▒█▀▀▀█ ▀▀█▀▀ ░█▀▀█ ▒█░░░ ▒█░░░ ▒█▀▀▀ ▒█▀▀█
+>> ▒█░ ▒█▒█▒█ ░▀▀▀▄▄ ░▒█░░ ▒█▄▄█ ▒█░░░ ▒█░░░ ▒█▀▀▀ ▒█▄▄▀
+>> ▄█▄ ▒█░░▀█ ▒█▄▄▄█ ░▒█░░ ▒█░▒█ ▒█▄▄█ ▒█▄▄█ ▒█▄▄▄ ▒█░▒█
 {Fore.RESET}"""
 print(BANNER)
 join = lambda lst: ''.join(lst)
@@ -37,8 +39,8 @@ def link(source: str, to: str):
         error(f">>= Directory {to} existis. skipping!")
 for conf in CONFIG:
     info(f">>= Linking {conf[0]} config")
-    if 'system:' in conf[0]:
-        os.system(f'{SUDO} cp {conf[1]} {conf[2]} -f')
+    if 'System' in conf[0]:
+        if os.system(f'{SUDO} cp {conf[1]} {conf[2]} -f') == 0: pass
     else:
         link(conf[1], conf[2])
 

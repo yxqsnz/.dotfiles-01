@@ -1,11 +1,11 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local lsp = require('lspconfig')
-local Servers = { "rust_analyzer", "clangd", "sumneko_lua", "grammarly", "pyright", "elixirls", "tsserver" }
+local Servers = { "rust_analyzer", "clangd", "sumneko_lua", "grammarly", "pyright", "elixirls", "tsserver", "hls", "jdtls" }
 
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 require("nvim-lsp-installer").setup({
-  automatic_installation = true,
+  automatic_installation = { exclude = "hls" },
   ui = {
     icons = {
       server_installed = "✓",
@@ -15,9 +15,24 @@ require("nvim-lsp-installer").setup({
   }
 })
 
-local function on_attach()
+local function on_attach(client, bufnr)
   require("fidget").setup({});
-  vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+  bufnr = bufnr or vim.api.nvim_get_current_buf()
+  local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        if vim.lsp.buf.format then
+          vim.lsp.buf.format({ bufnr = bufnr })
+        else
+          vim.lsp.buf.formatting_sync()
+        end
+      end,
+    })
+  end
 end
 
 local function get_config_of_server_or_default(server_name)

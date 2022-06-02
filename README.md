@@ -1,8 +1,5 @@
-# My dotfiles yay
+# My dotfiles yay(*wm theme is based on ArchCraft default theme)
 ## Installl
 ```sh
 python3 -m dot
 ``` 
-## Screenshots
-![Desktop](https://github.com/yxqsnz/dotfiles/raw/master/images/desktop-screenshot.png)
-![Neofetch](https://github.com/yxqsnz/dotfiles/raw/master/images/neofetch-screenshot.png)

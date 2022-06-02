@@ -12,6 +12,10 @@ return require('packer').startup(function(use)
     require('impatient').enable_profile()
   end })
 
+  use({ "akinsho/bufferline.nvim", event = "BufEnter", config = function()
+    require('plugs.bufferline')
+  end })
+
   use({
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
@@ -22,11 +26,12 @@ return require('packer').startup(function(use)
       })
     end,
   })
-  use({ "cocopon/iceberg.vim", config = function()
-    vim.cmd("colorscheme iceberg")
-  end })
 
-
+  use({
+    'navarasu/onedark.nvim', config = function()
+      require('onedark').load()
+    end
+  })
   use({ "github/copilot.vim", event = "BufEnter" })
 
   use({
@@ -68,7 +73,7 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-emoji",
       "hrsh7th/cmp-calc",
       "hrsh7th/cmp-nvim-lsp-signature-help",
-      "hrsh7th/cmp-copilot",
+      --      "hrsh7th/cmp-copilot",
       { "petertriho/cmp-git", requires = { "nvim-lua/plenary.nvim" } },
       "saadparwaiz1/cmp_luasnip",
       "L3MON4D3/LuaSnip",

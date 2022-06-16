@@ -12,6 +12,7 @@
 	rebase = yes
 [core]
 	askpass = 
+	editor = nvim
 [credential]
 	helper = store
 [alias]

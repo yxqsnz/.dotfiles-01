@@ -13,6 +13,7 @@ require hist
 require plugs
 require alias
 require prompt
+require init
 autoload -U compinit     && compinit
 autoload -U bashcompinit && bashcompinit
 zstyle ':completion:*' menu select
@@ -22,5 +23,15 @@ zstyle :compinstall filename "$HOME/.config/zsh/conf.zsh"
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
-[ -f "/home/yxqsnz/.ghcup/env" ] && source "/home/yxqsnz/.ghcup/env" # ghcup-env
 
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/gk/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall

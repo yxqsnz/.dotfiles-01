@@ -1,16 +1,44 @@
 local fn = vim.fn
-
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+
+
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOSTRAP = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
   vim.cmd [[packadd packer.nvim]]
 end
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
+  use({ 'wbthomason/packer.nvim' })
+  use({ "yxqsnz/3bc.vim" })
+  use({ "folke/trouble.nvim", cmd = "TroubleToggle" })
+  use({ "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline", config = function()
+    vim.g.symbols_outline = {
+      highlight_hovered_item = false
+    }
+  end })
+
+  use({ "sainnhe/gruvbox-material", config = function()
+    vim.cmd [[colorscheme gruvbox-material]]
+  end })
 
   use({ 'lewis6991/impatient.nvim', config = function()
-    require('impatient').enable_profile()
+    require('impatient')
   end })
+
+  use({
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  })
+
+  use({
+    "neovim/nvim-lspconfig",
+    requires = { "williamboman/nvim-lsp-installer", "j-hui/fidget.nvim" },
+    config = function()
+      require('plugs.lsp')
+    end
+  })
+
 
   use({ "akinsho/bufferline.nvim", event = "BufEnter", config = function()
     require('plugs.bufferline')
@@ -27,15 +55,19 @@ return require('packer').startup(function(use)
     end,
   })
 
+
   use({
-    'navarasu/onedark.nvim', config = function()
-      require('onedark').load()
-    end
+    "simrat39/rust-tools.nvim",
+    requires = { "neovim/nvim-lspconfig" },
   })
+
+
+
   use({ "github/copilot.vim", event = "BufEnter" })
 
   use({
     "kyazdani42/nvim-tree.lua",
+    cmd = 'NvimTreeToggle',
     requires = { "kyazdani42/nvim-web-devicons" },
     config = function()
       require('plugs.file_manager')
@@ -83,9 +115,6 @@ return require('packer').startup(function(use)
     end
   })
 
-  use({ "simrat39/symbols-outline.nvim" })
-  use({ "folke/trouble.nvim" })
-
   use({
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
@@ -94,13 +123,7 @@ return require('packer').startup(function(use)
     end
   })
 
-  use({
-    "neovim/nvim-lspconfig",
-    requires = { "williamboman/nvim-lsp-installer", "j-hui/fidget.nvim" },
-    config = function()
-      require('plugs.lsp')
-    end
-  })
+
 
   use({
     "nvim-treesitter/nvim-treesitter",

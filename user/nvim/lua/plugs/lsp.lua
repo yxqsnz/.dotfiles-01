@@ -1,11 +1,21 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local lsp = require('lspconfig')
-local Servers = { "rust_analyzer", "clangd", "sumneko_lua", "grammarly", "pyright", "elixirls", "tsserver", "hls", "jdtls" }
+local SERVERS = { "rust_analyzer",
+  "clangd",
+  "sumneko_lua",
+  "grammarly",
+  "pyright",
+  "elixirls",
+  "tsserver",
+  "hls",
+  "jdtls",
+  "eslint",
+  "asm_lsp" }
 
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 require("nvim-lsp-installer").setup({
-  automatic_installation = { exclude = "hls" },
+  automatic_installation = { true, exclude = { "hls", "jdtls" } },
   ui = {
     icons = {
       server_installed = "✓",
@@ -40,12 +50,22 @@ local function get_config_of_server_or_default(server_name)
   if present then return plugin else return {} end
 end
 
-for _, Server in ipairs(Servers) do
-  lsp[Server].setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = get_config_of_server_or_default(Server)
-  })
+for _, server in ipairs(SERVERS) do
+  if server == 'rust_analyzer' then
+    require('rust-tools').setup({
+      server = {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = get_config_of_server_or_default(server)
+      }
+    })
+  else
+    lsp[server].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = get_config_of_server_or_default(server)
+    })
+  end
 end
 
 
@@ -60,3 +80,28 @@ for name, symbol in pairs(symbols) do
   local group = "DiagnosticSign" .. name
   vim.fn.sign_define(group, { text = symbol, texthl = group, numhl = group })
 end
+local notify = vim.notify
+vim.notify = function(msg, ...)
+  if msg:match("warning: multiple different client offset_encodings") then
+    return
+  end
+
+  notify(msg, ...)
+end
+local configs = require('lspconfig.configs')
+if not configs.sleepy then
+  configs.sleepy = {
+    default_config = {
+      filetypes = { '3bc' },
+      root_dir = function(fname)
+        return lsp.util.find_git_ancestor(fname)
+      end,
+      cmd = { '/home/gk/Documents/Projects/Rust/sleepy-ls/target/debug/sleepy-ls' },
+      settings = {}
+    },
+    docs = [[ lol ]]
+  }
+end
+lsp.sleepy.setup({ on_attach = on_attach,
+  capabilities = capabilities,
+});

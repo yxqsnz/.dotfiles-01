@@ -52,23 +52,18 @@ require('nvim-tree').setup { -- BEGIN_DEFAULT_OPTS
   },
   ignore_ft_on_setup = {},
   system_open = {
-    cmd = "",
+    cmd = "xdg-open",
     args = {},
   },
   diagnostics = {
-    enable = false,
-    show_on_dirs = false,
+    enable = true,
+    show_on_dirs = true,
     icons = {
       hint = "",
       info = "",
       warning = "",
       error = "",
     },
-  },
-  filters = {
-    dotfiles = false,
-    custom = {},
-    exclude = {},
   },
   git = {
     enable = true,
@@ -89,30 +84,19 @@ require('nvim-tree').setup { -- BEGIN_DEFAULT_OPTS
         enable = true,
         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
         exclude = {
-          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame", "NvimTree" },
           buftype = { "nofile", "terminal", "help" },
         },
       },
     },
   },
   trash = {
-    cmd = "trash",
+    cmd = "trasg",
     require_confirm = true,
   },
   live_filter = {
     prefix = "[FILTER]: ",
     always_show_folders = true,
   },
-  log = {
-    enable = false,
-    truncate = false,
-    types = {
-      all = false,
-      config = false,
-      copy_paste = false,
-      diagnostics = false,
-      git = false,
-      profile = false,
-    },
-  },
+
 } -- END_DEFAULT_OPTS

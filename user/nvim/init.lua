@@ -6,4 +6,4 @@ Leader = ' '
 require('options')
 require('keybinds')
 require('packerInit')
-vim.o.guifont = 'Operator Mono:h10'
+vim.o.guifont = 'Operator Mono Lig:style=Italic:h8'

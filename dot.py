@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 CONFIG = [
     ["Git", 'user/git', '~/.config/git'],
+    ["Sxhkd", 'user/sxhkd', '~/.config/sxhkd'],
+    ["Dunst (Notification daemon)", 'user/dunst', '~/.config/dunst'],
+    ["Rofi", 'user/rofi', '~/.config/rofi'],
+    ["Bspwm", 'user/bspwm', '~/.config/bspwm'],
+    ["Picom", 'user/picom', '~/.config/picom'],
+    ["Eww"  , 'user/eww',  '~/.config/eww'],
     ['Neovim', 'user/nvim', '~/.config/nvim'],
     ["Cargo", 'user/cargo/config.toml', '~/.cargo/config.toml'],
     ["Kitty", 'user/kitty', '~/.config/kitty'],
@@ -32,9 +38,9 @@ def link(source: str, to: str):
     if not path.exists(to):
         os.symlink(path.realpath(source), to)
     else:
-        error(f"ス Directory {to} existis. skipping!")
+        error(f"Warn: Directory {to} existis. skipping!")
 for conf in CONFIG:
-    info(f"ラ Linking {conf[0]} config")
+    info(f"Info: Linking {conf[0]} config")
     if 'System' in conf[0]:
         if os.system(f'{SUDO} cp {conf[1]} {conf[2]} -f') == 0: pass
     else:

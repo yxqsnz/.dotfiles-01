@@ -1,0 +1,39 @@
+(defwidget launcher []
+  (box :orientation "v" 
+       :space-evenly "false" 
+       :spacing -15
+    (button :class "launcher-icon" 
+            :onclick "scripts/popup launcher"  "")))
+
+
+;; Top Widgets ;;
+(defwidget top []
+  (box	:orientation "v" 
+        :space-evenly "false" 
+        :valign "start" 
+    (launcher)
+    (workspaces)))
+
+;; Bottom Widgets ;;
+(defwidget bottom []
+  (box	 :orientation "v" 
+         :space-evenly false 
+    (time)))
+
+;; End Widgets ;;
+(defwidget end []
+  (box :orientation "v" 
+       :space-evenly "false" 
+       :valign "end" 
+       :spacing 5
+    (control)
+    (bottom)))
+
+;; Bar Widgets ;;
+(defwidget bar []
+  (box :class "bar" 
+       :orientation "v" 
+       :vexpand "false" 
+       :hexpand "false"
+    (top)
+    (end)))

@@ -1,6 +1,7 @@
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin"
 export PATH="/home/yxqsnz/.deno/bin:$PATH"
+export PATH="$PATH:/home/gk/Documents/Scripts/Bin"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"

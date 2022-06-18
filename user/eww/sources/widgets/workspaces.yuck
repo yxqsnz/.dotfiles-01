@@ -1,0 +1,20 @@
+(defwidget item [name symbol]
+  (button 
+    :onclick "bspc desktop -f ${name}"
+    :class "workspaceItem ${currentWorkspace == name ? "focused" : ""}"
+    symbol))
+(defwidget workspaces []
+  (box	:class "works" 
+        :orientation "v"
+        :halign "center"
+        :valign "start"
+        :space-evenly "false"
+        :spacing "-5" 
+    (item :name "browser"   :symbol "")
+    (item	:name "terminal"  :symbol "")
+    (item :name "dev"       :symbol "")
+    (item :name "games"     :symbol "") 
+    (item :name "config"    :symbol "" ) 
+    (item :name "other"     :symbol "")))
+
+

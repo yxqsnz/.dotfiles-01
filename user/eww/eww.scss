@@ -1,0 +1,40 @@
+@import "styles";
+// Global
+* {
+   all: unset;
+}
+
+.bar {
+  padding: 0.3rem;
+}
+
+// Launcher
+.launcher-icon {
+  color: $cyan;
+  font-family: feather;
+  font-size: 16px;
+  padding: 0rem 0 4px 0;
+}
+
+
+
+
+
+scale trough {
+  all: unset;
+  background-color: $background;
+  border-radius: 5px;
+  min-height: 80px;
+  min-width: 10px;
+  margin: 0.3rem 0 0.3rem 0;
+}
+.bribar trough highlight {
+  background-color: $yellow;
+  border-radius: 5px;
+}
+.volbar trough highlight {
+  background-color: $green;
+  border-radius: 5px;
+}
+
+

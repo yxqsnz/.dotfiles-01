@@ -9,7 +9,20 @@ end
 return require('packer').startup(function(use)
   use({ 'wbthomason/packer.nvim' })
   use({ "yxqsnz/3bc.vim" })
+  use({ "ron-rs/ron.vim", })
+  use({ "elkowar/yuck.vim" })
   use({ "folke/trouble.nvim", cmd = "TroubleToggle" })
+  use({ "ziontee113/syntax-tree-surfer", event = "BufEnter", config = function()
+    require("syntax-tree-surfer").setup({
+      highlight_group = "STS_highligh",
+      left_hand_side = "fdsawervcxqtzb",
+      right_hand_side = "jkl;oiu.,mpy/n",
+    })
+  end })
+
+  use({ "norcalli/nvim-colorizer.lua", event = "BufReadPre", config = function()
+    require('colorizer').setup()
+  end })
   use({ "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline", config = function()
     vim.g.symbols_outline = {
       highlight_hovered_item = false

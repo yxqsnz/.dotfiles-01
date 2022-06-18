@@ -10,6 +10,7 @@ local SERVERS = { "rust_analyzer",
   "hls",
   "jdtls",
   "eslint",
+  "cssls",
   "asm_lsp" }
 
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
@@ -18,9 +19,9 @@ require("nvim-lsp-installer").setup({
   automatic_installation = { true, exclude = { "hls", "jdtls" } },
   ui = {
     icons = {
-      server_installed = "✓",
-      server_pending = "➜",
-      server_uninstalled = "✗"
+      server_installed = "",
+      server_pending = "",
+      server_uninstalled = ""
     }
   }
 })

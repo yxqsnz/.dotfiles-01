@@ -1,0 +1,66 @@
+(defwidget bat []
+	(box	  :orientation "v"	
+			    :space-evenly "false"
+	(label	:class "bat"		
+		  	  :halign "end"		
+			    :text battery	
+		      :tooltip "Battery: ${battery-cappacity}%")))
+
+;; Wifi Widgets ;;
+(defwidget wifi []
+	(box		:orientation "v"  
+  				:tooltip wifi-name
+	(button	:onclick "scripts/popup wifi" 
+				  :class "wifi-icon" wifi-icon)))
+
+;; Brightness Widgets ;;
+(defwidget bright []
+  (eventbox :onhover "${eww} update bright=true"   
+            :onhoverlost "${eww} update bright=false"
+    (box :orientation "v"  
+         :space-evenly "false"  
+         :spacing 2
+      (revealer :transition "slideup" 
+                :reveal bright   
+                :duration "550ms"
+        (scale :class "bribar" 
+               :value current-brightness 
+               :tooltip "Brightness: ${current-brightness}%" 
+               :onchange "xbacklight -set {}" 
+               :orientation "v" 
+               :flipped true 
+               :max 101 
+               :min 0))
+      (label :class "brightness-icon" 
+             :text ""))))
+
+;; Volume Widgets ;;
+(defwidget volum []
+  (eventbox :onhover "${eww} update volum=true" 		
+            :onhoverlost "${eww} update volum=false"
+    (box      :orientation "v" 	  
+              :space-evenly "false" 
+              :spacing "2"
+      (revealer :transition "slideup" 
+                :reveal volum         
+                :duration "550ms"
+        (scale    :class "volbar" 	  
+                  :value current-volume 
+                  :orientation "v"      
+                  :flipped true 
+                  :tooltip "Volume: ${current-volume}%" 
+                  :max 101 
+                  :min 0 
+                  :onchange "pamixer --set-volume {}" ))
+      (button   :onclick "scripts/popup audio"   :class "volume-icon" ""))))
+
+;; Control Panel Widgets ;;	
+(defwidget control []
+	(box :orientation "v" 
+		   :space-evenly false  
+	  	 :class "control"
+        (bat)
+        (wifi)
+        (bright)
+        (volum)))
+

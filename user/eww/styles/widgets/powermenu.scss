@@ -1,0 +1,29 @@
+// Powermenu
+.powermenu {
+  font-family: feather;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.button-bspres,
+.button-reb,
+.button-lock,
+.button-quit,
+.button-off {
+  padding: 0.5rem 0.2rem 0.3rem 0.2rem;
+}
+.button-off {
+  margin-bottom: 0.5rem;
+  color: $red;
+}
+.button-bspres {
+  color: $green;
+}
+.button-reb {
+  color: $yellow;
+}
+.button-quit {
+  color: $magenta;
+}
+.button-lock {
+  color: $blue;
+}

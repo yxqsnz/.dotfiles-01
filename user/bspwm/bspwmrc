@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+bspc rule -a "^(?:.*)$" -o allow_skip_taskbar=true
+bspc monitor -d browser terminal dev games config other
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+safeRun() {
+  log "Starting ${@}"
+  pgrep -x $1 || $@ 
+}
+log() {
+  echo "INFO: $@"
+}
+_init() {
+  log "Setting Background ..."
+    ~/.fehbg 
+  log "Feh Status: $?"
+  setxkbmap br
+  log "Starting Services ..."
+    safeRun sxhkd &
+    safeRun dunst & 
+    safeRun xfce4-power-manager &
+  log "Done"
+  xsetroot -cursor_name dot
+}
+_fullscreen() {
+  BAR=bar
+  bspc subscribe node_state | while read msg; do
+    EVENT=$(awk -F' ' '{ print $5 }' <<< $msg)
+    STATUS=$(awk -F' ' '{ print $6 }' <<< $msg)
+    if [[ "${EVENT}" == "fullscreen" ]]; then
+      case $STATUS in
+        on) eww close $BAR ;;
+        off) eww open $BAR ;;
+      esac
+    fi
+  done
+}
+_init        @> ~/.cache/bspwm.log
+_fullscreen  @> ~/.cache/bspwm.fullscreen.service.log &
+# Rules
+bspc rule -a "*:Toolkit:Picture-in-Picture" \
+     state=floating sticky=on follow=on focus=on \
+     rectangle=440x247+917+509
+bspc rule -a Net center=on state=floating rectangle=500x500+50+50

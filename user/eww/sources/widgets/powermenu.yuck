@@ -1,0 +1,33 @@
+;; Powermenu Widgets ;;
+(defwidget power []
+	(eventbox	:onhover "${eww} update power=true"	
+				:onhoverlost "${eww} update power=false" 
+	(box	:orientation "v"					
+				:space-evenly "false" 	 
+				:vexpand "false" 	
+				:class "powermenu"
+	  (revealer	:transition "slideup"				
+		  	    	:reveal power			 
+			      	:duration "550ms"
+	    (box :orientation "v"					
+			  	  :space-evenly "false"
+
+        (button  :class "button-bspres"  			
+                 :tooltip "BSPWM Restart"     
+                 :onclick "bspc wm -r" "" )
+
+        (button	:class "button-reb"					
+                :tooltip "Reboot"		 
+                :onclick "reboot"	"")
+
+        (button	:class "button-quit" 				
+                :tooltip "Logout" 		 
+                :onclick "killall bspwm" "")
+
+        (button	:class "button-lock" 				
+                :tooltip "Lock Screen"	 
+                :onclick "betterlockscreen -l"	"")))
+
+        (button	:class "button-off"					
+                :tooltip "Shutdown"		   
+                :onclick "shutdown now"	""))))

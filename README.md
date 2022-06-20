@@ -1,4 +1,4 @@
-# My dotfiles yay(*wm theme is based on ArchCraft default theme)
+# My dotfiles yay
 ## Installl
 ```sh
 python3 -m dot

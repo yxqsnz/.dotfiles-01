@@ -19,6 +19,8 @@ _init() {
     safeRun sxhkd &
     safeRun dunst & 
     safeRun xfce4-power-manager &
+    safeRun picom &
+    safeRun eww open bar 
   log "Done"
   xsetroot -cursor_name dot
 }
@@ -41,4 +43,9 @@ _fullscreen  @> ~/.cache/bspwm.fullscreen.service.log &
 bspc rule -a "*:Toolkit:Picture-in-Picture" \
      state=floating sticky=on follow=on focus=on \
      rectangle=440x247+917+509
-bspc rule -a Net center=on state=floating rectangle=500x500+50+50
+bspc rule -a Net center=on state=floating center=on
+bspc rule -a robloxplayerlauncher.exe center=on state=floating desktop=games focus=on
+bspc rule -a robloxstudiolauncherbeta.exe center=on state=floating desktop=games focus=on
+bspc rule -a Grapejuice	center=on state=floating desktop=config focus=on 
+bspc rule -a robloxplayerbeta.exe desktop=games focus=on center=on
+bspc rule -a roblox_installer.exe state=floating focus=on center=on

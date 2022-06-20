@@ -2,7 +2,8 @@
   (box :orientation "v" 
        :space-evenly "false" 
        :spacing -15
-    (button :class "launcher-icon" 
+    (button :class "launcher-icon ${cpu-governator}" 
+            :tooltip "Current CPU Governor: ${cpu-governator}"
             :onclick "scripts/popup launcher"  "")))
 
 

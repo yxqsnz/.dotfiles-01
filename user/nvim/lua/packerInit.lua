@@ -12,6 +12,11 @@ return require('packer').startup(function(use)
   use({ "ron-rs/ron.vim", })
   use({ "elkowar/yuck.vim" })
   use({ "folke/trouble.nvim", cmd = "TroubleToggle" })
+  use({ 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async', config = function()
+    vim.wo.foldcolumn = '1'
+    vim.wo.foldlevel = 99
+    vim.wo.foldenable = true
+  end })
   use({ "ziontee113/syntax-tree-surfer", event = "BufEnter", config = function()
     require("syntax-tree-surfer").setup({
       highlight_group = "STS_highligh",

@@ -11,8 +11,7 @@ CONFIG = [
     ["Cargo", 'user/cargo/config.toml', '~/.cargo/config.toml'],
     ["Kitty", 'user/kitty', '~/.config/kitty'],
     ["Weechat", 'user/weechat', '~/.config/weechat'],
-    ["Zsh", 'user/zsh', '~/.config/zsh'],
-    ["Zsh RC", 'user/zsh/conf.zsh', '~/.zshrc'],
+    ["Zsh", 'user/.zshrc', '~/.zshrc'],
     ["(System) Paru" ,'system/paru.conf', '/etc/paru.conf']
 ]
 SUDO = 'doas'

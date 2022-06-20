@@ -59,8 +59,8 @@
 	(box :orientation "v" 
 		   :space-evenly false  
 	  	 :class "control"
-        (bat)
         (wifi)
         (bright)
-        (volum)))
+        (volum)
+        (bat)))
 

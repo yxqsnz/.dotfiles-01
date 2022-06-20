@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-  kitty &
+  kitty --single-instance &
 # program launcher
 super + d
   rofi -modi drun -show drun
@@ -134,3 +134,22 @@ alt + {Left,Down,Up,Right}
 # expand a window by moving one of its side outward
 alt + shift + {Left,Down,Up,Right}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+###           ###
+#   MEDIA KEYS  #
+###           ###
+XF86AudioLowerVolume
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
+XF86AudioRaiseVolume
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+XF86MonBrightness{Down,Up}	
+	xbacklight {-dec,-inc} 10%
+XF86Audio{Prev, Next}
+	playerctl {previous,next}
+XF86AudioPlay
+	playerctl play-pause
+Super + Print
+	boomer
+

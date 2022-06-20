@@ -6,8 +6,9 @@ per="$(cat "$bat/capacity")"
 icon() {
 
 [ $(cat "$bat/status") = Charging ] && echo "" && exit
-
-if [ "$per" -gt "90" ]; then
+if [ "$per" == '100' ]; then
+  echo ""
+elif [ "$per" -gt "90" ]; then
 	icon=""
 elif [ "$per" -gt "80" ]; then
 	icon=""

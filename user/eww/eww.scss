@@ -10,14 +10,22 @@
 
 // Launcher
 .launcher-icon {
-  color: $cyan;
   font-family: feather;
   font-size: 16px;
   padding: 0rem 0 4px 0;
 }
-
-
-
+// Launcher Colors
+.ondemand,
+.conservative,
+.schedutil {
+  color: $blue;
+}
+.performance {
+  color: $red;
+}
+.powersave {
+  color: $green;
+}
 
 
 scale trough {

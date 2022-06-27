@@ -1,0 +1,13 @@
+#dawda
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    #family: "Hack"
+    # family: "FiraCode Nerd Font"
+    #family: "FantasqueSansMono Nerd Font"
+    family: "Cascadia Code"
+    #family: "IBM Plex Mono"
+    style: Bold
+  size: 8.5 # Offset 
+

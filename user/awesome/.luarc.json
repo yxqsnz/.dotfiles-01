@@ -1,0 +1,16 @@
+{
+  "diagnostics.globals": [
+    "awesome",
+    "client",
+    "screen",
+    "tag",
+    "root",
+    "printf",
+    "format",
+    "mouse"
+  ],
+  "workspace.library": [
+    "~/.config/awesome/etc/completions/awesome-emmylua",
+    "/usr/share/awesome/lib"
+  ]
+}

@@ -3,3 +3,6 @@
 ```sh
 python3 -m dot
 ``` 
+# TODO
+ [ ] Rewrite dotfile installation tool.
+ [ ] Rework dotfiles.

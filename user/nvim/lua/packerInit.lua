@@ -11,6 +11,8 @@ return require('packer').startup(function(use)
   use({ "yxqsnz/3bc.vim" })
   use({ "ron-rs/ron.vim", })
   use({ "elkowar/yuck.vim" })
+  use({ "github/copilot.vim" })
+  use({"rafamadriz/friendly-snippets"})
   use({ "folke/trouble.nvim", cmd = "TroubleToggle" })
   use({ 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async', config = function()
     vim.wo.foldcolumn = '1'
@@ -80,9 +82,6 @@ return require('packer').startup(function(use)
   })
 
 
-
-  use({ "github/copilot.vim", event = "BufEnter" })
-
   use({
     "kyazdani42/nvim-tree.lua",
     cmd = 'NvimTreeToggle',
@@ -123,7 +122,7 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-emoji",
       "hrsh7th/cmp-calc",
       "hrsh7th/cmp-nvim-lsp-signature-help",
-      --      "hrsh7th/cmp-copilot",
+      "L3MON4D3/LuaSnip",
       { "petertriho/cmp-git", requires = { "nvim-lua/plenary.nvim" } },
       "saadparwaiz1/cmp_luasnip",
       "L3MON4D3/LuaSnip",

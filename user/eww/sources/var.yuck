@@ -1,5 +1,0 @@
-(defvar eww    "eww")
-(defvar bright false)
-(defvar volum  false)
-(defvar power  false)
-

@@ -11,6 +11,7 @@ local SERVERS = { "rust_analyzer",
   "jdtls",
   "eslint",
   "cssls",
+  "html",
   "asm_lsp" }
 
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
@@ -31,7 +32,7 @@ require("nvim-lsp-installer").setup({
 
 local function on_attach(client, bufnr)
   require("fidget").setup({})
-  require('ufo').setup()
+  --require('ufo').setup()
   bufnr = bufnr or vim.api.nvim_get_current_buf()
   local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
   if client.supports_method("textDocument/formatting") then

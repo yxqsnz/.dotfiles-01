@@ -1,0 +1,9 @@
+[submodule "user/awesome/etc/completions/awesome-emmylua"]
+	path = user/awesome/etc/completions/awesome-emmylua
+	url = https://github.com/awchad/awesome-emmylua.git
+[submodule "user/awesome/lain"]
+	path = user/awesome/lain
+	url = https://github.com/lcpz/lain.git
+[submodule "user/awesome/vicious"]
+	path = user/awesome/vicious
+	url = https://github.com/vicious-widgets/vicious.git

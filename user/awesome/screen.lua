@@ -1,0 +1,11 @@
+local wal = require("util.wal")
+local awful = require("awful")
+require("awful.autofocus")
+screen.connect_signal("request::wallpaper", wal.set)
+screen.connect_signal("request::desktop_decoration", function(screen)
+  awful.tag(Settings.desktop.tags, screen, awful.layout.layouts[1])
+end)
+--  Enable sloppy focus, so that focus follows mouse.
+client.connect_signal("mouse::enter", function(c)
+  c:activate({ context = "mouse_enter", raise = false })
+end)

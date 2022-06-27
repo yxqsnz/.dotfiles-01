@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Deps {{
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -77,15 +84,19 @@ zinit light "zsh-users/zsh-autosuggestions"
 #zinit light "molovo/crash"
 zinit light "mafredri/zsh-async"
 zinit light "zdharma-continuum/fast-syntax-highlighting"
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 # }}
 # Config of Plugins {{
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 # }}
-# Aiases {{
+# Aliases {{
 alias ls='exa --icons --long'
 alias icat='kitty +kitten icat'
 alias l='ls'
 alias gstat='git diff --stat'
+alias vim='lvim'
+alias nvim='lvim'
+alias cat='bat -p --theme=ansi'
 _TH=$(command -v thefuck)
 [[ -z $_TH ]] && export _TH=":"
 eval $($_TH --alias)
@@ -93,18 +104,18 @@ GRC_ALIASES=true
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 # }}
 # Prompt {{
-_git_info() {
-GIT_INFO=''
-if [[ -d .git ]]; then  
-   GIT_INFO='git:'
-   GIT_INFO+=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-fi
-echo $GIT_INFO
-}
-setopt prompt_subst
-export __NL=$'\n'
-PROMPT='[ %T %B%~%b ] ${__NL}$ '
-RPROMPT='$(_git_info)'
+# _git_info() {
+# GIT_INFO=''
+# if [[ -d .git ]]; then  
+#    GIT_INFO='git:'
+#    GIT_INFO+=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+# fi
+# echo $GIT_INFO
+# }
+# setopt prompt_subst
+# export __NL=$'\n'
+# PROMPT='[ %T %B%~%b ] ${__NL}$ '
+# RPROMPT='$(_git_info)'
 # }}
 # Completion {{
 autoload -U compinit     && compinit
@@ -123,3 +134,6 @@ export PATH="$(yarn global bin):$PATH"
 # }}
 # vim: foldmarker={{,}}
 # vim: foldmethod=marker
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

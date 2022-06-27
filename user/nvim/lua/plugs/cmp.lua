@@ -30,7 +30,6 @@ local aliases = {
   nvim_lsp = 'lsp',
   luasnip = 'snippet',
 }
-
 cmp.setup({
   mapping = cmp.mapping.preset.insert({
     ['<C-e>'] = cmp.config.disable,
@@ -50,7 +49,6 @@ cmp.setup({
     { name = 'path', max_item_count = 10 },
     { name = 'nvim_lsp_signature_help', max_item_count = 10 },
     { name = "git", max_item_count = 10 },
-    { name = "copilot", max_item_count = 10 }
   }),
   snippet = {
     expand = function(args)
@@ -82,4 +80,5 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
+require("luasnip.loaders.from_vscode").lazy_load()
 require('cmp_git').setup()

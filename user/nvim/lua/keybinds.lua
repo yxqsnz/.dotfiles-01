@@ -1,4 +1,5 @@
 local keymap = vim.keymap
+local luasnip = require('luasnip')
 local function command(cmd)
   return '<cmd>' .. cmd .. '<cr>'
 end
@@ -23,6 +24,8 @@ keymap.set('n', 'bb', command('BufferLineCyclePrev'), opts)
 keymap.set('n', '<ESC>', command('nohl'), opts)
 keymap.set("n", "vx", command('STSSelectMasterNode'), opts)
 keymap.set("n", "vn", command('STSSelectCurrentNode<cr>'), opts)
+keymap.set("i", '<C-k>', function() luasnip.jump(1) end, opts)
+keymap.set("i", '<C-l>', function() luasnip.jump(-1) end, opts)
 keymap.set("x", "<A-j>", command('STSSwapNextVisual'), opts)
 keymap.set("x", "<A-k>", command('STSSwapPrevVisual'), opts)
 keymap.set("i", "<C-v>", [[<ESC>"+pi]], opts);

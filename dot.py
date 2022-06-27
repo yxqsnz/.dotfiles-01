@@ -1,22 +1,22 @@
 #!/usr/bin/python3
+from colorama.ansi import Fore
+from os import path
+import os
+
 CONFIG = [
     ["Git", "user/git", "~/.config/git"],
     ["Rofi", "user/rofi", "~/.config/rofi"],
     ["Picom", "user/picom", "~/.config/picom"],
-    ["Neovim", "user/nvim", "~/.config/nvim"],
+    ["Lunarvim", "user/lunarvim", "~/.config/lvim"],
     ["Awesome", "user/awesome/", "~/.config/awesome"],
     ["Cargo", "user/cargo/config.toml", "~/.cargo/config.toml"],
     ["Alacritty", "user/alacritty", "~/.config/alacritty"],
-    ["Awesome", "user/awesome", "~/.cofngi/awesome"],
+    ["Awesome", "user/awesome", "~/.config/awesome"],
     ["Weechat", "user/weechat", "~/.config/weechat"],
     ["Zsh", "user/.zshrc", "~/.zshrc"],
     ["(System) Paru", "system/paru.conf", "/etc/paru.conf"],
 ]
 SUDO = "doas"
-from colorama.ansi import Fore
-from os import path
-import os
-
 BANNER = f"""{Fore.RED}
 >> ▒█▀▀▄ ▒█▀▀▀█ ▀▀█▀▀ ▒█▀▀▀ ▀█▀ ▒█░░░ ▒█▀▀▀ 　
 >> ▒█░▒█ ▒█░░▒█ ░▒█░░ ▒█▀▀▀ ▒█░ ▒█░░░ ▒█▀▀▀ 　

@@ -10,7 +10,7 @@
 - [ZSH](https://www.zsh.org/) The Best shell
 - [Alacritty](https://alacritty.org) The hyperfast terminal emulator
 # Installation
-Just run `python dot.py`! And done, all of my configuration is linked into your `~/.config`!
+Just run `python3 dot.py`! And done, all of my configuration is linked into your `~/.config`!
 # Other Screenshots
 ![Desktop](screenshots/fullscreen.png)
 ![Neovim](screenshots/neovim.png)

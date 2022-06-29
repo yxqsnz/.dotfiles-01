@@ -248,6 +248,7 @@ awful.keyboard.append_global_keybindings({
   end, { description = "select previous", group = "layout" }),
 })
 -- }}
+
 -- {{ Default keybinds
 client.connect_signal("request::default_keybindings", function()
   awful.keyboard.append_client_keybindings({
@@ -323,6 +324,18 @@ awful.keyboard.append_global_keybindings({
   awful.key({}, "XF86AudioMute", command("pamixer -t"), {
     description = "Mute Volume",
     group = "media",
+  }),
+})
+-- }}
+-- {{ Backlight
+awful.keyboard.append_global_keybindings({
+  awful.key({}, "XF86MonBrightnessUp", command("xbacklight -inc 5"), {
+    description = "Increase Backlight",
+    group = "backlight",
+  }),
+  awful.key({}, "XF86MonBrightnessDown", command("xbacklight -dec 5"), {
+    description = "Decrease Backlight",
+    group = "backlight",
   }),
 })
 -- }}

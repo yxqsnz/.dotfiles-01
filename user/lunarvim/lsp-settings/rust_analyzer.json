@@ -1,0 +1,11 @@
+{
+  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.lens.run.enable": true,
+  "rust-analyzer.hover.actions.references.enable": true,
+  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "with_block",
+  "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
+  "rust-analyzer.inlayHints.reborrowHints.enable": "mutable",
+  "rust-analyzer.lens.references.adt.enable": true,
+  "rust-analyzer.lens.references.enumVariant.enable": true,
+  "rust-analyzer.lens.references.trait.enable": true
+}

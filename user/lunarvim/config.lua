@@ -97,6 +97,11 @@ local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{ command = "black" },
 	{ command = "stylua" },
+	{ command = "gofmt" },
+	{ command = "goimports" },
+	{ command = "gofumpt" },
+	{ command = "golines" },
+	{ command = "rustfmt" },
 	{
 		command = "clang-format",
 		filetype = { "c", "cpp", "cs", "java" },
@@ -118,6 +123,7 @@ formatters.setup({
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
 	{ command = "flake8", filetypes = { "python" } },
+	{ command = "editorconfig_checker" },
 	{
 		-- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
 		command = "shellcheck",
@@ -132,10 +138,57 @@ linters.setup({
 	},
 })
 
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 lvim.plugins = {
 	{ "folke/tokyonight.nvim" },
 	{ "nonamescm/notheme.nvim" },
 	{ "j-hui/fidget.nvim" },
+	{ "editorconfig/editorconfig-vim" },
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				textobjects = {
+					select = {
+						enable = true,
+
+						-- Automatically jump forward to textobj, similar to targets.vim
+						lookahead = true,
+
+						keymaps = {
+							-- You can use the capture groups defined in textobjects.scm
+							["af"] = "@function.outer",
+							["if"] = "@function.inner",
+							["ac"] = "@class.outer",
+							["ic"] = "@class.inner",
+						},
+					},
+				},
+			})
+		end,
+	},
+	{
+		"simrat39/rust-tools.nvim",
+		config = function()
+			local lsp_installer_servers = require("nvim-lsp-installer.servers")
+			local _, requested_server = lsp_installer_servers.get_server("rust_analyzer")
+			require("rust-tools").setup({
+				tools = {
+					autoSetHints = true,
+					hover_with_actions = true,
+					runnables = {
+						use_telescope = true,
+					},
+				},
+				server = {
+					cmd_env = requested_server._default_options.cmd_env,
+					on_attach = require("lvim.lsp").common_on_attach,
+					on_init = require("lvim.lsp").common_on_init,
+				},
+			})
+		end,
+		ft = { "rust", "rs" },
+	},
 	{
 		"windwp/nvim-spectre",
 		event = "BufRead",
@@ -213,6 +266,7 @@ lvim.plugins = {
 		end,
 	},
 	{ "elkowar/yuck.vim" },
+
 	{
 		"romgrk/nvim-treesitter-context",
 		config = function()

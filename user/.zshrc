@@ -35,7 +35,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin"
 export PATH="/home/yxqsnz/.deno/bin:$PATH"
 export PATH="$PATH:/home/gk/Documents/Scripts/Bin"
 # }}
-# History (From OMZ) {{
+#History (From OMZ) {{
 ## History wrapper
 function omz_history {
   local clear list
@@ -100,7 +100,6 @@ alias cat='bat -p --theme=ansi'
 _TH=$(command -v thefuck)
 [[ -z $_TH ]] && export _TH=":"
 eval $($_TH --alias)
-GRC_ALIASES=true
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 # }}
 # Prompt {{
@@ -131,6 +130,7 @@ bindkey  "^[[3~"  delete-char
 # Misc {{
 source /opt/asdf-vm/asdf.sh
 export PATH="$(yarn global bin):$PATH"
+export PATH="$(go env GOPATH)/bin:$PATH"
 # }}
 # vim: foldmarker={{,}}
 # vim: foldmethod=marker

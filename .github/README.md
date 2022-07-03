@@ -5,7 +5,7 @@
 
 - [Arch Linux](https://archlinux.org) The best distro
 - [Awesome](https://awesomewm.org) The hackable window manager
-- [Firefox](https://firefox.com) My favourite webbrowser
+- [Firefox](https://firefox.com) My favorite webbrowser
 - [Lunarvim](https://lunarvim.org) The configuration for neovim for busy peoples
 - [ZSH](https://www.zsh.org/) The Best shell
 - [Alacritty](https://alacritty.org) The hyperfast terminal emulator

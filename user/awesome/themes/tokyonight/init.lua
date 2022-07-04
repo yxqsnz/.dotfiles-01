@@ -10,7 +10,7 @@ theme.icon_theme = "Papirus-Dark"
 -- {{ Font
 theme.dashboardFont = "Iosevka SS14"
 theme.nerdFont = "Symbols Nerd Font"
-theme.font = "Iosevka"
+theme.font = "Iosevka SS14"
 -- }}
 -- {{ Colors
 -- {{ Background

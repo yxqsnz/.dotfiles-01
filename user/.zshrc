@@ -33,7 +33,7 @@ export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 # Aditional Paths {{
 export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin"
 export PATH="/home/yxqsnz/.deno/bin:$PATH"
-export PATH="$PATH:/home/gk/Documents/Scripts/Bin"
+export PATH="$PATH:/home/yxqsnz/Documents/Scripts/Bin"
 # }}
 #History (From OMZ) {{
 ## History wrapper
@@ -94,8 +94,7 @@ alias ls='exa --icons --long'
 alias icat='kitty +kitten icat'
 alias l='ls'
 alias gstat='git diff --stat'
-alias vim='lvim'
-alias nvim='lvim'
+alias vim='nvim'
 alias cat='bat -p --theme=ansi'
 _TH=$(command -v thefuck)
 [[ -z $_TH ]] && export _TH=":"
@@ -128,7 +127,7 @@ bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 # }} 
 # Misc {{
-source /opt/asdf-vm/asdf.sh
+. $HOME/.asdf/asdf.sh
 export PATH="$(yarn global bin):$PATH"
 export PATH="$(go env GOPATH)/bin:$PATH"
 # }}

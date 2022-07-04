@@ -8,6 +8,7 @@ CONFIG = [
     ["Rofi", "user/rofi", "~/.config/rofi"],
     ["Picom", "user/picom", "~/.config/picom"],
     ["Lunarvim", "user/lunarvim", "~/.config/lvim"],
+    ["Neovim", 'user/neovim', '~/.config/nvim'],
     ["Awesome", "user/awesome/", "~/.config/awesome"],
     ["Cargo", "user/cargo/config.toml", "~/.cargo/config.toml"],
     ["Alacritty", "user/alacritty", "~/.config/alacritty"],

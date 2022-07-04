@@ -91,6 +91,12 @@ awful.keyboard.append_global_keybindings({
     description = "Takes a full screenshot",
     group = "misc",
   }),
+  awful.key({modkey}, "d", function()
+    awful.util.spawn_with_shell("rofi -show drun")
+  end, {
+    description = "Show app launcher",
+    group = "apps",
+  }),
   awful.key({ "Shift" }, "Print", function()
     awful.util.spawn_with_shell(shot .. " area")
   end, {
@@ -122,19 +128,12 @@ awful.keyboard.append_global_keybindings({
     { description = "reload awesome", group = "awesome" }
   ),
   awful.key(
-    { modkey, "Shift" },
+    { modkey, "Shift", "x" },
     "q",
     awesome.quit,
     { description = "quit awesome", group = "awesome" }
   ),
-  awful.key({ modkey }, "x", function()
-    awful.prompt.run({
-      prompt = "Run Lua code: ",
-      textbox = awful.screen.focused().mypromptbox.widget,
-      exe_callback = awful.util.eval,
-      history_path = awful.util.get_cache_dir() .. "/history_eval",
-    })
-  end, { description = "lua execute prompt", group = "awesome" }),
+
 
   awful.key({ modkey }, "Return", function()
     awful.spawn(Settings.app.terminal)
@@ -248,7 +247,6 @@ awful.keyboard.append_global_keybindings({
   end, { description = "select previous", group = "layout" }),
 })
 -- }}
-
 -- {{ Default keybinds
 client.connect_signal("request::default_keybindings", function()
   awful.keyboard.append_client_keybindings({
@@ -329,11 +327,11 @@ awful.keyboard.append_global_keybindings({
 -- }}
 -- {{ Backlight
 awful.keyboard.append_global_keybindings({
-  awful.key({}, "XF86MonBrightnessUp", command("xbacklight -inc 5"), {
+  awful.key({}, "XF86MonBrightnessUp", command("light -A 5"), {
     description = "Increase Backlight",
     group = "backlight",
   }),
-  awful.key({}, "XF86MonBrightnessDown", command("xbacklight -dec 5"), {
+  awful.key({}, "XF86MonBrightnessDown", command("light -U 5"), {
     description = "Decrease Backlight",
     group = "backlight",
   }),

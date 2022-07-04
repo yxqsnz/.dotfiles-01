@@ -9,7 +9,6 @@ State = {}
 local awful = require("awful")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
-require("luarocks.loader")
 -- }}
 -- {{ Some Debugs
 Log.info("(StartUp) Using Awesome " .. awesome.api_level)

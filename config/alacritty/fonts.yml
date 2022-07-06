@@ -1,0 +1,7 @@
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    family: "Jetbrains Mono Nerd font"
+  size: 10 # Offset 
+

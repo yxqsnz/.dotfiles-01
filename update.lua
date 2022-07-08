@@ -10,6 +10,7 @@ local configs = {
   sway = { "sway", "~/.config/sway" },
   mako = { "mako", "~/.config/mako" },
   cargo = { "cargo/config.toml", "~/.cargo/config.toml" },
+  helix = { "helix", "~/.config/helix" },
   git = { "git", "~/.config/git" },
   waybar = { "waybar", "~/.config/waybar" },
   alacritty = { "alacritty", "~/.config/alacritty" },

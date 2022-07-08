@@ -1,0 +1,97 @@
+$bg: #1e2030;
+$fg: #cad3f5;
+$accent: #cba6f7;
+* {
+  min-height: 0;
+  font-size: 15px;
+  font-family: "Iosevka Nerd Font", "Font Awesome 6 Free", 'Material Icons';
+}
+window#waybar {
+  background-color: transparent;
+  transition-duration: 0.5s;
+  transition-property: background-color;
+}
+#workspaces {
+  all: unset;
+  margin-left: 4px;
+}
+
+#workspaces button {
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.2rem;
+  margin: 5px 2px;
+  background: $bg;
+  color: $fg;
+}
+
+#workspaces button:hover {
+  background: $accent;
+  box-shadow: inherit;
+}
+
+#workspaces button.focused {
+  color: $accent;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+#clock,
+#battery,
+#pulseaudio,
+#mpd,
+#memory,
+#custom-power,
+#cpu,
+#disk,
+#language,
+{
+  background: $bg; 
+  padding: 0.4rem 0.9rem;
+  margin: 5px 2px;
+  color: $fg;
+  border-radius: 0.2rem; 
+}
+#network {
+  background: $bg;
+  font-size: 17px;
+  padding: 0.4rem 0.9rem;
+  margin: 5px 3px;
+  color: $fg;
+  border-radius: 0.2rem;
+}
+
+#tray {
+  margin: 5px 3px;
+  padding: 5px 5px;
+  border-radius: 0.2rem;
+  background-color: $bg;
+}
+
+#battery.critical:not(.charging) {
+  color: #ECEFF4;
+  background-color: #BF616A;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #2e3440;
+}
+
+#network.disconnected {
+  font-size: 17px;
+  padding: 0.4rem 0.9rem;
+  margin: 5px 3px;
+  color: #2e3440;
+  background: #D08770;
+  border-radius: 0.2rem;
+}
+
+#pulseaudio.muted {
+  background-color: gray;
+}
+

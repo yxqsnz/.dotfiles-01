@@ -1,0 +1,101 @@
+// vim: ft=json
+{
+  "height": 42,
+  "modules-left": ["sway/workspaces", "tray"],
+  "position": "top",
+  "modules-center": [],
+  "modules-right": ["pulseaudio", "cpu", "memory", "battery", "network", "clock", "custom/power"],
+  "sway/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1":"",
+      "2":"",
+      "6":"",
+      "4":"",
+      "5":"",
+      "3":"",
+      "7":"",
+      "8":"",
+      "9":""
+    }
+  },
+  "mpd": {
+    "format": "󰝚 {repeatIcon} {artist} - {title} {stateIcon}",
+    "format-disconnected": "Disconnected 󰟦",
+    "format-stopped": "󰝚 {repeatIcon} {title} {stateIcon}",
+    "state-icons": {
+      "paused": "󰏤",
+      "playing": "󰐊"
+    },
+    "repeat-icons": {
+      "on": "󰑖"
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+
+  },
+  "custom/power": {
+    "format": "",
+    "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Suspend' 'swaymsg exec systemctl suspend' -b 'shutdown' 'shutdown now'"
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 8
+  },
+  "memory": {
+    "format": " {percentage}%"
+  },
+  "disk": {
+    "format": " {percentage_used}%",
+    "format-alt": " {used}/{total}",
+    "path": "/home/yxqsnz"
+  },
+  "clock": {
+    "format": " {:%H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "sway/language": {
+    "format": " {short}"
+  },
+  "cpu": {
+    "format": " {usage}%"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}", 
+    "format-icons": ["", "", "", "", ""],
+  },
+  "network": {
+    "format-wifi": "{icon} {bandwidthDownBits}",
+    "format-ethernet": "󰈁",
+    "format-disabled": "󰤮",
+    "format-linked": "(No IP) ",
+    "format-disconnected": "󰤭",
+    "format-icons": [""]
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-bluetooth-muted": " {icon}󰂯",
+    "format-muted": "",
+    "format-source-muted": "󰍭",
+    "on-click": "pactl set-sink-mute 0 toggle",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""]
+    },
+  }
+}
+

@@ -2,6 +2,6 @@
 font:
   # Normal (roman) font face
   normal:
-    family: "Jetbrains Mono Nerd font"
+    family: "Jetbrains Mono Nerd Font"
   size: 10 # Offset 
 

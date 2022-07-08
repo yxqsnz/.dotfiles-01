@@ -3,6 +3,21 @@ local luasnip = require("luasnip")
 local cmp = require("cmp")
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 require("luasnip/loaders/from_vscode").lazy_load()
+kind.init({
+  preset = "codicons",
+})
+local function border(hl_name)
+  return {
+    { "╭", hl_name },
+    { "─", hl_name },
+    { "╮", hl_name },
+    { "│", hl_name },
+    { "╯", hl_name },
+    { "─", hl_name },
+    { "╰", hl_name },
+    { "│", hl_name },
+  }
+end
 
 local check_backspace = function()
   local col = vim.fn.col(".") - 1
@@ -58,13 +73,36 @@ cmp.setup({
       "s",
     }),
   }),
+  sorting = {
+    priority_weight = 2,
+    comparators = {
+      require("copilot_cmp.comparators").prioritize,
+      require("copilot_cmp.comparators").score,
+
+      -- Below is the default comparitor list and order for nvim-cmp
+      cmp.config.compare.offset,
+      -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+      cmp.config.compare.exact,
+      cmp.config.compare.score,
+      cmp.config.compare.recently_used,
+      cmp.config.compare.locality,
+      cmp.config.compare.kind,
+      cmp.config.compare.sort_text,
+      cmp.config.compare.length,
+      cmp.config.compare.order,
+    },
+  },
   formatting = {
-    format = kind.cmp_format(),
+    fields = { "kind", "abbr", "menu" },
+    format = kind.cmp_format({
+      mode = "text",
+    }),
   },
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "luasnip" },
+    { name = "cmp" },
     { name = "buffer" },
     { name = "path" },
   },
@@ -73,13 +111,34 @@ cmp.setup({
     select = false,
   },
   window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
+    completion = {
+      border = border("CmpBorder"),
+      winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+    },
+    documentation = {
+      border = border("CmpDocBorder"),
+    },
   },
   experimental = {
     ghost_text = true,
   },
 })
+cmp.setup.cmdline("/", {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = "buffer" },
+  },
+})
+
+cmp.setup.cmdline(":", {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = "path" },
+  }, {
+    { name = "cmdline" },
+  }),
+})
+
 local handlers = require("nvim-autopairs.completion.handlers")
 
 cmp.event:on(
@@ -115,3 +174,5 @@ cmp.event:on(
     },
   })
 )
+vim.api.nvim_set_hl(0, "CmpBorder", { fg = "#474656" })
+vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = "#474656", bg = "#191828" })

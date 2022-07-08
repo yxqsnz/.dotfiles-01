@@ -40,16 +40,11 @@ local function install()
   end
 end
 
-local function copy() end
-
 if action == "install" then
   install()
-elseif action == "copy" then
-  copy()
 else
   print([[
    ./update.lua <ACTION>
 		copy # Copy files to dotfiles repository
-		install # Install dotfiles
    ]])
 end

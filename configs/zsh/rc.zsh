@@ -49,6 +49,7 @@ alias htop=btm
 alias ls='exa --icons --long'
 alias vim=nvim
 alias svn=git
+alias ff=fastfetch
 alias editor=nvim
 #endregion
 #region Keybinds
@@ -112,9 +113,7 @@ autoload -Uz compinit
 compinit
 #endregion
 #region Prompt
-autoload -Uz promptinit
-promptinit
-prompt adam2
+eval "$(starship init zsh)"
 #endregion
 #region ASDF 
 . /opt/asdf-vm/asdf.sh

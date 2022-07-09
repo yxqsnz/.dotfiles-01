@@ -31,7 +31,7 @@ local function install()
       INFO(string.format("Run: %s", cmd))
       io.write(BLOCK .. " " .. colors.cyan)
       io.flush()
-      local _, _kind, code = os.execute(cmd)
+      local _, _, code = os.execute(cmd)
       if code ~= 0 then
         ERROR(string.format("Failed to install %s config", name))
       end
@@ -46,6 +46,6 @@ if action == "install" then
 else
   print([[
    ./update.lua <ACTION>
-		copy # Copy files to dotfiles repository
+		install # Install dotfiles 
    ]])
 end

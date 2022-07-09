@@ -1,10 +1,10 @@
 // vim: ft=json
 {
-  "height": 42,
-  "modules-left": ["sway/workspaces", "tray"],
+//  "height": 42,
+  "modules-left": ["sway/workspaces"],
   "position": "top",
-  "modules-center": [],
-  "modules-right": ["pulseaudio", "cpu", "memory", "battery", "network", "clock", "custom/power"],
+  "modules-center": ["clock"],
+  "modules-right": ["tray", "pulseaudio", "cpu", "memory", "battery", "custom/power"],
   "sway/workspaces": {
     "format": "{icon}",
     "format-icons": {
@@ -51,7 +51,7 @@
     "path": "/home/yxqsnz"
   },
   "clock": {
-    "format": " {:%H:%M}",
+    "format": "{:%H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}"
   },
@@ -73,11 +73,11 @@
     "format-icons": ["", "", "", "", ""],
   },
   "network": {
-    "format-wifi": "{icon} {bandwidthDownBits}",
+    "format-wifi": "{icon}",
     "format-ethernet": "󰈁",
     "format-disabled": "󰤮",
     "format-linked": "(No IP) ",
-    "format-disconnected": "󰤭",
+    "format-disconnected": "Disconnected 󰟦",
     "format-icons": [""]
   },
   "pulseaudio": {

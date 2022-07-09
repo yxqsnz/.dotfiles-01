@@ -4,16 +4,15 @@ $accent: #cba6f7;
 * {
   min-height: 0;
   font-size: 15px;
-  font-family: "Iosevka Nerd Font", "Font Awesome 6 Free", 'Material Icons';
+  font-family: "Jetbrains Mono Nerd Font", "Font Awesome 6 Free", 'Material Icons';
 }
 window#waybar {
   background-color: transparent;
   transition-duration: 0.5s;
   transition-property: background-color;
 }
-#workspaces {
+#workspaces button {
   all: unset;
-  margin-left: 4px;
 }
 
 #workspaces button {
@@ -45,21 +44,15 @@ window#waybar {
 #cpu,
 #disk,
 #language,
+#network
 {
   background: $bg; 
-  padding: 0.4rem 0.9rem;
+  padding: 0.4rem 0.9rem; 
   margin: 5px 2px;
   color: $fg;
   border-radius: 0.2rem; 
 }
-#network {
-  background: $bg;
-  font-size: 17px;
-  padding: 0.4rem 0.9rem;
-  margin: 5px 3px;
-  color: $fg;
-  border-radius: 0.2rem;
-}
+
 
 #tray {
   margin: 5px 3px;

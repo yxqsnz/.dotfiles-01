@@ -1,16 +1,15 @@
 * {
   min-height: 0;
   font-size: 15px;
-  font-family: "Iosevka Nerd Font", "Font Awesome 6 Free", 'Material Icons'; }
+  font-family: "Jetbrains Mono Nerd Font", "Font Awesome 6 Free", 'Material Icons'; }
 
 window#waybar {
   background-color: transparent;
   transition-duration: 0.5s;
   transition-property: background-color; }
 
-#workspaces {
-  all: unset;
-  margin-left: 4px; }
+#workspaces button {
+  all: unset; }
 
 #workspaces button {
   padding: 0.4rem 0.9rem;
@@ -37,18 +36,11 @@ window#waybar {
 #custom-power,
 #cpu,
 #disk,
-#language {
+#language,
+#network {
   background: #1e2030;
   padding: 0.4rem 0.9rem;
   margin: 5px 2px;
-  color: #cad3f5;
-  border-radius: 0.2rem; }
-
-#network {
-  background: #1e2030;
-  font-size: 17px;
-  padding: 0.4rem 0.9rem;
-  margin: 5px 3px;
   color: #cad3f5;
   border-radius: 0.2rem; }
 

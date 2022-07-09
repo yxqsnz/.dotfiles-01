@@ -4,8 +4,8 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term foot
-set $menu wofi --show drun -I | xargs swaymsg exec --
+set $term kitty
+set $menu wofi --show drun -I --prompt="" | xargs swaymsg exec --
 input * {
     xkb_layout "br"
     xkb_options "grp:win_space_toggle"
@@ -20,6 +20,7 @@ titlebar_border_thickness 0
 titlebar_padding 0
 font pango:Jetbrains Mono Nerd Font 8
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id mako
 output * bg ~/.config/sway/dark-cat-rosewater.png fill
 
 # class                 border  backgr. text    indicator child_border

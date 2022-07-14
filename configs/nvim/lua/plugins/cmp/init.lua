@@ -6,18 +6,21 @@ require("luasnip/loaders/from_vscode").lazy_load()
 kind.init({
   preset = "codicons",
 })
-local function _border(hl_name)
-  return {
-    { "╭", hl_name },
-    { "─", hl_name },
-    { "╮", hl_name },
-    { "│", hl_name },
-    { "╯", hl_name },
-    { "─", hl_name },
-    { "╰", hl_name },
-    { "│", hl_name },
-  }
-end
+vim.api.nvim_set_hl(0, "CmpBorder", { fg = "#474656" })
+vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = "#474656", bg = "#191828" })
+-- local function _border(hl_name)
+--   return {
+--     { "╭", hl_name },
+--     { "─", hl_name },
+--     { "╮", hl_name },
+--     { "│", hl_name },
+--     { "╯", hl_name },
+--     { "─", hl_name },
+--     { "╰", hl_name },
+--     { "│", hl_name },
+--   }
+-- end
+
 local function border(hl)
   return {
     { "┌", hl },
@@ -202,5 +205,3 @@ cmp.event:on(
     },
   })
 )
-vim.api.nvim_set_hl(0, "CmpBorder", { fg = "#474656" })
-vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = "#474656", bg = "#191828" })

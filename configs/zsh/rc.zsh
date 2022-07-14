@@ -47,6 +47,8 @@ zinit light zsh-users/zsh-autosuggestions
 #region Aliases
 alias htop=btm
 alias ls='exa --icons --long'
+alias cat='bat -p --theme=ansi'
+alias pls=sudo
 alias vim=nvim
 alias svn=git
 alias ff=fastfetch
@@ -101,6 +103,7 @@ SAVEHIST=1000000
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.deno/bin:$PATH"
 export PATH="/usr/sbin:$PATH"
 #endregion
 #region Completion
@@ -119,6 +122,7 @@ eval "$(starship init zsh)"
 #region ASDF 
 . /opt/asdf-vm/asdf.sh
 #endregion
+export GPG_TTY=$(tty)
 autopair-init
 
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh

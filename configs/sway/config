@@ -4,7 +4,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term kitty
+set $term foot
 set $menu wofi --show drun -I --prompt="" | xargs swaymsg exec --
 input * {
     xkb_layout "br"
@@ -22,7 +22,7 @@ font pango:Jetbrains Mono Nerd Font 8
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id mako
 output * bg ~/.config/sway/dark-cat-rosewater.png fill
-
+# output * bg ~/Pictures/main_image_deep_field_smacs0723-5mb.jpg fill
 # class                 border  backgr. text    indicator child_border
 client.focused          #cba6f7 #cba6f7 #ffffff #cba6f7 	#cba6f7 	
 client.focused_inactive #9399b2 #5f676a #ffffff #484e50   #9399b2

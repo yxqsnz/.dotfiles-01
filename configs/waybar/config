@@ -1,10 +1,11 @@
-// vim: ft=json
+// vim: ft=json5
+
 {
 //  "height": 42,
-  "modules-left": ["sway/workspaces"],
+  "modules-left": ["sway/workspaces", "tray"],
   "position": "top",
   "modules-center": ["clock"],
-  "modules-right": ["tray", "pulseaudio", "cpu", "memory", "battery", "custom/power"],
+  "modules-right": ["pulseaudio", "cpu", "memory", "battery", "custom/power"],
   "sway/workspaces": {
     "format": "{icon}",
     "format-icons": {
@@ -43,7 +44,7 @@
     "spacing": 8
   },
   "memory": {
-    "format": " {percentage}%"
+    "format": " {used:0.1f}G/{total:0.1f}G"
   },
   "disk": {
     "format": " {percentage_used}%",

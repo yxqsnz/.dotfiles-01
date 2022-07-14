@@ -6,7 +6,7 @@ require("luasnip/loaders/from_vscode").lazy_load()
 kind.init({
   preset = "codicons",
 })
-local function border(hl_name)
+local function _border(hl_name)
   return {
     { "╭", hl_name },
     { "─", hl_name },
@@ -18,7 +18,18 @@ local function border(hl_name)
     { "│", hl_name },
   }
 end
-
+local function border(hl)
+  return {
+    { "┌", hl },
+    { "─", hl },
+    { "┐", hl },
+    { "│", hl },
+    { "┘", hl },
+    { "─", hl },
+    { "└", hl },
+    { "│", hl },
+  }
+end
 local check_backspace = function()
   local col = vim.fn.col(".") - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
@@ -41,13 +52,23 @@ cmp.setup({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
+
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm({ select = false }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expandable() then
+      else
+        fallback()
+      end
+    end, {
+      "i",
+      "s",
+    }),
+
+    ["<C-j>"] = cmp.mapping(function(fallback)
+      if luasnip.expandable() then
         luasnip.expand()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
@@ -56,10 +77,8 @@ cmp.setup({
       else
         fallback()
       end
-    end, {
-      "i",
-      "s",
-    }),
+    end, { "s", "i" }),
+
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -104,6 +123,7 @@ cmp.setup({
     { name = "luasnip" },
     { name = "cmp" },
     { name = "buffer" },
+    { name = "crates" },
     { name = "path" },
   },
   confirm_opts = {
@@ -111,12 +131,20 @@ cmp.setup({
     select = false,
   },
   window = {
-    completion = {
-      border = border("CmpBorder"),
-      winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
-    },
+    -- completion = {
+    -- 	--border = border("CmpBorder"),
+    -- 	--winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+    -- },
+    -- documentation = {
+    -- 	border = border("CmpDocBorder"),
+    -- },
     documentation = {
-      border = border("CmpDocBorder"),
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    },
+    completion = {
+      --border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+      border = border("CmpBorder"),
+      winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
     },
   },
   experimental = {
@@ -164,7 +192,7 @@ cmp.event:on(
           ---@param char string
           ---@param item item completion
           ---@param bufnr buffer number
-          handler = function(char, item, bufnr)
+          handler = function(_char, _item, _bufnr)
             -- Your handler function. Inpect with print(vim.inspect{char, item, bufnr})
           end,
         },

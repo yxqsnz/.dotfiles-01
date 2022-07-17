@@ -5,12 +5,35 @@ Settings = {
     config = "user.theme",
   },
   lsp = {
-    servers = { "rust_analyzer", "sumneko_lua", "clangd", "cssls", "jsonls", "tsserver" },
+    servers = {
+      "rust_analyzer",
+      "sumneko_lua",
+      "clangd",
+      "cssls",
+      "jsonls",
+      "tsserver",
+      "pylsp",
+      "cssls",
+    },
     linters = { "staticcheck", "credo", "eslint", "mdl" },
     code_actions = { "eslint", "gitsigns", "refactoring" },
-    formatters = { "stylua", "clang_format", "rustfmt", "cmake_format" },
+    formatters = {
+      "stylua",
+      "clang_format",
+      "rustfmt",
+      "cmake_format",
+      "black",
+      "prettier",
+    },
   },
   treesitter = {
-    ensure_installed = { "rust", "lua", "markdown", "markdown_inline", "c", "cpp" },
+    ensure_installed = {
+      "rust",
+      "lua",
+      "markdown",
+      "markdown_inline",
+      "c",
+      "cpp",
+    },
   },
 }

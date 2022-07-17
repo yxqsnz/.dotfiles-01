@@ -1,7 +1,6 @@
 local lconfig = require("lspconfig")
 local installer = require("nvim-lsp-installer")
 local handler = require("plugins.lsp.handler")
-
 installer.setup({
   automatic_installation = true,
 })

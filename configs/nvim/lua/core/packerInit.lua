@@ -17,22 +17,24 @@ end
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost packerInit.lua source <afile> | PackerSync
+    autocmd BufWritePost packerInit.lua source <afile> | PackerCompile
   augroup end
 ]])
 local packer = require("packer")
 
 packer.init({
+  autoremove = true,
   display = {
     open_fn = function()
-      return require("packer.util").float({ border = "rounded" })
+      return require("packer.util").float({ border = "single" })
     end,
   },
 })
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 return packer.startup(function(use)
   use({ "wbthomason/packer.nvim", "lewis6991/impatient.nvim" })
-
+  use({ "lourenci/github-colors" })
+  use({ "AlphaTechnolog/pywal.nvim" })
   use({
     Settings.theme.repo,
     as = Settings.theme.name,
@@ -216,6 +218,7 @@ return packer.startup(function(use)
     end,
   })
   use({ "ThePrimeagen/vim-be-good", cmd = "VimBeGood" })
+  use({ "alec-gibson/nvim-tetris", cmd = "Tetris" })
   use({
     "nvim-lualine/lualine.nvim",
     event = "BufEnter",
@@ -226,9 +229,10 @@ return packer.startup(function(use)
       require("lualine").setup({
         options = {
           icons_enabled = true,
-          theme = "catppuccin",
+          theme = "auto",
           component_separators = "|",
-          section_separators = { left = "", right = "" },
+          --section_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
           disabled_filetypes = {},
           always_divide_middle = true,
           globalstatus = true,
@@ -298,31 +302,7 @@ return packer.startup(function(use)
     end,
   })
 
-  use({
-    "Pocco81/AutoSave.nvim",
-    config = function()
-      local autosave = require("autosave")
-
-      autosave.setup({
-        enabled = true,
-        execution_message = "AutoSave: saved at " .. vim.fn.strftime(
-          "%H:%M:%S"
-        ),
-        events = { "InsertLeave", "TextChanged" },
-        conditions = {
-          exists = true,
-          filename_is_not = {},
-          filetype_is_not = {},
-          modifiable = true,
-        },
-        write_all_buffers = false,
-        on_off_commands = true,
-        clean_command_line_interval = 0,
-        debounce_delay = 135,
-      })
-    end,
-  })
-
+  use({ "elkowar/yuck.vim" })
   use({ "~/.vim/plugins/yex-lang/", opt = true })
   use({ "andweeb/presence.nvim", event = "VimEnter" })
   use({ "github/copilot.vim" })

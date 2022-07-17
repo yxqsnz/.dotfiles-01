@@ -117,7 +117,7 @@ cmp.setup({
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = kind.cmp_format({
-      mode = "text",
+      mode = "symbol_text",
     }),
   },
   sources = {
@@ -146,7 +146,7 @@ cmp.setup({
     },
     completion = {
       --border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-      border = border("CmpBorder"),
+      --border = border("CmpBorder"),
       winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
     },
   },

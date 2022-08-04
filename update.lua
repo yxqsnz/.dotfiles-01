@@ -7,15 +7,12 @@ require("sources.utils.table")
 local ask = arg[2] == "--ask"
 local configs = {
   neovim = { "nvim", "~/.config/nvim" },
-  sway = { "sway", "~/.config/sway" },
-  mako = { "mako", "~/.config/mako" },
   cargo = { "cargo/config.toml", "~/.cargo/config.toml" },
   helix = { "helix", "~/.config/helix" },
   git = { "git", "~/.config/git" },
-  waybar = { "waybar", "~/.config/waybar" },
   kitty = { "kitty", "~/.config/kitty" },
-  zsh_rc = { "zsh/rc.zsh", "~/.zshrc" },
-  starship = { "zsh/starship.toml", "~/.config/starship.toml" },
+  starship = { "etc/starship.toml", "~/.config/starship.toml" },
+  fish = { "fish", "~/.config/fish" }
 }
 
 INFO("Welcome to the dotfile configuration script!")

@@ -1,16 +1,10 @@
-local keymap = require("utils.keymap")
-local mapper = keymap.global()
-vim.g.mapleader = " "
-mapper.map("n", "<leader>fm", ":NvimTreeToggle<cr>")
-mapper.map("n", "<leader>wq", ":q!")
-mapper.map("n", "<C-s>", ":w!<cr>")
-mapper.map("n", "<ESC>", ":nohlsearch<cr>")
-mapper.map("n", "<leader><leader>", ":Telescope find_files<cr>")
-mapper.map("n", "<leader>fg", ":Telescope git_files<cr>")
-mapper.map("n", "<leader>s", ":Telescope live_grep<cr>")
-mapper.map("n", "<leader>bb", ":Telescope buffers<cr>")
-mapper.map("n", "<leader>ld", ":Telescope diagnostics<cr>")
-mapper.map("n", "<leader>lds", ":Telescope lsp_document_symbols<cr>")
-mapper.map("n", "<leader>lws", ":Telescope lsp_workspace_symbols<cr>")
-mapper.map("n", "<leader>pj", ":Telescope projects<cr>")
-vim.cmd([[nnoremap <F3> :%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i]])
+local wk = require('which-key')
+
+wk.register({
+  f = {
+    name = "file", 
+    f = { "<cmd>Telescope find_files<cr>", "Find File" }, 
+    n = { "New File" }, 
+    e = "Edit File", 
+  },
+}, { prefix = "<leader>" })

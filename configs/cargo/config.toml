@@ -6,7 +6,6 @@ jobs = 8
 rustflags = [
     "-C", "link-arg=-fuse-ld=mold",
     "-C", "link-arg=-Xlinker --threads=8",
-    "-Z", "share-generics=yes"
 ]
 linker = "clang"
 

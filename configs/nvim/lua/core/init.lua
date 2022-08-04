@@ -1,6 +1,0 @@
-pcall(require, "user.settings")
-pcall(require, "user.keybinds")
-require("core.options")
-require("utils.vim")
-require("utils.table")
-require("core.packerInit")

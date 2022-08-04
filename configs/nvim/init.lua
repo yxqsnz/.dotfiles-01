@@ -1,2 +1,3 @@
-pcall(require, "impatient")
-require("core")
+require "core.options"
+require "core.packerInit"
+require "user.keybinds"

@@ -27,6 +27,7 @@
 [push]
 	gpgSign = false
 	default = tracking
+	autoSetupRemote = true
 [pull]
 	ff = true
 

@@ -1,0 +1,24 @@
+alias urc="
+"
+# Options
+setopt interactive_comments hist_ignore_dups  octal_zeroes   no_prompt_cr
+setopt no_hist_no_functions no_always_to_end  append_history list_packed
+setopt inc_append_history   complete_in_word  no_auto_menu   auto_pushd
+setopt pushd_ignore_dups    no_glob_complete  no_glob_dots   c_bases
+setopt numeric_glob_sort    no_share_history  promptsubst    auto_cd
+setopt rc_quotes            extendedglob      notify
+
+# Block Complete
+autoload -U compinit
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle :compinstall filename "${HOME}/.zshrc"
+zstyle ':completion:*' menu yes select
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=34}:${(s.:.)LS_COLORS}")'
+# Aliases
+alias ls="exa --icons --long"
+alias vim=nvim
+export DENO_INSTALL="/home/yxqsnz/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+# prompt
+eval $(starship init zsh) 
+compinit

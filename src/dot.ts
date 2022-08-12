@@ -3,7 +3,10 @@ import {existsSync,} from "https://deno.land/std@0.151.0/fs/mod.ts";
 const HOME = Deno.env.get("HOME");
 const FONTS_DIR = `${HOME}/.local/share/fonts`;
 const CONFIGS: string[] = [
+  ["shell/fish", "~/.config/fish", "Fish"],
   ["shell/zsh", "~/.zshrc", "Zsh"],
+  ["app/lvim", "~/.config/lvim", "Lunarvim"],
+  ["etc/starship.toml", "~/.config/starship.toml", "Starship"],
   ["app/git", "~/.config/git", "Git"],
   ["lang/rust/cargo/Cargo.toml", "~/.cargo/config.toml", "Cargo config"]
 ];

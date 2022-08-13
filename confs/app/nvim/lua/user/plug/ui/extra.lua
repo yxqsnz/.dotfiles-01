@@ -9,6 +9,7 @@ end)
 with({
 	"folke/todo-comments.nvim",
 	requires = "nvim-lua/plenary.nvim",
+	event = "BufRead",
 }, function()
 	require("todo-comments").setup({})
 end)

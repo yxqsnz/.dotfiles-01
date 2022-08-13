@@ -119,3 +119,5 @@ with({
 		server = require("inte.lsp.handlers"),
 	})
 end)
+
+with({ "folke/trouble.nvim", cmd = "TroubleToggle" })

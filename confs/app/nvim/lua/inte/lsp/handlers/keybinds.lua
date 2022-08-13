@@ -15,6 +15,9 @@ return function(client, bufnr)
 			r = map("Lspsaga rename", "Rename"),
 			a = map("Lspsaga code_action", "Code action"),
 		},
+		t = {
+			l = map("TroubleToggle", "Show diagnostics"),
+		},
 	}, { leader = vim.g.mapleader })
 
 	if client.name == "rust_analyzer" then

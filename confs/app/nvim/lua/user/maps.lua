@@ -25,5 +25,7 @@ which.register({
 		["<SPACE>"] = command("Telescope find_files", "Find files"),
 	},
 })
-
+-- Lsp saga float term
+vim.keymap.set("n", "<A-d>", "<cmd>Lspsaga open_floaterm fish<CR>", { silent = true })
+vim.keymap.set("t", "<A-d>", "<C-\\><C-n><cmd>Lspsaga close_floaterm<CR>", { silent = true })
 vim.cmd([[noremap <ESC> <cmd>nohl<cr>]])

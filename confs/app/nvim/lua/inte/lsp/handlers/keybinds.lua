@@ -1,15 +1,11 @@
 local which = require("which-key")
 local utils = require("core.utils")
 local map = utils.command
+
 return function(client, bufnr)
 	which.register({
 		l = {
 			name = "+Lsp",
-			d = {
-				name = "+Diagnostic",
-				k = map("Lspsaga diagnostic_jump_next", "Go to the next diagnostic"),
-				j = map("Lspsaga diagnostic_jump_prev", "Go to the next diagnostic"),
-			},
 			D = { vim.lsp.buf.declaration, "Goto declaration" },
 			i = map("lua vim.lsp.buf.implementation()", "Goto implementation"),
 			r = map("Lspsaga rename", "Rename"),
@@ -19,6 +15,11 @@ return function(client, bufnr)
 			l = map("TroubleToggle", "Show diagnostics"),
 		},
 	}, { leader = vim.g.mapleader })
+
+	which.register({
+		["[d"] = map("Lspsaga diagnostic_jump_prev", "Go to the previus diagnostic"),
+		["]d"] = map("Lspsaga diagnostic_jump_next", "Go to the next diagnostic"),
+	})
 
 	if client.name == "rust_analyzer" then
 		which.register({

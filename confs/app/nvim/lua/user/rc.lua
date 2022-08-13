@@ -1,6 +1,6 @@
 _G.user = {
 	lsp = {
-		servers = { "sumneko_lua", "clangd", "denols", "tsserver" },
+		servers = { "sumneko_lua", "clangd", "denols", "tsserver", "pyright" },
 		null_ls = {
 			formatting = { "stylua", "rustfmt", "black", "prettier" },
 			diagnostics = { "eslint", "mypy" },

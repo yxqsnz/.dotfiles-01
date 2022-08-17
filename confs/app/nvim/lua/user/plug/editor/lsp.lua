@@ -2,7 +2,6 @@ with({
 	"neovim/nvim-lspconfig",
 	event = "BufRead",
 	requires = {
-		{ "ms-jpq/coq_nvim", requires = { "ms-jpq/coq.artifacts" } },
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"ray-x/lsp_signature.nvim",
@@ -11,6 +10,7 @@ with({
 		"windwp/nvim-autopairs",
 		"glepnir/lspsaga.nvim",
 		"RRethy/vim-illuminate",
+		"hrsh7th/cmp-nvim-lsp",
 	},
 }, function()
 	local handlers = require("inte.lsp.handlers")

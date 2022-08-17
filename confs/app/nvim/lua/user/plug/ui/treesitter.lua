@@ -7,7 +7,7 @@ with({
 	end,
 }, function()
 	require("nvim-treesitter.configs").setup({
-		ensure_installed = { "c", "rust", "lua", "elixir", "cpp", "go", "python" },
+		ensure_installed = { "c", "rust", "lua", "elixir", "cpp", "go", "python", "markdown", "markdown_inline" },
 		sync_install = false,
 		auto_install = true,
 

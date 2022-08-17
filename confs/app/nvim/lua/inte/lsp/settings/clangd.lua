@@ -3,6 +3,7 @@ return {
 		"clangd",
 		"--all-scopes-completion",
 		"--suggest-missing-includes",
+		"--header-insertion-decorators",
 		"--background-index",
 		"--pch-storage=disk",
 		"--cross-file-rename",

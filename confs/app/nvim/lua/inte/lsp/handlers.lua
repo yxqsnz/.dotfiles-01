@@ -1,8 +1,6 @@
 -- Internal lsp handler --
 local this = {}
 
-local coq = require("coq")
-
 function this.on_attach(client, bufnr)
 	require("inte.lsp.handlers.fmt")(client, bufnr)
 	require("inte.lsp.handlers.fidget")()
@@ -10,7 +8,11 @@ function this.on_attach(client, bufnr)
 	require("nvim-navic").attach(client, bufnr)
 	require("illuminate").on_attach(client)
 
-	vim.cmd(":COQnow --shut-up")
+	if client.server_capabilities.colorProvider then
+		require("document-color").buf_attach(bufnr)
+	end
 end
 
-return coq.lsp_ensure_capabilities(this)
+this.capabilities = vim.lsp.protocol.make_client_capabilities()
+this.capabilities = require("cmp_nvim_lsp").update_capabilities(this.capabilities)
+return this

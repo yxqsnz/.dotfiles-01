@@ -34,3 +34,5 @@ with({ "rcarriga/nvim-notify" }, function()
 		})
 	end
 end)
+
+with({ "mg979/vim-visual-multi", event = "BufRead" })

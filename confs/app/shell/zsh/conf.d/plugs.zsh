@@ -7,6 +7,8 @@ znap source zsh-users/zsh-autosuggestions
 znap source hlissner/zsh-autopair
 znap source marlonrichert/zsh-edit
 znap source zpm-zsh/colors
+znap source zsh-users/zsh-completions
+znap source sobolevn/wakatime-zsh-plugin
 autopair-init
 
 

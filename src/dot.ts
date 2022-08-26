@@ -23,6 +23,7 @@ const CONFIGS: [string, string, string][] = [
   ["etc/starship.toml", "~/.config/starship.toml", "Starship"],
   ["app/git", "~/.config/git", "Git"],
   ["app/pacman", "~/.config/pacman", "Pacman user config"],
+  ["app/rofi", "~/.config/rofi", "Rofi"],
   ["lang/rust/cargo/Cargo.toml", "~/.cargo/config.toml", "Cargo config"],
 ];
 

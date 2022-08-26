@@ -5,3 +5,5 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id ~/.fehbg
+exec --no-startup-id picom
+exec --no-startup-id xsetroot -cursor_name arrow

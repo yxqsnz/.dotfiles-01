@@ -1,0 +1,14 @@
+font pango:Operator Mono 8
+
+set $mauve     #cba6f7
+set $surface2  #585b70
+set $surface1  #45475a
+set $rosewater #f5e0dc
+set $text      #cdd6f4
+set $base      #1e1e2e
+set $mantle    #181825
+set $red       #f38ba8
+
+include ~/.config/i3/conf.d/*
+
+exec_always --no-startup-id polybar

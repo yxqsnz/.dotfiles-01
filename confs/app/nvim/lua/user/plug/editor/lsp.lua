@@ -121,3 +121,4 @@ with({
 end)
 
 with({ "folke/trouble.nvim", cmd = "TroubleToggle" })
+with( {"Shatur/neovim-cmake", requires = {"mfussenegger/nvim-dap"}})

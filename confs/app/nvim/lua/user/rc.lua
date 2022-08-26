@@ -1,10 +1,10 @@
 _G.user = {
 	lsp = {
-		servers = { "sumneko_lua", "clangd", "denols", "tsserver", "pyright", "hls" },
+		servers = { "sumneko_lua", "clangd", "tsserver", "pyright", "hls" },
 		null_ls = {
 			formatting = { "stylua", "rustfmt", "black", "prettier", "brittany" },
-			diagnostics = { "eslint" },
-			completion = { "spell" },
+			diagnostics = { "eslint", "flake8" },
+			completion = {},
 		},
 	},
 
@@ -26,7 +26,7 @@ _G.user = {
 				},
 				styles = {
 					comments = { "italic" },
-					conditionals = { "underline" },
+					conditionals = {},
 					loops = {},
 					functions = {},
 					keywords = {},
@@ -105,7 +105,7 @@ _G.user = {
 				color_overrides = {},
 				highlight_overrides = {},
 			})
-			vim.g.catppuccin_flavour = "frappe"
+			vim.g.catppuccin_flavour = "mocha"
 			apply("catppuccin")
 		end,
 	},

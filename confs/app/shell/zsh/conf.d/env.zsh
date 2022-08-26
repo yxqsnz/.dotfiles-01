@@ -6,6 +6,8 @@ export CCX=clang++
 # Deno
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+# GPG
+export GPG_TTY=$(tty)
 # pnpm
 export PNPM_HOME="/home/yxqsnz/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"

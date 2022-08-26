@@ -29,5 +29,5 @@ export HISTSIZE=1000000000
 export SAVEHIST=1000000000
 
 znap eval starship 'starship init zsh --print-full-init'
-starship_precmd
+# starship_precmd
 znap prompt 

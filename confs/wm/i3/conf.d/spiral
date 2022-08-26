@@ -1,0 +1,5 @@
+# vim: ft=i3config
+
+for_window [class=".*"] split toggle
+default_orientation vertical
+

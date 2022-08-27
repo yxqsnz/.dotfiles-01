@@ -1,7 +1,0 @@
-pcall(require, "impatient.nvim")
-require("core.options")
-local packer = require("core.packerInit")
-packer:boostrap()
-require("user.rc")
-packer:load()
-packer:setup()

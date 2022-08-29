@@ -1,4 +1,5 @@
 font:
   normal:
-    family: Operator Mono 
-  size: 9.2
+    family: Fira Code 
+
+  size: 8.2

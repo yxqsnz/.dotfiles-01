@@ -1,18 +1,18 @@
 local opts = {
   dim_inactive = {
     enabled = true,
-    shade = "dark",
+    shade = 'dark',
     percentage = 0.15,
   },
   transparent_background = false,
   term_colors = false,
   compile = {
     enabled = true,
-    path = vim.fn.stdpath "cache" .. "/catppuccin",
+    path = vim.fn.stdpath('cache') .. '/catppuccin',
   },
   styles = {
-    comments = { "italic" },
-    conditionals = { "italic" },
+    comments = { 'italic' },
+    conditionals = { 'italic' },
     loops = {},
     functions = {},
     keywords = {},
@@ -29,16 +29,16 @@ local opts = {
     native_lsp = {
       enabled = true,
       virtual_text = {
-        errors = { "bold" },
+        errors = { 'bold' },
         hints = {},
         warnings = {},
         information = {},
       },
       underlines = {
-        errors = { "underline" },
-        hints = { "underline" },
-        warnings = { "underline" },
-        information = { "underline" },
+        errors = { 'underline' },
+        hints = { 'underline' },
+        warnings = { 'underline' },
+        information = { 'underline' },
       },
     },
     coc_nvim = false,
@@ -87,7 +87,7 @@ local opts = {
     beacon = true,
     navic = {
       enabled = false,
-      custom_bg = "NONE",
+      custom_bg = 'NONE',
     },
     overseer = false,
   },
@@ -95,4 +95,4 @@ local opts = {
   highlight_overrides = {},
 }
 vim.g.catppuccin_flavour = 'mocha'
-require("catppuccin").setup(opts)
+require('catppuccin').setup(opts)

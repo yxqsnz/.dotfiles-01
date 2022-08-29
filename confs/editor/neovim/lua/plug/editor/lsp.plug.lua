@@ -69,6 +69,8 @@ plugin {
       table.insert(sources, null.builtins.diagnostics[d])
     end
 
+    local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
+
     null.setup {
       sources = sources,
       on_attach = function(client, bufnr)
@@ -81,8 +83,8 @@ plugin {
               vim.lsp.buf.format {
                 bufnr = bufnr,
                 sync = false,
-                filter = function(client)
-                  return client.name == 'null-ls'
+                filter = function(current)
+                  return current.name == 'null-ls'
                 end,
               }
             end,

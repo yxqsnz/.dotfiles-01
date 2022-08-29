@@ -1,6 +1,6 @@
 plugin {
   'hrsh7th/nvim-cmp',
-  event = "InsertEnter",
+  event = 'InsertEnter',
 
   requires = {
     'hrsh7th/cmp-nvim-lsp',
@@ -11,15 +11,15 @@ plugin {
     'saadparwaiz1/cmp_luasnip',
     'windwp/nvim-autopairs',
     'hrsh7th/cmp-nvim-lsp',
-    "rafamadriz/friendly-snippets",
+    'rafamadriz/friendly-snippets',
   },
 
   config = function()
-    local cmp           = require 'cmp'
-    local luasnip       = require 'luasnip'
+    local cmp = require('cmp')
+    local luasnip = require('luasnip')
     local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
-    require("nvim-autopairs").setup({ map_bs = false, map_cr = false })
+    require('nvim-autopairs').setup { map_bs = false, map_cr = false }
 
     cmp.setup {
       snippet = {
@@ -27,7 +27,7 @@ plugin {
           luasnip.lsp_expand(args.body)
         end,
       },
-      mapping = cmp.mapping.preset.insert({
+      mapping = cmp.mapping.preset.insert {
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
 
@@ -57,7 +57,7 @@ plugin {
             fallback()
           end
         end, { 'n', 's' }),
-      }),
+      },
       sources = {
         { name = 'luasnip' },
         { name = 'nvim_lsp' },
@@ -71,28 +71,25 @@ plugin {
         { name = 'cmp_git' },
       }, {
         { name = 'buffer' },
-      })
+      }),
     })
 
     cmp.setup.cmdline('/', {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
-        { name = 'buffer' }
-      }
+        { name = 'buffer' },
+      },
     })
 
     cmp.setup.cmdline(':', {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
-        { name = 'path' }
+        { name = 'path' },
       }, {
-        { name = 'cmdline' }
-      })
+        { name = 'cmdline' },
+      }),
     })
 
-    cmp.event:on(
-      'confirm_done',
-      cmp_autopairs.on_confirm_done()
-    )
-  end
+    cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
+  end,
 }

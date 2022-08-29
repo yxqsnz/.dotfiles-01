@@ -1,34 +1,34 @@
 plugin {
-  "goolord/alpha-nvim",
-  event = "VimEnter",
-  requires = { "kyazdani42/nvim-web-devicons" },
+  'goolord/alpha-nvim',
+  event = 'VimEnter',
+  requires = { 'kyazdani42/nvim-web-devicons' },
   config = function()
-    local alpha = require("alpha")
+    local alpha = require('alpha')
 
     local function button(sc, txt, keybind)
-      local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
+      local sc_ = sc:gsub('%s', ''):gsub('SPC', '<leader>')
 
       local opts = {
-        position = "center",
+        position = 'center',
         text = txt,
         shortcut = sc,
         cursor = 5,
         width = 36,
-        align_shortcut = "right",
-        hl = "AlphaButtons",
+        align_shortcut = 'right',
+        hl = 'AlphaButtons',
       }
 
       if keybind then
-        opts.keymap = { "n", sc_, keybind, { noremap = true, silent = true } }
+        opts.keymap = { 'n', sc_, keybind, { noremap = true, silent = true } }
       end
 
       return {
-        type = "button",
+        type = 'button',
         val = txt,
         on_press = function()
           local key = vim.api.nvim_replace_termcodes(sc_, true, false, true)
           ---@diagnostic disable-next-line: param-type-mismatch
-          vim.api.nvim_feedkeys(key, "normal", false)
+          vim.api.nvim_feedkeys(key, 'normal', false)
         end,
         opts = opts,
       }
@@ -37,34 +37,34 @@ plugin {
     local options = {
 
       header = {
-        type = "text",
+        type = 'text',
         val = {
-          "   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ",
-          "    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ",
-          "          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ",
-          "           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ",
-          "          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ",
-          "   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ",
-          "  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ",
-          " ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ",
-          " ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ",
-          "      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ",
-          "       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ",
+          '   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ',
+          '    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ',
+          '          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ',
+          '           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ',
+          '          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ',
+          '   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ',
+          '  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ',
+          ' ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ',
+          ' ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ',
+          '      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ',
+          '       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ',
         },
         opts = {
-          position = "center",
-          hl = "AlphaHeader",
+          position = 'center',
+          hl = 'AlphaHeader',
         },
       },
 
       buttons = {
-        type = "group",
+        type = 'group',
         val = {
-          button("SPC f f", "  Find File  ", ":Telescope find_files<CR>"),
-          button("SPC f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
-          button("SPC f w", "  Find Word  ", ":Telescope live_grep<CR>"),
-          button("SPC b m", "  Bookmarks  ", ":Telescope marks<CR>"),
-          button("SPC e s", "  Settings", ":e ~/.config/nvim/lua/user/config.lua | :cd %:p:h <CR>"),
+          button('SPC f f', '  Find File  ', ':Telescope find_files<CR>'),
+          button('SPC f o', '  Recent File  ', ':Telescope oldfiles<CR>'),
+          button('SPC f w', '  Find Word  ', ':Telescope live_grep<CR>'),
+          button('SPC b m', '  Bookmarks  ', ':Telescope marks<CR>'),
+          button('SPC e s', '  Settings', ':e ~/.config/nvim/lua/user/config.lua | :cd %:p:h <CR>'),
         },
         opts = {
           spacing = 1,
@@ -73,14 +73,14 @@ plugin {
     }
 
     ---@diagnostic disable-next-line: redundant-parameter
-    alpha.setup({
+    alpha.setup {
       layout = {
-        { type = "padding", val = 2 },
+        { type = 'padding', val = 2 },
         options.header,
-        { type = "padding", val = 2 },
+        { type = 'padding', val = 2 },
         options.buttons,
       },
       opts = {},
-    })
-  end
+    }
+  end,
 }

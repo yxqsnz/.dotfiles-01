@@ -7,5 +7,5 @@ plugin {
   config = function()
     require('which-key').setup()
     require('user.maps')
-  end
+  end,
 }

@@ -1,11 +1,11 @@
 plugin({
   'nvim-treesitter/nvim-treesitter',
-  requires = { "p00f/nvim-ts-rainbow", "RRethy/nvim-treesitter-endwise" },
-  event = { "BufNewFile", "BufRead" },
+  requires = { 'p00f/nvim-ts-rainbow', 'RRethy/nvim-treesitter-endwise' },
+  event = { 'BufNewFile', 'BufRead' },
 
   run = function()
-    require("nvim-treesitter.install").update({ with_sync = true })
-  end
+    require('nvim-treesitter.install').update { with_sync = true }
+  end,
 }, function()
   local config = require('user.config').treesitter
 
@@ -15,7 +15,7 @@ plugin({
 
     highlight = {
       enable = true,
-      additional_vim_regex_highlighting = false
+      additional_vim_regex_highlighting = false,
     },
 
     rainbow = {
@@ -25,10 +25,9 @@ plugin({
     },
 
     endwise = {
-      enable = true
-    }
+      enable = true,
+    },
   }
 
-  require('nvim-treesitter.configs')
-      .setup(vim.tbl_deep_extend('force', this, config))
+  require('nvim-treesitter.configs').setup(vim.tbl_deep_extend('force', this, config))
 end)

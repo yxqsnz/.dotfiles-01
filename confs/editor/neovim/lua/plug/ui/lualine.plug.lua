@@ -1,7 +1,7 @@
 plugin {
   'nvim-lualine/lualine.nvim',
   requires = { 'kyazdani42/nvim-web-devicons', 'arkav/lualine-lsp-progress' },
-  event = "VimEnter",
+  event = 'VimEnter',
 
   config = function()
     require('lualine').setup {
@@ -21,7 +21,7 @@ plugin {
           statusline = 1000,
           tabline = 1000,
           winbar = 1000,
-        }
+        },
       },
       sections = {
         lualine_a = { 'mode' },
@@ -29,7 +29,7 @@ plugin {
         lualine_c = { 'filename' },
         lualine_x = { 'encoding', 'fileformat', 'filetype' },
         lualine_y = { 'progress' },
-        lualine_z = { 'location' }
+        lualine_z = { 'location' },
       },
       inactive_sections = {
         lualine_a = {},
@@ -37,12 +37,12 @@ plugin {
         lualine_c = { 'filename' },
         lualine_x = { 'location' },
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = {},
       },
       tabline = {},
       winbar = {},
       inactive_winbar = {},
-      extensions = {}
+      extensions = {},
     }
-  end
+  end,
 }

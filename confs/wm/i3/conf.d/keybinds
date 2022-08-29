@@ -148,3 +148,5 @@ mode "resize" {
 # Screenshot
 bindsym Print exec flameshot full -c
 bindsym Shift+Print exec flameshot gui
+bindsym Mod1+Tab exec rofi -show window
+bindsym Mod1+g exec  rofi -modi play:/projects/Python/RofiPlay/modi.py -show play

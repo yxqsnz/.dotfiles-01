@@ -13,7 +13,7 @@ const FONTS_DIR = `${HOME}/.local/share/fonts`;
 const CONFIGS: [string, string, string][] = [
   ["etc/ZshRc.zsh", "~/.zshrc", "Zsh config loader"],
   ["app/shell/zsh", "~/.config/zsh", "Zsh"],
-  ["app/lvim", "~/.config/lvim", "Lunarvim"],
+  ["app/wezterm", "~/.config/wezterm", "Wezterm"],
   ["editor/neovim", "~/.config/nvim", "Neovim"],
   ["app/dunst", "~/.config/dunst", "Dunst"],
   ["app/alacritty", "~/.config/alacritty", "Alacritty"],

@@ -1,5 +1,7 @@
 plugin {
   'neovim/nvim-lspconfig',
+  event = { "BufNewFile", "BufRead" },
+
   requires = {
     'williamboman/mason-lspconfig.nvim',
     'jose-elias-alvarez/null-ls.nvim',

@@ -6,8 +6,8 @@ return {
   },
 
   lsp = {
-    servers    = { 'sumneko_lua' },
-    formatters = { "stylua" }
+    servers    = { 'sumneko_lua', 'pyright' },
+    formatters = { "stylua", 'black', 'isort' }
   },
 
   treesitter = {

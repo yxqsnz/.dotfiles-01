@@ -1,7 +1,8 @@
 plugin({
   'nvim-treesitter/nvim-treesitter',
-  requires = { "p00f/nvim-ts-rainbow" },
-  event = "BufRead",
+  requires = { "p00f/nvim-ts-rainbow", "RRethy/nvim-treesitter-endwise" },
+  event = { "BufNewFile", "BufRead" },
+
   run = function()
     require("nvim-treesitter.install").update({ with_sync = true })
   end
@@ -21,6 +22,10 @@ plugin({
       enable = true,
       extended_mode = true,
       max_file_lines = 100000,
+    },
+
+    endwise = {
+      enable = true
     }
   }
 

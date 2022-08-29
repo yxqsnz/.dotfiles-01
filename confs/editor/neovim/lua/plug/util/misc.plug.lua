@@ -5,7 +5,7 @@ plugin {
 
 plugin {
   'lukas-reineke/indent-blankline.nvim',
-  event = "BufRead",
+  event = "BufWinEnter",
   config = function()
     require("indent_blankline").setup({})
   end
@@ -13,7 +13,7 @@ plugin {
 
 plugin {
   'numToStr/Comment.nvim',
-  event = "BufRead",
+  event = "BufWinEnter",
   config = function()
     require('Comment').setup()
   end

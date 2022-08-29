@@ -1,6 +1,6 @@
 plugin {
   'saecki/crates.nvim',
-  event = { "BufRead Cargo.toml" },
+  event = { "BufWinEnter Cargo.toml" },
   requires = { { 'nvim-lua/plenary.nvim' } },
   after = { 'cmp-nvim-lsp' },
   config = function()

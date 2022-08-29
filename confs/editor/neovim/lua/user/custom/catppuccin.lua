@@ -7,7 +7,7 @@ local opts = {
   transparent_background = false,
   term_colors = false,
   compile = {
-    enabled = false,
+    enabled = true,
     path = vim.fn.stdpath "cache" .. "/catppuccin",
   },
   styles = {
@@ -94,5 +94,5 @@ local opts = {
   color_overrides = {},
   highlight_overrides = {},
 }
-
+vim.g.catppuccin_flavour = 'mocha'
 require("catppuccin").setup(opts)

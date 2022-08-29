@@ -1,6 +1,7 @@
 plugin {
   'hrsh7th/nvim-cmp',
-  event = "BufRead",
+  event = "InsertEnter",
+
   requires = {
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
@@ -8,8 +9,9 @@ plugin {
     'hrsh7th/cmp-cmdline',
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
+    'windwp/nvim-autopairs',
     'hrsh7th/cmp-nvim-lsp',
-    'windwp/nvim-autopairs'
+    "rafamadriz/friendly-snippets",
   },
 
   config = function()
@@ -57,8 +59,10 @@ plugin {
         end, { 'n', 's' }),
       }),
       sources = {
-        { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+        { name = 'path' },
       },
     }
 

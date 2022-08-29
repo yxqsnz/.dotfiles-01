@@ -1,6 +1,8 @@
 plugin {
   'p00f/clangd_extensions.nvim',
   after = 'nvim-lspconfig',
+  ft = { "c", "cpp" },
+
   config = function()
     require("clangd_extensions").setup {
       server = {

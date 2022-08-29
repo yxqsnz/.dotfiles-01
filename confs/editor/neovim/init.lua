@@ -1,4 +1,5 @@
 local here = vim.fn.stdpath("config")
+
 local stdpath = {
   plugs = here .. '/lua/plug'
 }
@@ -17,14 +18,12 @@ local packer = require('core.packer')
 
 require('user.options') -- Use options
 require('user.config') -- Cache config
-require('user.maps')
 
 packer:boostrap()
 packer:load_plugins_from(stdpath.plugs)
 packer:init()
 
 pcall(require, 'impatient')
-
 
 local default_plugins = {
   "2html_plugin",
@@ -53,6 +52,7 @@ local default_plugins = {
   "compiler",
   "bugreport",
   "ftplugin",
+  'man'
 }
 
 for _, plugin in pairs(default_plugins) do

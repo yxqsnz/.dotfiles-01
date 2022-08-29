@@ -1,6 +1,6 @@
 plugin {
   'lewis6991/gitsigns.nvim',
-  event = "BufRead",
+  event = "BufWinEnter",
 
   config = function()
     require('gitsigns').setup()

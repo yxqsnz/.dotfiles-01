@@ -1,50 +1,49 @@
 plugin {
   'neovim/nvim-lspconfig',
-  event = { "BufNewFile", "BufRead" },
+  event = { 'BufNewFile', 'BufRead' },
 
   requires = {
     'williamboman/mason-lspconfig.nvim',
     'jose-elias-alvarez/null-ls.nvim',
     'nvim-lua/plenary.nvim',
-    'lukas-reineke/lsp-format.nvim',
     'tamago324/nlsp-settings.nvim',
     'ray-x/lsp_signature.nvim',
-    'j-hui/fidget.nvim'
+    'j-hui/fidget.nvim',
   },
 
   config = function()
-    local lsp    = require 'lspconfig'
+    local lsp = require('lspconfig')
     local config = require('user.config').lsp
-    local null   = require('null-ls')
-    local utils  = require('core.utils')
+    local null = require('null-ls')
+    local utils = require('core.utils')
 
-    require("mason-lspconfig").setup({
+    require('mason-lspconfig').setup {
       ensure_installed = config.servers,
       automatic_installation = true,
-    })
+    }
 
-    local nlspsettings = require("nlspsettings")
+    local nlspsettings = require('nlspsettings')
 
-    nlspsettings.setup({
+    nlspsettings.setup {
       config_home = vim.fn.stdpath('config') .. '/lsp-settings',
-      local_settings_dir = ".neovim",
+      local_settings_dir = '.neovim',
       local_settings_root_markers_fallback = { '.git' },
       append_default_schemas = true,
-      loader = 'json'
-    })
+      loader = 'json',
+    }
 
-    vim.diagnostic.config({
+    vim.diagnostic.config {
       virtual_text = true,
       signs = true,
       underline = true,
       severity_sort = true,
       update_in_insert = false,
-    })
+    }
 
-    local signs = { Error = " ", Warn = " ", Info = " ", Hint = " " }
+    local signs = { Error = ' ', Warn = ' ', Info = ' ', Hint = ' ' }
 
     for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
+      local hl = 'DiagnosticSign' .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
     end
 
@@ -60,8 +59,36 @@ plugin {
       lsp[server].setup(server_config)
     end
 
-    null.setup({
-      sources = utils.map_field(null.builtins.formatting, config.formatters)
-    })
-  end
+    local sources = {}
+
+    for _, f in pairs(config.formatters) do
+      table.insert(sources, null.builtins.formatting[f])
+    end
+
+    for _, d in pairs(config.diagnostics) do
+      table.insert(sources, null.builtins.diagnostics[d])
+    end
+
+    null.setup {
+      sources = sources,
+      on_attach = function(client, bufnr)
+        if client.supports_method('textDocument/formatting') then
+          vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+          vim.api.nvim_create_autocmd('BufWritePre', {
+            group = augroup,
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.format {
+                bufnr = bufnr,
+                sync = false,
+                filter = function(client)
+                  return client.name == 'null-ls'
+                end,
+              }
+            end,
+          })
+        end
+      end,
+    }
+  end,
 }

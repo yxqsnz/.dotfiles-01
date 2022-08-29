@@ -6,10 +6,7 @@ local setup_keybinds = require('plug.editor.lsp.maps')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 this.capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-function this.on_attach(client, bufnr)
-
-  -- Formatting
-  require('lsp-format').on_attach(client, bufnr)
+function this.on_attach(_client, bufnr)
 
   -- Signature
   require("lsp_signature").setup({

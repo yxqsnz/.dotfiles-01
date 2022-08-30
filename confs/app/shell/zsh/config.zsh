@@ -28,6 +28,6 @@ export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
 export SAVEHIST=1000000000
 
-znap eval starship 'starship init zsh --print-full-init'
+# znap eval starship 'starship init zsh --print-full-init'
 # starship_precmd
-znap prompt 
+znap prompt romkatv/powerlevel10k

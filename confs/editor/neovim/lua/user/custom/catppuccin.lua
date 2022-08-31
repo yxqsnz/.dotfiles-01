@@ -102,6 +102,10 @@ local opts = {
       TelescopeResultsBorder = tborder,
       TelescopePreviewBorder = tborder,
     },
+
+    mocha = {
+      LspBorder = { fg = '#3e4145', bg = '#181825' },
+    },
   },
 }
 

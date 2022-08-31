@@ -6,8 +6,8 @@ return {
   },
 
   lsp = {
-    servers = { 'sumneko_lua', 'pyright' },
-    formatters = { 'stylua', 'black', 'isort', 'rustfmt', 'clang_format' },
+    servers = { 'sumneko_lua', 'pyright', 'html', 'tsserver' },
+    formatters = { 'stylua', 'black', 'isort', 'rustfmt', 'clang_format', 'prettier' },
     diagnostics = { 'eslint', 'flake8' },
   },
 

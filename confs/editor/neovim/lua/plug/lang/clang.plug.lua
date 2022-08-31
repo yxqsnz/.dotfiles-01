@@ -7,7 +7,22 @@ plugin {
     require('clangd_extensions').setup {
       server = {
         on_attach = require('plug.editor.lsp.handler').on_attach,
+        cmd = {
+          'clangd',
+          '--all-scopes-completion',
+          '--suggest-missing-includes',
+          '--header-insertion-decorators',
+          '--background-index',
+          '--pch-storage=disk',
+          '--cross-file-rename',
+          '--log=info',
+          '--completion-style=detailed',
+          '--enable-config',
+          '--clang-tidy',
+          '--offset-encoding=utf-16',
+        },
       },
+
       extensions = {
         autoSetHints = true,
         inlay_hints = {

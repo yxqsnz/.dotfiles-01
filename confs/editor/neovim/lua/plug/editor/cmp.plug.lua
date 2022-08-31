@@ -2,6 +2,7 @@ plugin {
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
   module = { 'cmp', 'cmp_nvim_lsp' },
+
   requires = {
     { 'hrsh7th/cmp-nvim-lsp', wants = 'nvim-cmp' },
     { 'hrsh7th/cmp-buffer', wants = 'nvim-cmp' },
@@ -18,7 +19,9 @@ plugin {
     local cmp = require('cmp')
     local luasnip = require('luasnip')
     local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+    local border = require('core.utils').border
 
+    require('luasnip.loaders.from_vscode').lazy_load()
     require('nvim-autopairs').setup { map_bs = false, map_cr = false }
 
     local kind_icons = {
@@ -61,19 +64,6 @@ plugin {
       Package = '',
     }
 
-    local function border(hl_name)
-      return {
-        { '╭', hl_name },
-        { '─', hl_name },
-        { '╮', hl_name },
-        { '│', hl_name },
-        { '╯', hl_name },
-        { '─', hl_name },
-        { '╰', hl_name },
-        { '│', hl_name },
-      }
-    end
-
     cmp.setup {
       window = {
         completion = cmp.config.window.bordered {
@@ -86,7 +76,7 @@ plugin {
       },
 
       formatting = {
-        format = function(entry, vim_item)
+        format = function(_, vim_item)
           vim_item.kind = string.format('%s%s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
           vim_item.menu = ''
           return vim_item
@@ -118,7 +108,7 @@ plugin {
           else
             fallback()
           end
-        end, { 'n', 's' }),
+        end, { 'i', 's' }),
 
         ['<S-Tab>'] = cmp.mapping(function(fallback)
           if cmp.visible() then

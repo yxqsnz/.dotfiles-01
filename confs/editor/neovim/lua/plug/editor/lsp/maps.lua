@@ -16,7 +16,7 @@ return function(bufnr)
   }, { buffer = bufnr, prefix = vim.g.mapleader })
 
   which.register({
-    K = { '<cmd>Lspsaga hover_doc<cr>', 'Hover doc' },
+    K = { vim.lsp.buf.hover, 'Hover doc' },
     ['[d'] = { '<cmd>Lspsaga diagnostic_jump_next<cr>', 'Go to next diagnostic' },
     [']d'] = { '<cmd>Lspsaga diagnostic_jump_prev<cr>', 'Go to prev diagnostic' },
   }, { buffer = bufnr })

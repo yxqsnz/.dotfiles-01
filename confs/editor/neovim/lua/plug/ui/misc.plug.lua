@@ -14,6 +14,7 @@ plugin {
   config = function()
     require('bufferline').setup {
       options = {
+        ---@diagnostic disable-next-line: assign-type-mismatch
         diagnostics = 'nvim_lsp',
         always_show_bufferline = false,
         indicator = {

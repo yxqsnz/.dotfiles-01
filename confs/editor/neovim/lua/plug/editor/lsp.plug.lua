@@ -9,14 +9,20 @@ plugin {
     'tamago324/nlsp-settings.nvim',
     'ray-x/lsp_signature.nvim',
     'j-hui/fidget.nvim',
+    {
+      'kosayoda/nvim-lightbulb',
+      requires = 'antoinemadec/FixCursorHold.nvim',
+    },
   },
 
   config = function()
     local lsp = require('lspconfig')
     local config = require('user.config').lsp
     local null = require('null-ls')
-    local utils = require('core.utils')
+    local border = require('core.utils').border
 
+    require('telescope')
+    require('nvim-lightbulb').setup { autocmd = { enabled = true } }
     require('mason-lspconfig').setup {
       ensure_installed = config.servers,
       automatic_installation = true,
@@ -70,6 +76,13 @@ plugin {
     end
 
     local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
+
+    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+      opts = opts or {}
+      opts.border = opts.border or border('LspBorder')
+      return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    end
 
     null.setup {
       sources = sources,

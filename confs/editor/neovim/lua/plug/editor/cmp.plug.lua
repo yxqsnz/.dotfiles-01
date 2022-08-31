@@ -1,7 +1,6 @@
 plugin {
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
-
   module = { 'cmp', 'cmp_nvim_lsp' },
   requires = {
     { 'hrsh7th/cmp-nvim-lsp', wants = 'nvim-cmp' },
@@ -22,12 +21,84 @@ plugin {
 
     require('nvim-autopairs').setup { map_bs = false, map_cr = false }
 
+    local kind_icons = {
+      Namespace = '',
+      Text = ' ',
+      Method = ' ',
+      Function = ' ',
+      Constructor = ' ',
+      Field = 'ﰠ ',
+      Variable = ' ',
+      Class = 'ﴯ ',
+      Interface = ' ',
+      Module = ' ',
+      Property = 'ﰠ ',
+      Unit = '塞 ',
+      Value = ' ',
+      Enum = ' ',
+      Keyword = ' ',
+      Snippet = ' ',
+      Color = ' ',
+      File = ' ',
+      Reference = ' ',
+      Folder = ' ',
+      EnumMember = ' ',
+      Constant = ' ',
+      Struct = 'פּ ',
+      Event = ' ',
+      Operator = ' ',
+      TypeParameter = ' ',
+      Table = '',
+      Object = ' ',
+      Tag = '',
+      Array = '[]',
+      Boolean = ' ',
+      Number = ' ',
+      Null = 'ﳠ',
+      String = ' ',
+      Calendar = '',
+      Watch = ' ',
+      Package = '',
+    }
+
+    local function border(hl_name)
+      return {
+        { '╭', hl_name },
+        { '─', hl_name },
+        { '╮', hl_name },
+        { '│', hl_name },
+        { '╯', hl_name },
+        { '─', hl_name },
+        { '╰', hl_name },
+        { '│', hl_name },
+      }
+    end
+
     cmp.setup {
+      window = {
+        completion = cmp.config.window.bordered {
+          border = border('CmpBorder'),
+        },
+
+        documentation = cmp.config.window.bordered {
+          border = border('CmpBorder'),
+        },
+      },
+
+      formatting = {
+        format = function(entry, vim_item)
+          vim_item.kind = string.format('%s%s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+          vim_item.menu = ''
+          return vim_item
+        end,
+      },
+
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
       },
+
       mapping = cmp.mapping.preset.insert {
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),

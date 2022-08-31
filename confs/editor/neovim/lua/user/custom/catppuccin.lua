@@ -1,3 +1,5 @@
+local tborder = { fg = '#3e4145', bg = '#181825' }
+
 local opts = {
   dim_inactive = {
     enabled = true,
@@ -79,7 +81,7 @@ local opts = {
     ts_rainbow = true,
     hop = false,
     notify = true,
-    telekasten = false,
+    telekasten = true,
     symbols_outline = false,
     mini = false,
     aerial = false,
@@ -92,7 +94,16 @@ local opts = {
     overseer = false,
   },
   color_overrides = {},
-  highlight_overrides = {},
+  highlight_overrides = {
+    all = {
+      CmpBorder = { fg = '#3e4145' },
+      TelescopeNormal = { bg = '#181825' },
+      TelescopePromptBorder = tborder,
+      TelescopeResultsBorder = tborder,
+      TelescopePreviewBorder = tborder,
+    },
+  },
 }
+
 vim.g.catppuccin_flavour = 'mocha'
 require('catppuccin').setup(opts)

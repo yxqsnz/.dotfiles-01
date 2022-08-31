@@ -8,7 +8,7 @@ plugin {
       hijack_unnamed_buffer_when_opening = true,
 
       view = {
-        side = 'right',
+        side = 'left',
         adaptive_size = true,
         mappings = {
           list = {

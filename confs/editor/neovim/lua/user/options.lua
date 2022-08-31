@@ -12,7 +12,7 @@ vim.o.relativenumber = true
 -- Style
 vim.o.termguicolors = true
 vim.o.cursorline = true
-vim.o.signcolumn = "yes"
+vim.o.signcolumn = 'yes'
 
 -- Hl search
 vim.o.hlsearch = true
@@ -29,18 +29,18 @@ vim.o.updatetime = 10
 vim.o.numberwidth = 5
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
-vim.o.clipboard = "unnamedplus"
+vim.o.clipboard = 'unnamedplus'
 
 -- File
 vim.o.undofile = true
 vim.o.swapfile = false
-vim.o.fileencoding = "utf-8"
+vim.o.fileencoding = 'utf-8'
 vim.o.backup = false
 vim.o.conceallevel = 3
 
 -- Keyboard
 vim.o.timeoutlen = 100
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
 -- UI
 vim.o.laststatus = 3

@@ -1,96 +1,96 @@
-plugin({
-	"neovim/nvim-lspconfig",
-	event = { "BufNewFile", "BufRead" },
+plugin {
+  'neovim/nvim-lspconfig',
+  event = { 'BufNewFile', 'BufRead' },
 
-	requires = {
-		"williamboman/mason-lspconfig.nvim",
-		"jose-elias-alvarez/null-ls.nvim",
-		"nvim-lua/plenary.nvim",
-		"tamago324/nlsp-settings.nvim",
-		"ray-x/lsp_signature.nvim",
-		"j-hui/fidget.nvim",
-	},
+  requires = {
+    'williamboman/mason-lspconfig.nvim',
+    'jose-elias-alvarez/null-ls.nvim',
+    'nvim-lua/plenary.nvim',
+    'tamago324/nlsp-settings.nvim',
+    'ray-x/lsp_signature.nvim',
+    'j-hui/fidget.nvim',
+  },
 
-	config = function()
-		local lsp = require("lspconfig")
-		local config = require("user.config").lsp
-		local null = require("null-ls")
-		local utils = require("core.utils")
+  config = function()
+    local lsp = require('lspconfig')
+    local config = require('user.config').lsp
+    local null = require('null-ls')
+    local utils = require('core.utils')
 
-		require("mason-lspconfig").setup({
-			ensure_installed = config.servers,
-			automatic_installation = true,
-		})
+    require('mason-lspconfig').setup {
+      ensure_installed = config.servers,
+      automatic_installation = true,
+    }
 
-		local nlspsettings = require("nlspsettings")
+    local nlspsettings = require('nlspsettings')
 
-		nlspsettings.setup({
-			config_home = vim.fn.stdpath("config") .. "/lsp-settings",
-			local_settings_dir = ".neovim",
-			local_settings_root_markers_fallback = { ".git" },
-			append_default_schemas = true,
-			loader = "json",
-		})
+    nlspsettings.setup {
+      config_home = vim.fn.stdpath('config') .. '/lsp-settings',
+      local_settings_dir = '.neovim',
+      local_settings_root_markers_fallback = { '.git' },
+      append_default_schemas = true,
+      loader = 'json',
+    }
 
-		vim.diagnostic.config({
-			virtual_text = true,
-			signs = true,
-			underline = true,
-			severity_sort = true,
-			update_in_insert = false,
-		})
+    vim.diagnostic.config {
+      virtual_text = true,
+      signs = true,
+      underline = true,
+      severity_sort = true,
+      update_in_insert = false,
+    }
 
-		local signs = { Error = " ", Warn = " ", Info = " ", Hint = " " }
+    local signs = { Error = ' ', Warn = ' ', Info = ' ', Hint = ' ' }
 
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-		end
+    for type, icon in pairs(signs) do
+      local hl = 'DiagnosticSign' .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    end
 
-		for _, server in pairs(config.servers) do
-			local server_config = require("plug.editor.lsp.handler")
+    for _, server in pairs(config.servers) do
+      local server_config = require('plug.editor.lsp.handler')
 
-			local server_settings_exists, server_custom_config = pcall(require, "plug.editor.lsp.settings." .. server)
+      local server_settings_exists, server_custom_config = pcall(require, 'plug.editor.lsp.settings.' .. server)
 
-			if server_settings_exists then
-				server_config = vim.tbl_deep_extend("force", server_config, server_custom_config)
-			end
+      if server_settings_exists then
+        server_config = vim.tbl_deep_extend('force', server_config, server_custom_config)
+      end
 
-			lsp[server].setup(server_config)
-		end
+      lsp[server].setup(server_config)
+    end
 
-		local sources = {}
+    local sources = {}
 
-		for _, f in pairs(config.formatters) do
-			table.insert(sources, null.builtins.formatting[f])
-		end
+    for _, f in pairs(config.formatters) do
+      table.insert(sources, null.builtins.formatting[f])
+    end
 
-		for _, d in pairs(config.diagnostics) do
-			table.insert(sources, null.builtins.diagnostics[d])
-		end
+    for _, d in pairs(config.diagnostics) do
+      table.insert(sources, null.builtins.diagnostics[d])
+    end
 
-		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+    local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
-		null.setup({
-			sources = sources,
-			on_attach = function(client, bufnr)
-				if client.supports_method("textDocument/formatting") then
-					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						group = augroup,
-						buffer = bufnr,
-						callback = function()
-							vim.lsp.buf.format({
-								bufnr = bufnr,
-								sync = false,
-								filter = function(current)
-									return current.name == "null-ls"
-								end,
-							})
-						end,
-					})
-				end
-			end,
-		})
-	end,
-})
+    null.setup {
+      sources = sources,
+      on_attach = function(client, bufnr)
+        if client.supports_method('textDocument/formatting') then
+          vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+          vim.api.nvim_create_autocmd('BufWritePre', {
+            group = augroup,
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.format {
+                bufnr = bufnr,
+                sync = false,
+                filter = function(current)
+                  return current.name == 'null-ls'
+                end,
+              }
+            end,
+          })
+        end
+      end,
+    }
+  end,
+}

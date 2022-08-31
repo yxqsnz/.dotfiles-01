@@ -1,27 +1,27 @@
-local runtime_path = vim.split(package.path, ";")
+local runtime_path = vim.split(package.path, ';')
 
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/init.lua')
 
 return {
-	settings = {
-		Lua = {
-			runtime = {
-				version = "LuaJIT",
-				path = runtime_path,
-			},
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+        path = runtime_path,
+      },
 
-			diagnostics = {
-				globals = { "vim" },
-			},
+      diagnostics = {
+        globals = { 'vim' },
+      },
 
-			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
-			},
+      workspace = {
+        library = vim.api.nvim_get_runtime_file('', true),
+      },
 
-			telemetry = {
-				enable = false,
-			},
-		},
-	},
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
 }

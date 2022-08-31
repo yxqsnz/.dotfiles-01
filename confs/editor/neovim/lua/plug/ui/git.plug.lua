@@ -1,8 +1,8 @@
-plugin({
-	"lewis6991/gitsigns.nvim",
-	event = "BufWinEnter",
+plugin {
+  'lewis6991/gitsigns.nvim',
+  event = 'BufWinEnter',
 
-	config = function()
-		require("gitsigns").setup()
-	end,
-})
+  config = function()
+    require('gitsigns').setup()
+  end,
+}

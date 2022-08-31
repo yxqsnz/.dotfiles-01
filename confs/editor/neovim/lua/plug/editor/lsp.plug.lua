@@ -9,6 +9,7 @@ plugin {
     'tamago324/nlsp-settings.nvim',
     'ray-x/lsp_signature.nvim',
     'j-hui/fidget.nvim',
+    'mrshmllow/document-color.nvim',
     {
       'kosayoda/nvim-lightbulb',
       requires = 'antoinemadec/FixCursorHold.nvim',
@@ -26,6 +27,9 @@ plugin {
     require('mason-lspconfig').setup {
       ensure_installed = config.servers,
       automatic_installation = true,
+    }
+    require('document-color').setup {
+      mode = 'foreground',
     }
 
     local nlspsettings = require('nlspsettings')

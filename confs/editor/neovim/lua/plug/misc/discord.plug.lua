@@ -1,7 +1,7 @@
-plugin({
-	"andweeb/presence.nvim",
-	event = "BufRead",
-	config = function()
-		require("presence"):setup({})
-	end,
-})
+plugin {
+  'andweeb/presence.nvim',
+  event = { 'BufRead', 'BufNewFile' },
+  config = function()
+    require('presence'):setup {}
+  end,
+}

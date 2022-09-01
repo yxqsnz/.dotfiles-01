@@ -13,6 +13,9 @@ return function(bufnr)
       d = { '<cmd>Telescope lsp_definitions<cr>', 'Find document definition' },
       fd = { '<cmd>Telescope lsp_type_definitions<cr>', 'Find type definitions' },
     },
+    t = {
+      t = { '<cmd>TroubleToggle<cr>', 'Show project diagnostics' },
+    },
   }, { buffer = bufnr, prefix = vim.g.mapleader })
 
   which.register({

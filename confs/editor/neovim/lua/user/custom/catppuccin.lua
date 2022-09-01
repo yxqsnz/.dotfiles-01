@@ -105,6 +105,7 @@ local opts = {
 
     mocha = {
       LspBorder = { fg = '#3e4145', bg = '#181825' },
+      LspSagaHoverBorder = { fg = '#3e4145', bg = '#181825' },
     },
   },
 }

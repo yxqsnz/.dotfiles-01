@@ -19,6 +19,8 @@ const CONFIGS: [string, string, string][] = [
   ["app/alacritty", "~/.config/alacritty", "Alacritty"],
   ["app/picom", "~/.config/picom", "Picom"],
   ["wm/i3", "~/.config/i3", "i3 Window Manager"],
+  ["wm/bspwm", "~/.config/bspwm", "BSP Window Manager"],
+  ["wm/sxhkd", "~/.config/sxhkd", "Simple X Keybind Manager"],
   ["wm/polybar", "~/.config/polybar", "Polybar"],
   ["etc/starship.toml", "~/.config/starship.toml", "Starship"],
   ["app/git", "~/.config/git", "Git"],

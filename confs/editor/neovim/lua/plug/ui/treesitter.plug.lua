@@ -18,7 +18,7 @@ plugin {
     local config = require('user.config').treesitter
 
     local this = {
-      sync_install = false,
+      sync_install = true,
       auto_install = true,
 
       highlight = {

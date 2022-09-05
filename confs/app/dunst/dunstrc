@@ -30,10 +30,10 @@
     height = 300
 
     # Position the notification in the top right corner
-    origin = bottom-right
+    origin = top-right
 
     # Offset from the origin
-    offset = 16x46
+    offset = 11x19
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -196,7 +196,7 @@
     enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = Adwaita
+    icon_theme = Papirus-Dark
     # You can also set multiple icon themes, with the leftmost one being used first.
     # icon_theme = "Adwaita, breeze"
 
@@ -310,14 +310,14 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#1e1e2e"
     foreground = "#888888"
-    timeout = 10
+    timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
     background = "#181825"
     foreground = "#ffffff"
-    timeout = 10
+    timeout = 3
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 

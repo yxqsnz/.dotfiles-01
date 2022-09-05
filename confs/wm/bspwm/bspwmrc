@@ -6,7 +6,7 @@ R() {
 bspc monitor -d G O O D B Y E 
 
 bspc config border_width         1
-bspc config window_gap           12
+bspc config window_gap           2
 bspc config focused_border_color '#45475a'
 bspc config normal_border_color  '#313244'
 
@@ -19,12 +19,18 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-
-bspc config bottom_padding 34
+bspc rule -a xfce4-panel layer=below sticky=off manage=on focus=off border=off locked=on
+bspc rule -a "*:Toolkit:Picture-in-Picture" \
+     state=floating sticky=on follow=off focus=on \
+     rectangle=461x260+2760+1040
+# bspc config bottom_padding 34
 
 R sxhkd
-R polybar
-R dunst
+R xfce4-panel --disable-wm-check 
+R nm-applet
 R xsetroot -cursor_name arrow
 R ~/.fehbg
 R xfce4-power-manager
+R picom
+R systemctl start dunst
+

@@ -17,6 +17,7 @@ const CONFIGS: [string, string, string][] = [
   ["editor/neovim", "~/.config/nvim", "Neovim"],
   ["app/dunst", "~/.config/dunst", "Dunst"],
   ["app/alacritty", "~/.config/alacritty", "Alacritty"],
+  ["app/kitty", "~/.config/kitty", "Kitty"],
   ["app/picom", "~/.config/picom", "Picom"],
   ["wm/i3", "~/.config/i3", "i3 Window Manager"],
   ["wm/bspwm", "~/.config/bspwm", "BSP Window Manager"],

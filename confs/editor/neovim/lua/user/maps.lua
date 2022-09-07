@@ -2,6 +2,15 @@ local which = require('which-key')
 
 which.register({
   e = { '<cmd>NvimTreeToggle<cr>', 'Open file manager' },
+  f = {
+    w = { '<cmd>Telescope live_grep<cmd>', 'Find word' },
+    f = { '<cmd>Telescope find_files<cr>', 'Find files' },
+    k = { '<cmd>Telescope keymaps<cmd>', 'Find Keymaps' },
+  },
+  g = {
+    s = { '<cmd>Telescope git_status<cmd>', 'Show git status' },
+    c = { '<cmd>Telescope git_commits<cmd>', 'Show git commits' },
+  },
 }, { prefix = vim.g.mapleader })
 
 which.register {

@@ -10,6 +10,7 @@ plugin {
     'ray-x/lsp_signature.nvim',
     'j-hui/fidget.nvim',
     'mrshmllow/document-color.nvim',
+    'lukas-reineke/lsp-format.nvim',
     {
       'kosayoda/nvim-lightbulb',
       requires = 'antoinemadec/FixCursorHold.nvim',
@@ -88,26 +89,11 @@ plugin {
       return orig_util_open_floating_preview(contents, syntax, opts, ...)
     end
 
+    require('lsp-format').setup {}
+
     null.setup {
       sources = sources,
-      on_attach = function(client, bufnr)
-        if client.supports_method('textDocument/formatting') then
-          vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
-          vim.api.nvim_create_autocmd('BufWritePre', {
-            group = augroup,
-            buffer = bufnr,
-            callback = function()
-              vim.lsp.buf.format {
-                bufnr = bufnr,
-                sync = false,
-                filter = function(current)
-                  return current.name == 'null-ls'
-                end,
-              }
-            end,
-          })
-        end
-      end,
+      on_attach = require('lsp-format').on_attach,
     }
   end,
 }

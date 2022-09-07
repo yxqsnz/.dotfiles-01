@@ -37,6 +37,8 @@ vim.o.swapfile = false
 vim.o.fileencoding = 'utf-8'
 vim.o.backup = false
 vim.o.conceallevel = 3
+vim.opt.foldenable = false
+vim.opt.foldmethod = 'manual'
 
 -- Keyboard
 vim.o.timeoutlen = 100

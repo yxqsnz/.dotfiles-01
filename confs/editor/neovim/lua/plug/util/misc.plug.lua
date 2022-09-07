@@ -1,11 +1,4 @@
 plugin {
-  'glacambre/firenvim',
-  run = function()
-    vim.fn['firenvim#install'](0)
-  end,
-}
-
-plugin {
   'lukas-reineke/indent-blankline.nvim',
   event = { 'BufRead', 'BufNewFile' },
   config = function()

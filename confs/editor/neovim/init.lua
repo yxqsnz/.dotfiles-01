@@ -59,4 +59,7 @@ for _, plugin in pairs(default_plugins) do
   vim.g['loaded_' .. plugin] = 1
 end
 
-vim.opt.guifont = 'JetbrainsMono Nerd Font:h8'
+vim.opt.guifont = 'JetBrainsMono Nerd Font:h8'
+vim.g.neovide_cursor_antialiasing = false
+vim.g.neovide_cursor_vfx_mode = 'pixiedust'
+vim.g.neovide_refresh_rate = 120

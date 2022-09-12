@@ -12,7 +12,7 @@ capabilities.textDocument.colorProvider = {
 
 function this.on_attach(client, bufnr)
   -- Signature
-  require('lsp_signature').setup({
+  require('lsp_signature').on_attach({
     bind = true,
     handler_opts = {
       border = 'single',

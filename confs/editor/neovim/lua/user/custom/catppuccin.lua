@@ -1,4 +1,6 @@
 local tborder = { fg = '#3e4145', bg = '#181825' }
+local ucolors = require('catppuccin.utils.colors')
+local latte = require('catppuccin.palettes').get_palette('latte')
 
 local opts = {
   dim_inactive = {
@@ -96,14 +98,16 @@ local opts = {
   color_overrides = {},
   highlight_overrides = {
     all = {
-      CmpBorder = { fg = '#3e4145' },
       TelescopeNormal = { bg = '#181825' },
       TelescopePromptBorder = tborder,
       TelescopeResultsBorder = tborder,
       TelescopePreviewBorder = tborder,
     },
-
+    latte = {
+      Normal = { fg = ucolors.darken(latte.base, 0.7, latte.mantle) },
+    },
     mocha = {
+      CmpBorder = { fg = '#3e4145' },
       LspBorder = { fg = '#3e4145', bg = '#181825' },
       LspSagaHoverBorder = { fg = '#3e4145', bg = '#181825' },
       LspSagaRenameBorder = { fg = '#3e4145', bg = '#11111b' },

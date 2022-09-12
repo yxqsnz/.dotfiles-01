@@ -25,6 +25,7 @@ plugin {
 
 plugin {
   'folke/trouble.nvim',
+
   requires = { 'kyazdani42/nvim-web-devicons' },
   command = { 'Trouble', 'TroubleClose', 'TroubleToggle', 'TroubleRefresh' },
   config = function()

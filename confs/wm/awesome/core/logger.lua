@@ -18,5 +18,9 @@ return function(module)
     send_log('DEBUG', colors.cyan, ...)
   end
 
+  function logger:warn(...)
+    send_log('WARN', colors.yellow, ...)
+  end
+
   return logger
 end

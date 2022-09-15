@@ -6,8 +6,8 @@ local hooks = {
   'hooks.custom.wallpaper',
   'hooks.custom.tag',
 
-  -- auto start apps
-  'hooks.custom.autostart',
+  -- screenshot
+  'hooks.custom.screenshot',
 }
 
 for _, hook in pairs(hooks) do

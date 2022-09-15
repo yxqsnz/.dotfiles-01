@@ -3,7 +3,7 @@ local which = require('which-key')
 which.register({
   e = { '<cmd>NvimTreeToggle<cr>', 'Open file manager' },
   f = {
-    w = { '<cmd>Telescope live_grep<cmd>', 'Find word' },
+    w = { '<cmd>Telescope live_grep<cr>', 'Find word' },
     f = { '<cmd>Telescope find_files<cr>', 'Find files' },
     k = { '<cmd>Telescope keymaps<cmd>', 'Find Keymaps' },
   },

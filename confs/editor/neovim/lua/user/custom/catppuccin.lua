@@ -4,11 +4,11 @@ local latte = require('catppuccin.palettes').get_palette('latte')
 
 local opts = {
   dim_inactive = {
-    enabled = true,
+    enabled = false,
     shade = 'dark',
     percentage = 0.15,
   },
-  transparent_background = false,
+  transparent_background = true,
   term_colors = false,
   compile = {
     enabled = true,
@@ -45,6 +45,7 @@ local opts = {
         information = { 'underline' },
       },
     },
+    fidget = true,
     coc_nvim = false,
     lsp_trouble = false,
     cmp = true,

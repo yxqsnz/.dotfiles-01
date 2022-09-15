@@ -13,10 +13,7 @@ capabilities.textDocument.colorProvider = {
 function this.on_attach(client, bufnr)
   -- Signature
   require('lsp_signature').on_attach({
-    bind = true,
-    handler_opts = {
-      border = 'single',
-    },
+    floating_window = false,
   }, bufnr)
 
   setup_keybinds(bufnr)

@@ -50,5 +50,6 @@ vim.o.showmode = false
 vim.o.ruler = false
 vim.o.pumheight = 10
 vim.o.wrap = false
+vim.o.completeopt = 'menu,preview'
 --vim.opt.list = true
 --vim.opt.listchars:append "space:⋅"

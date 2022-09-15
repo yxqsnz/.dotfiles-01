@@ -9,6 +9,7 @@ return {
     default = suit.tile,
     availiable = {
       suit.tile,
+      suit.floating,
     },
   },
   keyboard = {

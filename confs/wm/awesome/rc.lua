@@ -32,5 +32,10 @@ logger:info('Starting awesome %s', awesome.version)
 -- Load hooks
 require('hooks')
 
+logger:debug('Loading user config')
 -- Load keybindings
 require('user.maps')
+logger:info('Loaded keymaps')
+
+require('user.rules')
+logger:info('Loaded rules')

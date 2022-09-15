@@ -5,6 +5,9 @@ local hooks = {
   'hooks.custom.themer',
   'hooks.custom.wallpaper',
   'hooks.custom.tag',
+
+  -- auto start apps
+  'hooks.custom.autostart',
 }
 
 for _, hook in pairs(hooks) do

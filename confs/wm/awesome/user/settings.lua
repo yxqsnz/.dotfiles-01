@@ -5,10 +5,14 @@ return {
   theme = {
     name = 'oceanic',
   },
+  compositing = {
+    picom_enabled = true,
+    gamemode_hook = true,
+  },
   layout = {
-    default = suit.tile,
+    default = suit.spiral,
     availiable = {
-      suit.tile,
+      suit.spiral,
       suit.floating,
     },
   },
@@ -17,6 +21,7 @@ return {
   },
   apps = {
     terminal = 'kitty',
+    screenshot_provider = 'flameshot',
     editor = {
       is_gui = false,
       command = 'nvim',

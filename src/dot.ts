@@ -7,6 +7,7 @@ import {
 } from "https://deno.land/std@0.151.0/fmt/colors.ts";
 
 import { existsSync } from "https://deno.land/std@0.151.0/fs/mod.ts";
+
 const HOME = Deno.env.get("HOME");
 const FONTS_DIR = `${HOME}/.local/share/fonts`;
 
@@ -19,6 +20,7 @@ const CONFIGS: [string, string, string][] = [
   ["app/alacritty", "~/.config/alacritty", "Alacritty"],
   ["app/kitty", "~/.config/kitty", "Kitty"],
   ["app/picom", "~/.config/picom", "Picom"],
+  ["wm/awesome", "~/.config/awesome", "Awesome window manager"],
   ["wm/i3", "~/.config/i3", "i3 Window Manager"],
   ["wm/bspwm", "~/.config/bspwm", "BSP Window Manager"],
   ["wm/sxhkd", "~/.config/sxhkd", "Simple X Keybind Manager"],
@@ -33,6 +35,7 @@ const CONFIGS: [string, string, string][] = [
 const result = await prompt(
   `Do you want to install this dotfiles?\n [${red("n")}/${green("y")}]`,
 );
+
 if (result == "n") Deno.exit(0);
 
 const info = (scope) => bold(green(`info(${scope}):`));

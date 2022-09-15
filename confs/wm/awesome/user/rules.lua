@@ -4,6 +4,7 @@ local awful = require('awful')
 ruled.client.connect_signal('request::rules', function()
   -- @DOC_GLOBAL_RULE@
   -- All clients will match this rule.
+
   ruled.client.append_rule {
     id = 'global',
     rule = {},
@@ -53,6 +54,16 @@ ruled.client.connect_signal('request::rules', function()
     id = 'titlebars',
     rule_any = { type = { 'normal', 'dialog' } },
     properties = { titlebars_enabled = false },
+  }
+
+  ruled.client.append_rule {
+    id = 'discordfix',
+    rule_any = { class = { 'discord' } },
+    properties = {
+      on_ready = function(client)
+        client.maximized = false
+      end,
+    },
   }
 
   -- Set Firefox to always map on the tag named "2" on screen 1.

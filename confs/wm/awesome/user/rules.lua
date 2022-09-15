@@ -1,6 +1,5 @@
 local ruled = require('ruled')
 local awful = require('awful')
-local wibox = require('wibox')
 
 ruled.client.connect_signal('request::rules', function()
   -- @DOC_GLOBAL_RULE@
@@ -53,7 +52,7 @@ ruled.client.connect_signal('request::rules', function()
     -- @DOC_CSD_TITLEBARS@
     id = 'titlebars',
     rule_any = { type = { 'normal', 'dialog' } },
-    properties = { titlebars_enabled = true },
+    properties = { titlebars_enabled = false },
   }
 
   -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -61,38 +60,4 @@ ruled.client.connect_signal('request::rules', function()
   --     rule       = { class = "Firefox"     },
   --     properties = { screen = 1, tag = "2" }
   -- }
-end)
-
--- Add a titlebar if titlebars_enabled is set to true in the rules.
-client.connect_signal('request::titlebars', function(c)
-  -- buttons for the titlebar
-  local buttons = {
-    awful.button({}, 1, function()
-      c:activate { context = 'titlebar', action = 'mouse_move' }
-    end),
-    awful.button({}, 3, function()
-      c:activate { context = 'titlebar', action = 'mouse_resize' }
-    end),
-  }
-
-  awful.titlebar(c).widget = {
-    nil,
-    { -- Middle
-      { -- Title
-        halign = 'center',
-        widget = awful.titlebar.widget.titlewidget(c),
-      },
-      buttons = buttons,
-      layout = wibox.layout.flex.horizontal,
-    },
-    { -- Right
-      awful.titlebar.widget.floatingbutton(c),
-      awful.titlebar.widget.maximizedbutton(c),
-      awful.titlebar.widget.stickybutton(c),
-      awful.titlebar.widget.ontopbutton(c),
-      awful.titlebar.widget.closebutton(c),
-      layout = wibox.layout.fixed.horizontal(),
-    },
-    layout = wibox.layout.align.horizontal,
-  }
 end)

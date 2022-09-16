@@ -5,7 +5,7 @@ local hooks = {
   'hooks.custom.themer',
   'hooks.custom.wallpaper',
   'hooks.custom.tag',
-
+  'hooks.custom.bar',
   -- screenshot
   'hooks.custom.screenshot',
 }

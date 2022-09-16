@@ -11,7 +11,7 @@ return function(module)
   end
 
   function logger:info(...)
-    send_log('INFO', colors.green, ...)
+    send_log('INFO ', colors.green, ...)
   end
 
   function logger:debug(...)
@@ -19,7 +19,7 @@ return function(module)
   end
 
   function logger:warn(...)
-    send_log('WARN', colors.yellow, ...)
+    send_log('WARN ', colors.yellow, ...)
   end
 
   return logger

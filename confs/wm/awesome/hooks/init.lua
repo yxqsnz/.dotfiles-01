@@ -6,6 +6,7 @@ local hooks = {
   'hooks.custom.wallpaper',
   'hooks.custom.tag',
   'hooks.custom.bar',
+  'hooks.custom.events.volume',
   -- screenshot
   'hooks.custom.screenshot',
 }

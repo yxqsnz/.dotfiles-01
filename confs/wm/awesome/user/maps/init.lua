@@ -12,6 +12,7 @@ local binds = {
   'user.maps.tag',
   'user.maps.client',
   'user.maps.popup',
+  'user.maps.events',
 }
 
 for _, bind in pairs(binds) do

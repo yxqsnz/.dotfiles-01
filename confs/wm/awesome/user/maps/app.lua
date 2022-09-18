@@ -18,8 +18,8 @@ return function(modkey)
       run(settings.apps.terminal),
       { description = 'Open a terminal', group = 'launcher' }
     ),
-    awful.key({ modkey }, 'd', run('rofi -show drun'), { description = 'Run a program', group = 'launcher' }),
 
-    awful.key({ modkey, 'Shift' }, 'r', awesome.restart),
+    awful.key({ modkey }, 'd', run('rofi -show drun'), { description = 'Run a program', group = 'launcher' }),
+    awful.key({ modkey, 'Shift' }, 'r', awesome.restart, { description = 'Restart awesome', group = 'awesome' }),
   }
 end

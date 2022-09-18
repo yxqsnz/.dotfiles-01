@@ -19,11 +19,11 @@ if provider then
   awful.keyboard.append_global_keybindings {
     awful.key({}, 'Print', function()
       awful.spawn.easy_async_with_shell(provider.fullscreen, noop)
-    end, { description = 'Take a full screen shot', category = 'screenshot' }),
+    end, { description = 'Take a full screen shot', group = 'screenshot' }),
 
     awful.key({ 'Shift' }, 'Print', function()
       awful.spawn.easy_async_with_shell(provider.selection, noop)
-    end, { description = 'Take selection screenshot', category = 'screenshot' }),
+    end, { description = 'Take selection screenshot', group = 'screenshot' }),
   }
 else
   log:warn('%s is a invalid screenshot provider.', settings.apps.screenshot_provider)

@@ -39,3 +39,7 @@ logger:info('Loaded keymaps')
 
 require('user.rules')
 logger:info('Loaded rules')
+
+--- Load integrations
+require('core.integrations')
+logger:info('Loaded integrations')

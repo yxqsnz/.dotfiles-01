@@ -57,8 +57,8 @@ ruled.client.connect_signal('request::rules', function()
   }
 
   ruled.client.append_rule {
-    id = 'chromiumfix',
-    rule_any = { class = { 'discord', 'Discord', 'DiscordCanary', 'chromium', 'Chromium' } },
+    id = 'floatingfix',
+    rule_any = { class = { 'discord', 'Discord', 'DiscordCanary', 'chromium', 'Chromium', 'TelegramDesktop' } },
     properties = {
       on_ready = function(client)
         client.maximized = false

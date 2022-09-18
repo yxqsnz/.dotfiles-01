@@ -13,12 +13,12 @@ local function update_bar_color(bar, bar2, theme, percentage, charging)
     bar.color = theme.palette.yellow
   elseif percentage <= 15 then
     bar.color = theme.palette.red
-  elseif percentage > 30 and percentage < 99 then
+  elseif percentage > 30 and percentage < 95 then
     bar.color = theme.palette.green
     bar2.value = 0
   end
 
-  if percentage == 100 then
+  if percentage > 95 then
     bar2.color = bar.color
     bar2.value = 1
   end

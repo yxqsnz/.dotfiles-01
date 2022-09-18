@@ -15,6 +15,7 @@ awful.spawn.with_line_callback(cmd, {
       awesome.emit_signal('gamemode::enabled')
     elseif Integrations.gamemode_enabled then
       log:info('Gamemode disabled')
+
       ---@diagnostic disable-next-line: missing-parameter, param-type-mismatch
       awesome.emit_signal('gamemode::disabled')
       Integrations.gamemode_enabled = false

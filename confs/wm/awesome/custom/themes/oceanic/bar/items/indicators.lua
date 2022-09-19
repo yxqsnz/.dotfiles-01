@@ -25,8 +25,7 @@ return function(theme)
           )
         ),
         0
-      ),
-      0.02
+      )
     ),
   }, 4)
 end

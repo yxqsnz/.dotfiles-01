@@ -7,13 +7,14 @@ function mod.center(widget)
   return { widget, valign = 'center', halign = 'center', layout = wibox.container.place }
 end
 
-function mod.round(theme, widget, radius, kind)
+function mod.round(theme, widget, radius)
   local shape = require('gears').shape
   return {
     bg = theme.palette.bg2,
-    shape = kind or shape.rounded_rect,
+    shape = function(cr, w, h)
+      return shape.rounded_rect(cr, w, h, radius or 6)
+    end,
     widget = wibox.container.background,
-    radius = radius or 0.56,
     widget,
   }
 end

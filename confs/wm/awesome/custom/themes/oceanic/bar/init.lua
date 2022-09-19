@@ -1,11 +1,11 @@
+local indicators = require('custom.themes.oceanic.bar.items.indicators')
 local awful = require('awful')
 local wibox = require('wibox')
-local launcher = require('common.widgets.launcher')
 local modkey = require('user.settings').keyboard.modkey
-local center = require('utils.widget').center
-local indicators = require('custom.themes.oceanic.bar.items.indicators')
+local w = require('utils.widget')
 local battery = require('common.widgets.battery')
 local volume = require('common.widgets.volume')
+local launcher = require('common.widgets.launcher')
 
 return function(theme, screen)
   screen.mytaglist = awful.widget.taglist {
@@ -46,19 +46,22 @@ return function(theme, screen)
     screen = screen,
     widget = {
       layout = wibox.layout.align.vertical,
-      {
-        layout = wibox.layout.fixed.vertical,
-        launcher(theme),
-      },
-      {
-        layout = wibox.layout.fixed.vertical,
 
-        center(screen.mytaglist),
+      {
+        layout = wibox.layout.align.vertical,
+        w.center(launcher(theme)),
       },
+
+      {
+        layout = wibox.layout.align.vertical,
+
+        w.center(screen.mytaglist),
+      },
+
       {
         layout = wibox.layout.fixed.vertical,
-        volume(theme),
         battery(theme),
+        volume(theme),
         indicators(theme),
       },
     },

@@ -5,6 +5,7 @@ local modkey = require('user.settings').keyboard.modkey
 local center = require('utils.widget').center
 local indicators = require('custom.themes.oceanic.bar.items.indicators')
 local battery = require('common.widgets.battery')
+local volume = require('common.widgets.volume')
 
 return function(theme, screen)
   screen.mytaglist = awful.widget.taglist {
@@ -56,7 +57,7 @@ return function(theme, screen)
       },
       {
         layout = wibox.layout.fixed.vertical,
-
+        volume(theme),
         battery(theme),
         indicators(theme),
       },

@@ -21,7 +21,7 @@ return function(theme)
       margin(
         center(
           wibox.widget.textclock(
-            markup.box { markup.colorize(theme.palette.green, '%H'), markup.colorize(theme.palette.red, '\n%M') }
+            markup.box { markup.colorize(theme.palette.pink1, '%H'), markup.colorize(theme.palette.green, '\n%M') }
           )
         ),
         0

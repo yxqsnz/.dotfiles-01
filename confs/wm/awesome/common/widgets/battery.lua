@@ -1,6 +1,7 @@
 local wibox = require('wibox')
 local round = require('utils.widget').round
 local margin = require('utils.widget').margin
+local create_bar = require('common.base.indicator_bar')
 
 local function update_bar_color(bar, theme, percentage, charging)
   if Integrations.gamemode_enabled then
@@ -17,13 +18,7 @@ local function update_bar_color(bar, theme, percentage, charging)
 end
 
 return function(theme)
-  local bar = wibox.widget.progressbar()
-
-  bar.forced_height = 12
-  bar.forced_width = 3
-  bar.border_width = 0.2
-
-  bar.background_color = theme.palette.bg2
+  local bar = create_bar(theme)
 
   bar.color = theme.palette.green
   local last_update = nil

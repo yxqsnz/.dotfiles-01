@@ -1,1 +1,0 @@
-bind \cf fg 

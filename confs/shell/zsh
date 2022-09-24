@@ -1,0 +1,67 @@
+export ZSH_HOME="${HOME}/.local/share/zsh"
+export ZPLUG_HOME="${ZSH_HOME}/zplug"
+
+[ -d "${ZSH_HOME}" ] || mkdir -p ${ZSH_HOME}
+if ! [ -d "${ZPLUG_HOME}" ]; then
+  echo "[*]: Can't find a valid Zplug installation [plugin manager] so installing it."
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME
+fi
+
+if ! command -v starship >/dev/null; then
+  echo "[*]: Can't find starsip [prompt] so installing it."
+ curl -sS https://starship.rs/install.sh | sh
+fi
+
+# History
+export HISTFILE="${ZSH_HOME}/history"
+export HISTSIZE=10000
+export SAVEHIST=10000
+
+# Aliases
+alias ls='exa --icons --long'
+alias l=ls
+
+# Options
+setopt interactive_comments hist_ignore_dups  octal_zeroes   no_prompt_cr
+setopt no_hist_no_functions no_always_to_end  append_history list_packed
+setopt inc_append_history   auto_pushd
+setopt pushd_ignore_dups    no_glob_complete  no_glob_dots   c_bases
+setopt numeric_glob_sort    no_share_history  promptsubst    auto_cd
+setopt rc_quotes            extendedglob      notify
+
+# Plugins.rc
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+
+# Plugins
+source ${ZPLUG_HOME}/init.zsh
+
+zplug "zsh-users/zsh-history-substring-search"
+zplug "hlissner/zsh-autopair"
+zplug "zsh-users/zsh-autosuggestions", defer:2
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load 
+
+# Completion
+
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+
+zstyle :compinstall filename '~/.zshrc'
+zstyle ':completion:*' menu select
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=34}:${(s.:.)LS_COLORS}")';
+zstyle ':completion:*' rehash true
+autoload -Uz compinit
+compinit
+
+eval $(starship init zsh)

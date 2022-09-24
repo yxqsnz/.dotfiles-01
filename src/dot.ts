@@ -12,28 +12,16 @@ const HOME = Deno.env.get("HOME");
 const FONTS_DIR = `${HOME}/.local/share/fonts`;
 
 const CONFIGS: [string, string, string][] = [
-  ["etc/ZshRc.zsh", "~/.zshrc", "Zsh config loader"],
-  ["app/shell/zsh", "~/.config/zsh", "Zsh"],
-  ["app/wezterm", "~/.config/wezterm", "Wezterm"],
   ["editor/neovim", "~/.config/nvim", "Neovim"],
-  ["app/dunst", "~/.config/dunst", "Dunst"],
-  ["app/alacritty", "~/.config/alacritty", "Alacritty"],
-  ["app/kitty", "~/.config/kitty", "Kitty"],
-  ["app/picom", "~/.config/picom", "Picom"],
-  ["wm/awesome", "~/.config/awesome", "Awesome window manager"],
-  ["wm/i3", "~/.config/i3", "i3 Window Manager"],
-  ["wm/bspwm", "~/.config/bspwm", "BSP Window Manager"],
-  ["wm/sxhkd", "~/.config/sxhkd", "Simple X Keybind Manager"],
-  ["wm/polybar", "~/.config/polybar", "Polybar"],
-  ["etc/starship.toml", "~/.config/starship.toml", "Starship"],
+  ["editor/lunarvim", "~/.config/lvim", "Lunarvim"],
+  ["shell/zsh", "~/.zshrc", "Zsh"],
+  ["shell/starship.toml", "~/.config/starship.toml", "Starship prompt"],
   ["app/git", "~/.config/git", "Git"],
-  ["app/pacman", "~/.config/pacman", "Pacman user config"],
-  ["app/rofi", "~/.config/rofi", "Rofi"],
   ["lang/rust/cargo/Cargo.toml", "~/.cargo/config.toml", "Cargo config"],
 ];
 
 const result = await prompt(
-  `Do you want to install this dotfiles?\n [${red("n")}/${green("y")}]`,
+  `Do you want to install this dotfiles?\n [${red("n")}/${green("y")}]`
 );
 
 if (result == "n") Deno.exit(0);
@@ -53,11 +41,9 @@ const futs = CONFIGS.map(async (config) => {
 
 if (!existsSync(FONTS_DIR)) {
   console.log(
-    `${warn("font")} can't find ${
-      underline(
-        "~/.local/share/fonts",
-      )
-    }. creating it.`,
+    `${warn("font")} can't find ${underline(
+      "~/.local/share/fonts"
+    )}. creating it.`
   );
   await Deno.mkdir(FONTS_DIR, { recursive: true });
 }

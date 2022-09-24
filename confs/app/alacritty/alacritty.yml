@@ -1,8 +1,0 @@
-import:
-  - ~/.config/alacritty/conf.d/fonts.yml
-  - ~/.config/alacritty/conf.d/catppuccin.yml
-
-window:
-  padding:
-   x: 10
-   y: 10

@@ -9,7 +9,7 @@
 [user]
 	email = yxqsnz@gmail.com
 	name = yxqsnz
-	signingkey = F4216D44798CE83C8D693C14FD27C3F265D62E4A
+	signingkey = 7B1A3524EFED74293BE35EC8BFB00BB26771EECB
 [commit]
 	gpgsign = true
 [init]

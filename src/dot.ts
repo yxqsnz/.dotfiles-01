@@ -17,6 +17,10 @@ const CONFIGS: [string, string, string][] = [
   ["shell/zsh", "~/.zshrc", "Zsh"],
   ["shell/starship.toml", "~/.config/starship.toml", "Starship prompt"],
   ["app/git", "~/.config/git", "Git"],
+  ["app/foot", "~/.config/foot", "Foot Terminal"],
+  ["wm/sway", "~/.config/sway", "Sway"],
+  ["wm/mako", "~/.config/mako", "Mako"],    
+  ["wm/waybar", "~/.config/waybar", "Waybar"],
   ["lang/rust/cargo/Cargo.toml", "~/.cargo/config.toml", "Cargo config"],
 ];
 

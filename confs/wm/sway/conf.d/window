@@ -1,0 +1,19 @@
+# vi: ft=i3config
+
+default_border pixel 2
+default_floating_border pixel 2
+default_orientation vertical
+
+
+gaps inner 3
+gaps outer 4
+
+for_window [app_id=".*"] split toggle
+
+set $color #403d52
+
+# borders color
+client.focused $color $color $color $color $color
+client.unfocused $color $color $color
+client.focused_inactive $color $color $color
+client.urgent $color $color $color

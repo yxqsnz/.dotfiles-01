@@ -1,0 +1,27 @@
+sort=-time
+layer=overlay
+background-color=#191724
+width=300
+height=110
+border-size=1
+border-color=#403d52
+border-radius=1
+icons=0
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=1
+font=JetBrainsMono Nerd Font 10
+
+[urgency=low]
+border-color=#403d52
+
+[urgency=normal]
+border-color=#403d52
+
+[urgency=high]
+border-color=#bf616a
+default-timeout=0
+
+[category=mpd]
+default-timeout=2000
+group-by=category

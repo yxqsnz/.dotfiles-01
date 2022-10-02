@@ -1,11 +1,12 @@
 lvim.lsp.installer.setup.ensure_installed = {
   "sumeko_lua",
   "jsonls",
+  "pyright"
 }
 
-lvim.lsp.installer.setup.automatic_installation = false
+-- lvim.lsp.installer.setup.automatic_installation = false
 
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 
 
 lvim.lsp.on_attach_callback = function(_, bufnr)

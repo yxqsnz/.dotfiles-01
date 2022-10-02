@@ -1,26 +1,41 @@
 # Custom prompt/format
-format = """
-[┌─\\[ $directory\\] ](bold purple)$git_branch$git_status$nodejs$rust$lua$go$python$cmd_duration
-[└─](bold purple)$character"""
+
+format = """$username[@](bold green)$hostname:$directory
+$character"""
+right_format = "(bold purple)$git_branch$git_status$nodejs$rust$lua$go$python$cmd_duration"
 
 # Wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 10
 
 [character]
-success_symbol = "[▪](bold purple)"
-error_symbol = "[▪](bold red)"
+success_symbol = "[\\$](white)"
+error_symbol = "[\\$](bold red)"
 
 [line_break]
 disabled = true
 
 [username]
-disabled = true
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style)"
+disabled = false 
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname](bold green)"
+disabled = false
+
+
+
 
 [directory]
 read_only = " 🔒"
 read_only_style = "red"
+style = "bold blue"
 truncation_length = 10
 truncate_to_repo = true
+format = "[$path]($style)[$read_only]($read_only_style)"
 
 [cmd_duration]
 min_time = 100

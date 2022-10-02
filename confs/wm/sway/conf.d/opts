@@ -1,0 +1,22 @@
+# vi: ft=i3config
+
+# Seat
+seat seat0 xcursor_theme macOSMonterey
+
+## Input 
+# You can read `man 5 sway-input` for more information about this section.
+input * {
+  xkb_layout br
+}
+
+# output
+output * {
+  bg ~/.config/sway/Pink-rose-close-up-petals-water-droplets-black-background_3840x2160.jpg fill
+  max_render_time 12
+}
+
+
+smart_borders    off
+smart_gaps        off
+
+# hide_edge_borders both 

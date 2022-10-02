@@ -42,3 +42,4 @@ vim.opt.guifont = 'Iosevka:h12'
 
 require 'user'
 require 'themes.rose-pine'
+lvim.transparent_window = true

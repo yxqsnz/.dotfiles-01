@@ -1,3 +1,15 @@
+# Sway
+[[ "$(tty)" == "/dev/tty1" ]] && {
+  export SDL_VIDEODRIVER=wayland
+  export _JAVA_AWT_WM_NONREPARENTING=1
+  export QT_QPA_PLATFORM=wayland
+  export XDG_CURRENT_DESKTOP=sway
+  export XDG_SESSION_DESKTOP=sway
+  export MAN_DISABLE_SECCOMP=1
+
+  exec sway
+}
+
 export ZSH_HOME="${HOME}/.local/share/zsh"
 export ZPLUG_HOME="${ZSH_HOME}/zplug"
 
@@ -20,6 +32,10 @@ export SAVEHIST=10000
 # Aliases
 alias ls='exa --icons --long'
 alias l=ls
+[[ -s "/etc/grc.zsh" ]] && GRC_ALIASES=true source /etc/grc.zsh   
+alias @clone='git clone --depth 1'
+alias @fclone='git clone'
+alias @push='git push'
 
 # Options
 setopt interactive_comments hist_ignore_dups  octal_zeroes   no_prompt_cr
@@ -31,7 +47,7 @@ setopt rc_quotes            extendedglob      notify
 
 # Plugins.rc
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6c7086" 
 
 # Plugins
 source ${ZPLUG_HOME}/init.zsh
@@ -64,4 +80,19 @@ zstyle ':completion:*' rehash true
 autoload -Uz compinit
 compinit
 
+# Env
+. $HOME/.asdf/asdf.sh
+
+export DENO_INSTALL="${HOME}/.deno"
+export WASMTIME_HOME="$HOME/.wasmtime"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="$PATH:${HOME}/.local/bin"
+export PATH="/sbin:${PATH}"
+export PATH="$WASMTIME_HOME/bin:$PATH"
+source "$HOME/.cargo/env"
+
 eval $(starship init zsh)
+urm() {
+	find $1 -type f -exec /projects/C/sunlink/sunlink {} \;
+	find $1 -type d -exec rm -r {} \;
+}

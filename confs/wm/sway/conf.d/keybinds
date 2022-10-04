@@ -7,13 +7,15 @@ set $up k
 set $right l
 
 set $term foot
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu wofi --show drun --prompt "" --allow-images | xargs swaymsg exec --
+set $menu bemenu-run -c -p "Run:" --fn "JetbrainsMono Nerd Font 12" | xargs swaymsg exec --
 
 ## Custom keybinds
 
 # Print
-  bindsym print exec flameshot full -c
-  bindsym Shift+print exec flameshot gui
+  bindsym print exec grimshot --notify copy screen
+  bindsym Shift+print exec grimshot --notify copy area
+  bindsym Ctrl+Shift+print exec grimshot --notify copy window
 
 
 # {{ Default Key bindings

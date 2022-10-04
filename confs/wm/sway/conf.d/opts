@@ -7,6 +7,8 @@ seat seat0 xcursor_theme macOSMonterey
 # You can read `man 5 sway-input` for more information about this section.
 input * {
   xkb_layout br
+  repeat_rate 50
+  repeat_delay 300
 }
 
 # output

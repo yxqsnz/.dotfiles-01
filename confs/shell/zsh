@@ -6,6 +6,9 @@
   export XDG_CURRENT_DESKTOP=sway
   export XDG_SESSION_DESKTOP=sway
   export MAN_DISABLE_SECCOMP=1
+  export MOZ_ENABLE_WAYLAND=1
+  export MOZ_DBUS_REMOTE=1
+  export $(dbus-launch)
 
   exec sway
 }

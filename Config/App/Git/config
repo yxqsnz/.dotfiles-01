@@ -1,0 +1,32 @@
+# vim: ft=gitconfig
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+[user]
+	email = yxqsnz@gmail.com
+	name = yxqsnz
+	signingkey = 7B1A3524EFED74293BE35EC8BFB00BB26771EECB
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = dev
+[branch "autosetup"]
+	rebase = yes
+[core]
+	askpass = 
+	editor = nvim
+[credential]
+	helper = store
+[alias]
+	commits = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	root = rev-parse --show-toplevel
+[push]
+	gpgSign = false
+	default = tracking
+	autoSetupRemote = true
+[pull]
+	ff = true

@@ -1,0 +1,5 @@
+# "$schema" = 'https://starship.rs/config-schema.json'
+
+[character] # The name of the module we are configuring is "character"
+error_symbol = "[\\$](bold red)"
+success_symbol = "[\\$](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
